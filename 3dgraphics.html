@@ -149,6 +149,14 @@ text {
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
 }
+
+/*resize when too thin*/
+@media (max-width: 600px) {
+  .topnavMaster {
+    flex-direction: column;
+	font-size: clamp(18px, 2vw, 20px);
+  }
+}
  
  /*footer copyright & funny quote*/
 .info {
