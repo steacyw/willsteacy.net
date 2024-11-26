@@ -2,71 +2,97 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>willsteacy.net - Blog</title>
+  <title>Will's Blog - willsteacy.net</title>
   <link rel="icon" type="image/x-icon" href="/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
+/* heading */
 h1 {
   font-family: courier new, serif;
-  font size: 100%;
+  font-size: clamp(15px, 3vw, 34px);
   color: #FCC79B;
-}
-
-p {
-  font-family: courier new, serif;
-  font-size: clamp(20px, 2vw, 30px);
-  color: #DAD0C2
+  line-height: clamp(15px, 3vw, 34px);
+  text-transform: uppercase;
   }
 
+/* subheading */
+h2 {
+  font-family: courier new, serif;
+  font-size: clamp(10px, 2.5vw, 22px);
+  color: #B5DECB;
+  line-height: clamp(10px, 2.5vw, 22px);
+  padding: 0px;
+  text-transform: uppercase;
+  }
+
+/* page explanation font */
+p {
+  font-family: courier new, serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #DAD0C2;
+  }
+
+/* longer-body-text font */
 p2 {
   font-family: times new roman, serif;
-  font-size: clamp(20px, 2vw, 30px);
-  color: #DAD0C2
-}
+  font-size: clamp(20px, 2vw, 24px);
+  color: #DAD0C2;
+  }
+
+/* under-image text */
+p3 {
+  font-family: times new roman, serif;
+  font-size: clamp(20px, 2vw, 24px);
+  color: #DAD0C2;
+  }
 
 /* ******************** LINKS ******************** */
 
-.slave_blog a:link {
-    color:#E3FC3A;
-}
+.nav_slave_blog a:link {
+  color:#E3FC3A;
+  }
+.nav_slave_blog a:hover {
+  color:#E3FC3A;
+  font-style: normal;
+  }
 
 a:link {
   color: #DAD0C2;
   white-space: nowrap;
-}
+  }
 a:visited {
   color: #DAD0C2;
   white-space: nowrap;
-}
+  }
 a:hover {
   color: #B5DECB;
   font-style: italic;
   white-space: nowrap;
-}
+  }
 a:active {
   color: #1c1c1c;
   font-style: italic;
   white-space: nowrap;
-}
+  }
 
 /* ******************** LINKS ******************** */
 
 text {
   color: #DAD0C2;
-}
+  }
 
 .spacerShort {
   margin: clamp(40px, 4vh, 60px);
-}
+  }
 
 .spacer {
   margin: 6vw;
-}
+  }
 
 .spacerLong {
   margin: 8vw;
-}
+  }
 
 /* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
 
@@ -131,15 +157,33 @@ text {
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
 .title {
+  display: flex;
+  flex-direction: row;
   margin: auto;
-  width: clamp(100px, 75vw, 100px);
-}
+  width: clamp(400px, 75vw, 400px);
+  }
+
+.titleitem01 {
+  flex: 25%;
+  margin: auto;
+  padding-left: 5px;
+  padding-left: 5px;
+  }
+.titleitem02 {
+  flex: 37.5%;
+  margin: auto;
+  }
+.titleitem03 {
+  flex: 37.5%;
+  margin: auto;
+  padding-left: 5px;
+  }
 
 .bodyText {
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
   line-height: 1.2;
-}
+  }
 
 .blogText {
   text-align: justify;
@@ -147,9 +191,9 @@ text {
   line-height: 1.5;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
-}
+  }
 
-/*resize when too thin*/
+/*resize topnav when too thin*/
 @media (max-width: 600px) {
   .topnavMaster {
     flex-direction: column;
@@ -167,7 +211,7 @@ text {
   color: #f13333;
   text-align: center;
   overflow: visible;
-}
+  }
 
 </style>
 </head>
@@ -190,16 +234,24 @@ text {
 </div>
 
 <div class="title">
-  <img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb_on.png" onmouseover="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb.png'" onmouseout="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb_on.png'" alt="Welcome to the Blog page." width=100%>
+  <div class="titleitem02">
+    <a href="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/radio.png"><img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/radioThumb.png" width="100%"></a>
+  </div>
+  <div class="titleitem01">
+    <img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb_on.png" onmouseover="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb.png'" onmouseout="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/blogThumb_on.png'" alt="Welcome to the Blog page." width="100%">
+  </div>
+  <div class="titleitem03">
+    <a href="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/stuff.png"><img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/stuffThumb.png" width="100%"></a>
+  </div>
 </div>
 
 <div class="spacerShort">
 </div>
 
 <div class="blogText">
-<h1>Leaving New Jersey</h1>
+<h1>Leaving New Jersey — 09/24/2023</h1>
 <p2>The first job I got out of college was doing product photography for a company that sells computers and laptops.<br><br>
-Like so many in our modern world, I accepted this position out of neccessity rather than passion, and so found myself in a line of work totally different than the one I had imagined for myself a year earlier.<br><br>
+Like so many in our modern world, I accepted this position out of neccessity rather than passion, and so found myself in a line of work totally different than the one I had imagined for myself as a fresh-faced (not so young) graduate.<br><br>
 As I shot and edited photos of what some might consider to be dull subject matter, I learned that I like this kind of thing. Posing the object, the lights, the camera; dialing in my settings and using the remote shutter to ensure a shake-free exposure; spending hours honing the results in Photoshop until the image became more than a sum of it's parts; I learned I had the patience and skill required for this type of work.<br><br>
 When I moved to Philadelphia, the commute back and forth to New Jersey became too much to deal with in exchange for the the paltry wage I had now outgrown. It was time to move on, but I knew what I was looking for this time.<br><br>
 I now work full time as the in-house photographer for a Philadelphia jewelry company. Much more interesting subject matter and a more stimulating day-to-day flow have kept me entertained, challenged, and growing for the last couple of years.</p2

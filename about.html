@@ -2,72 +2,97 @@
 <html>
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>willsteacy.net - About</title>
+  <title>Who is Will? - willsteacy.net</title>
   <link rel="icon" type="image/x-icon" href="/favicon.png">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
+/* heading */
 h1 {
-  font-family: courier new, sans serif;
-  font size: 20vw;
-  color: #F15A31;
-  transform: scaleY(6);
-}
-
-p {
-  font-family: 'Courier New', serif;
-  font-size: clamp(20px, 2vw, 30px);
-  color: #DAD0C2
+  font-family: courier new, serif;
+  font-size: clamp(15px, 3vw, 34px);
+  color: #FCC79B;
+  line-height: clamp(15px, 3vw, 34px);
+  text-transform: uppercase;
   }
 
+/* subheading */
+h2 {
+  font-family: courier new, serif;
+  font-size: clamp(10px, 2.5vw, 22px);
+  color: #B5DECB;
+  line-height: clamp(10px, 2.5vw, 22px);
+  padding: 0px;
+  text-transform: uppercase;
+  }
+
+/* page explanation font */
+p {
+  font-family: courier new, serif;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #DAD0C2;
+  }
+
+/* longer-body-text font */
 p2 {
-  font-family: 'Times New Roman', serif;
-  font-size: clamp(20px, 2vw, 30px);
-  color: #DAD0C2
-}
+  font-family: times new roman, serif;
+  font-size: clamp(20px, 2vw, 24px);
+  color: #DAD0C2;
+  }
+
+/* under-image text */
+p3 {
+  font-family: times new roman, serif;
+  font-size: clamp(20px, 2vw, 24px);
+  color: #DAD0C2;
+  }
 
 /* ******************** LINKS ******************** */
 
-.slave_about a:link {
-    color:#E3FC3A;
-}
+.nav_slave_about a:link {
+  color:#E3FC3A;
+  }
+.nav_slave_about a:hover {
+  color:#E3FC3A;
+  font-style: normal;
+  }
 
 a:link {
   color: #DAD0C2;
   white-space: nowrap;
-}
+  }
 a:visited {
   color: #DAD0C2;
   white-space: nowrap;
-}
+  }
 a:hover {
   color: #B5DECB;
   font-style: italic;
   white-space: nowrap;
-}
+  }
 a:active {
   color: #1c1c1c;
   font-style: italic;
   white-space: nowrap;
-}
+  }
 
 /* ******************** LINKS ******************** */
 
 text {
   color: #DAD0C2;
-}
+  }
 
 .spacerShort {
   margin: clamp(40px, 4vh, 60px);
-}
+  }
 
 .spacer {
   margin: 6vw;
-}
+  }
 
 .spacerLong {
   margin: 8vw;
-}
+  }
 
 /* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
 
@@ -132,15 +157,27 @@ text {
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
 .title {
+  display: flex;
+  flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 200px);
-}
+  width: clamp(200px, 75vw, 350px);
+  }
+
+.titleitem01 {
+  flex: 57%;
+  margin: auto;
+  padding-left: 5px;
+  }
+.titleitem02 {
+  flex: 42%;
+  margin: auto;
+  padding-right: 5px;
+  }
 
 .bodyText {
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+
   line-height: 1.2;
-}
+  }
 
 .blogText {
   text-align: justify;
@@ -148,9 +185,86 @@ text {
   line-height: 1.5;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
+  }
+  
+/* ******************** FLEX BOXES ******************** */
+
+iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  }
+
+/*MASTER-container ROW*/
+.flexMasterRow {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  }
+
+/*MASTER-container COLUMN LEFT*/
+.flexMasterColumnLeft {
+  flex: 50%;
+  flex-direction: column;
+  margin-right: 15px;
+  width: clamp(200px, 75vw, 1200px);
+  }
+
+/*MASTER-container COLUMN RIGHT*/
+.flexMasterColumnRight {
+  flex: 50%;
+  flex-direction: column;
+  margin-left: 15px;
+  width: clamp(200px, 75vw, 1200px);
+  }
+
+/*IMAGE flex div (L)*/
+.flexSlaveImage {
+  float: left;
+  margin-left: 30px;
+  margin-right: 30px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  }
+
+/*resize content divs when too thin*/
+@media (max-width: 1000px) {
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .flexMasterRow {
+    flex-direction: column;
+  }
+  .flexMasterColumnLeft {
+    margin: auto;
+  }
+  .flexMasterColumnRight {
+    margin: auto;
+  }
+  h1 {
+    font-size: clamp(30px, 100%, 40px);
+	line-height: 30px;
+  }
+  h2 {
+    font-size: clamp(20px, 100%, 30px);
+	line-height: 20px;
+  }
+  p {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+  p2 {
+    font-size: clamp(18px, 2vw, 24px);
+  }
+  p3 {
+    font-size: clamp(14px, 2vw, 18px);
+	text-align: center;
+  }
 }
 
-/*resize when too thin*/
+/* ******************** FLEX BOXES ******************** */
+
+/*resize topnav when too thin*/
 @media (max-width: 600px) {
   .topnavMaster {
     flex-direction: column;
@@ -168,7 +282,7 @@ text {
   color: #f13333;
   text-align: center;
   overflow: visible;
-}
+  }
 
 </style>
 </head>
@@ -191,10 +305,35 @@ text {
 </div>
 
 <div class="title">
-  <img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/aboutThumb_on.png" onmouseover="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/aboutThumb.png'" onmouseout="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/aboutThumb_on.png'" alt="Welcome to the page about me!" width=100%>
+  <div class="titleitem02">
+    <a href="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/lens02.png"><img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/page header images/lens02Thumb.png" width="100%" title="Click to see it large"></a>
+  </div>
+  <div class="titleitem01">
+    <img src="file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/photoThumb_on.png" onmouseover="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/photoThumb.png'" onmouseout="this.src='file:///C:/Users/steac/Desktop/willsteacy.net/images/thumbnails/photoThumb_on.png'" alt="Welcome to the About page." width="100%">
+  </div>
 </div>
 
 <div class="spacerShort">
+</div>
+
+<div class="spacerShort">
+</div>
+
+<div class="flexMasterRow">
+  <div class="flexMasterColumnLeft">
+	<h1>Wow! I’ve got my very own On-Line® Web-Site™</h1>
+		<p2>I like to make cool images for my own and other's enjoyment.<br><br>
+		I received a BFA in Computer Animation from FIT in 2018.<br><br>
+		I live and work in Philadelphia, my favorite place in the world! I take product photos for a living, and have been specializing in jewelry photography for the last four years.<br><br>
+		In my free time I like to ride my bicycle and draw and pose at figure drawing sessions around the city.<br><br>
+		<i>Sometimes I like to go down to the old hoagie shop and order a cheese steak and some french fries… very cool!</i><br><br>
+		</p2>
+    </div>
+  <div class="flexMasterColumnRight">
+	<div class="flexSlaveImage">
+	<img src="file:///E:/websites/willsteacy.net/images/desktop/custom desktop.jpg" width="100%">
+    </div>
+  </div>
 </div>
 
 <div class="spacerLong">
