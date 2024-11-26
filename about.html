@@ -198,13 +198,15 @@ iframe {
 .flexMasterRow {
   display: flex;
   flex-direction: row;
+  justify: start;
+  align: stretch;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
   }
 
 /*MASTER-container COLUMN LEFT*/
 .flexMasterColumnLeft {
-  flex: 50%;
+  flex: 40%;
   flex-direction: column;
   margin-right: 15px;
   width: clamp(200px, 75vw, 1200px);
@@ -212,7 +214,7 @@ iframe {
 
 /*MASTER-container COLUMN RIGHT*/
 .flexMasterColumnRight {
-  flex: 50%;
+  flex: 60%;
   flex-direction: column;
   margin-left: 15px;
   width: clamp(200px, 75vw, 1200px);
