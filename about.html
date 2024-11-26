@@ -192,15 +192,12 @@ text {
 iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
-  align-items: stretch;
   }
 
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
   flex-direction: row;
-  justify: start;
-  align-items: stretch;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
   }
@@ -210,6 +207,7 @@ iframe {
   flex: 40%;
   flex-direction: column;
   margin-right: 15px;
+  align-self: stretch;
   width: clamp(200px, 75vw, 1200px);
   }
 
@@ -218,11 +216,13 @@ iframe {
   flex: 60%;
   flex-direction: column;
   margin-left: 15px;
+  align-self: stretch;
   width: clamp(200px, 75vw, 1200px);
   }
 
 /*IMAGE flex div (L)*/
 .flexSlaveImage {
+  align-self: stretch;
   float: left;
   margin-left: 30px;
   margin-right: 30px;
