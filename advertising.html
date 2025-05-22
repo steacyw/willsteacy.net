@@ -220,6 +220,20 @@ text {
   margin: auto;
 }
 
+/*resize flex boxes links when too thin*/
+@media (max-width: 600px) {
+  .flexMaster {
+    flex-direction: column;
+    width: clamp(150px, 50vw, 650px);
+  }
+  .flexSlave03 {
+    max-width: 32%;
+  }
+  .flexSlave04 {
+    max-width: 58%;
+  }
+}
+
 /*resize topnav when too thin*/
 @media (max-width: 600px) {
   .topnavMaster {
