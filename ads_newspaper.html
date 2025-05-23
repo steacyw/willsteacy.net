@@ -159,9 +159,14 @@ text {
 .title {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  margin: 0;
   width: clamp(200px, 75vw, 450px);
+  align-items: center;
   justify-content: center;
+  }
+.titleitem01 {
+  flex: 66%;
+  margin: auto;
   }
 
 .bodyText {
@@ -179,7 +184,6 @@ text {
   }
 
 /* ******************** FLEX BOXES ******************** */
-
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -212,7 +216,6 @@ text {
     max-width: 48%;
   }
 }
-
 /* ******************** FLEX BOXES ******************** */
 
 /*resize topnav when too thin*/
@@ -256,7 +259,9 @@ text {
 </div>
 
 <div class="title">
-    <img src="/images/thumbnails/newspaperThumb_on.png" onmouseover="this.src='/images/thumbnails/newspaperThumb.png'" onmouseout="this.src='/images/thumbnails/newspaperThumb_on.png'" alt="Welcome to the Newspaper Advertising page." width="66%">
+    <div class="titleitem01">
+	<img src="/images/thumbnails/newspaperThumb_on.png" onmouseover="this.src='/images/thumbnails/newspaperThumb.png'" onmouseout="this.src='/images/thumbnails/newspaperThumb_on.png'" alt="Welcome to the Newspaper Advertising page." width="66%">
+    </div>
 </div>
 
 <div class="spacerShort">
