@@ -198,7 +198,10 @@ iframe {
 .flexMasterColumn {
   display: flex;
   flex-direction: column;
-  padding: 30px;
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  padding-left: 30px;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
   box-shadow: 1px 1px 10px #1c1c1c;
@@ -225,11 +228,6 @@ iframe {
   padding-left: 15px;
   }
 
-.flexSlaveText {
-  flex: 100%;
-  margin-top: -10px;
-  }
-
 /*TEXT flex special (R)*/
 .flexSlaveProTips {
   flex: 50%;
@@ -254,22 +252,16 @@ iframe {
 	max-width: 100%;
 	padding-bottom: 20px;
   }
-  .flexSlaveText {
-    padding: 0;
-	max-width: 100%;
-	padding-bottom: 15px;
-	margin-top: -25px;
-  }
   .flexSlaveProTips {
     padding: 0;
 	max-width: 100%;
 	margin-top: -25px;
   }
-.flexSlave01 {
-  padding-right: 0px;
+  .flexSlave01 {
+    padding-right: 0px;
   }
-.flexSlave02 {
-  padding-left: 0px;
+  .flexSlave02 {
+    padding-left: 0px;
   }
 }
 /* ******************** /FLEX BOXES ******************** */
@@ -340,7 +332,7 @@ Click on a video and watch it play!
     <div class="flexSlave02"><iframe src="https://player.vimeo.com/video/1088065045" frameborder="0"></iframe></div>
   </div>
   <div class="flexMasterRow">
-    <div class="flexSlaveText"><p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn, I've edited it to fit the website and for time and done the transitions and text etc.</p></div>
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn, I've edited it to fit the website and for time and done the transitions and text etc.</p>
   </div>
 </div>
 <!-- end dual section -->
