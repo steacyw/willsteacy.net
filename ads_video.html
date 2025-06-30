@@ -184,6 +184,7 @@ text {
 
 /* ******************** FLEX BOXES ******************** */
 iframe {
+  height: 100%;
   width: 100%;
   aspect-ratio: 16 / 9;
   }
@@ -263,6 +264,7 @@ iframe {
 /*resize content divs when too thin*/
 @media (max-width: 800px) {
   iframe {
+    height: 100%;
     width: 100%;
     aspect-ratio: 16 / 9;
   }
@@ -380,11 +382,11 @@ Click on a video and watch it play!
 <!-- begin two video + text description Flex Box Chunklette -->
 <div class="flexMasterColumn">
   <div class="flexMasterRow">
-      <div class="flexSlave01"><iframe src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
-      <div class="flexSlave02"><iframe src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+      <div class="flexSlave01"><iframe style="height: 100%; width: 100%; aspect-ratio: 3/2" src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+      <div class="flexSlave02"><iframe style="height: 100%; width: 100%; aspect-ratio: 1/1" src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
   </div>
   <div class="flexMasterRowText">
-    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video in the office photo studio.</p>
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video to advertise the Wild Child collection.</p>
   </div>
 </div>
 <!-- end two video + text description Flex Box Chunklett -->
