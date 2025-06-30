@@ -140,8 +140,8 @@ text {
   padding: 10px;
 }
 
-/*marketing*/
-.slave_marketing {
+/*advertising*/
+.slave_advertising {
   min-width: 0;
   margin: auto;
   padding: 10px;
@@ -162,16 +162,10 @@ text {
   margin: auto;
   width: clamp(200px, 75vw, 450px);
   }
-
 .titleitem01 {
-  flex: 66%;
+  flex: 44.75%;
   margin: auto;
-  padding-left: 5px;
-  }
-.titleitem02 {
-  flex: 33%;
-  margin: auto;
-  padding-right: 5px;
+  max-width: 157px;
   }
 
 .bodyText {
@@ -189,48 +183,128 @@ text {
   }
 
 /* ******************** FLEX BOXES ******************** */
-
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  padding: 0 4px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-/* Create four equal columns that sits next to each other */
-.column {
-  flex: 24%;
-  max-width: 24%;
-  padding: 4px;
-  margin: auto;
-}
-
-.column img {
-  margin-top: 8px;
-  vertical-align: middle;
+iframe {
   width: 100%;
+  aspect-ratio: 16 / 9;
+  }
+
+.flexMasterRow {
+  display: flex;
+  flex-direction: row;
   margin: auto;
-  padding-bottom: 1vw;
-}
+  width: clamp(200px, 75vw, 1200px);
+  }
 
-/* Responsive layout - makes a two column-layout instead of four columns */
-@media screen and (max-width: 800px) {
-  .column {
-    flex: 50%;
-    max-width: 50%;
+.flexMasterRowText {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  text-align: center;
+  }
+
+.flexMasterColumn {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  box-shadow: 1px 1px 10px #1c1c1c;
+  }
+
+/*SUB-container*/
+.flexSubContainer {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-bottom: 15px;
+  width: 100%
+  }
+
+/*flex div (L)*/
+.flexSlave01 {
+  flex: 50%;
+  padding-right: 15px;
+  }
+
+/*flex div (R)*/
+.flexSlave02 {
+  flex: 50%;
+  padding-left: 15px;
+  }
+
+/*flex div (L)*/
+.flexSlave03 {
+  flex: 66%;
+  padding-right: 15px;
+  }
+
+/*flex div (R)*/
+.flexSlave04 {
+  flex: 33%;
+  padding-left: 15px;
+  }
+
+/*flex div (L) ALT FOR VIDEO*/
+.flexSlave05 {
+  width: 100%;
+  flex: 73%;
+  padding-right: 15px;
+  }
+
+/*flex div (R) ALT FOR VIDEO*/
+.flexSlave06 {
+  width: 100%;
+  flex: 27%;
+  padding-left: 15px;
+  }
+
+/*TEXT flex special (R)*/
+.flexSlaveProTips {
+  flex: 50%;
+  padding-left: 30px;
+  margin-top: -10px;
+  }
+
+/*resize content divs when too thin*/
+@media (max-width: 800px) {
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .flexMasterRow {
+    flex-direction: column;
+  }
+  .flexSubContainer {
+    flex-direction: column;
+  }
+  .flexSlaveImage {
+    padding: 0;
+	max-width: 100%;
+	padding-bottom: 20px;
+  }
+  .flexSlaveProTips {
+    padding: 0;
+	max-width: 100%;
+	margin-top: -25px;
+  }
+  .flexSlave01 {
+    padding-right: 0px;
+  }
+  .flexSlave02 {
+    padding-left: 0px;
+  }
+  .flexSlave03 {
+    padding-right: 0px;
+  }
+  .flexSlave04 {
+    padding-left: 0px;
   }
 }
-
-/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
-  .column {
-    flex: 100%;
-    max-width: 100%;
-  }
-}
-
-/* ******************** FLEX BOXES ******************** */
+/* ******************** /FLEX BOXES ******************** */
 
 /*resize topnav when too thin*/
 @media (max-width: 600px) {
@@ -265,7 +339,7 @@ text {
 	</div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
-  <div class="slave_marketing"><a style="text-decoration:none" href="blog" title="Go to the Marketing page">Marketing</a></div>
+  <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
@@ -273,11 +347,8 @@ text {
 </div>
 
 <div class="title">
-  <div class="titleitem02">
-    <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lens02Thumb.png" width="100%"></a>
-  </div>
   <div class="titleitem01">
-    <img src="/images/thumbnails/photoThumb_on.png" onmouseover="this.src='/images/thumbnails/photoThumb.png'" onmouseout="this.src='/images/thumbnails/photoThumb_on.png'" alt="Welcome to the About page." width="100%">
+    <img src="/images/thumbnails/printThumb_on.png" onmouseover="this.src='/images/thumbnails/printThumb.png'" onmouseout="this.src='/images/thumbnails/printThumb_on.png'" alt="Welcome to the Newspaper Advertising page." width="100%">
   </div>
 </div>
 
@@ -285,52 +356,71 @@ text {
 </div>
 
 <div class="bodyText">
-<p>Here are some of the print ads I've made for Paul Morelli.<br>
-These have appeared in various publications, the names of which you can see by hovering over the image.<br><br>
-Click on an image to see the full-size version.</p>
+<p>
+I've made many print ads for Paul Morelli over the years, here is a collection of some of them.<br><br>
+Click on an image to see the full-size version.
+</p>
 </div>
 
 <div class="spacerShort">
 </div>
 
-<div class="row">
-  <div class="column">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+    <div class="flexSlave01"><iframe src="https://player.vimeo.com/video/1088065065?loop=1" frameborder="0"></iframe></div>
+    <div class="flexSlave02"><iframe src="https://player.vimeo.com/video/1088065045?loop=1" frameborder="0"></iframe></div>
   </div>
-  <div class="column">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-  </div>
-  <div class="column">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-  </div>
-  <div class="column">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
-    <img src="C:\Users\wsteacy\Desktop\WSJ.jpg">
+  <div class="flexMasterRow">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn in 2024. I've edited it to fit the website, for time, done the transitions, and added text etc. (you know, editing! ;) )</p>
   </div>
 </div>
+<!-- end two video + text description Flex Box Chunklett -->
+
+<div class="spacerShort">
+</div>
+
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+    <div class="flexSlave05"><iframe src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0" allow="autoplay" frameborder="0"></iframe></div>
+    <div class="flexSlave06"><iframe src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0" allow="autoplay" frameborder="0"></iframe></div>
+  </div>
+  <div class="flexMasterRowText">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video in the office photo studio.</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklett -->
+
+<div class="spacerShort">
+</div>
+
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+    <div class="flexSlave03"><iframe src="https://player.vimeo.com/video/1096703051?loop=1" frameborder="0"></iframe></div>
+    <div class="flexSlave04"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+  </div>
+  <div class="flexMasterRow">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn in 2024. I've edited it to fit the website, for time, done the transitions, and added text etc. (you know, editing! ;) )</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklett -->
+
+<div class="spacerShort">
+</div>
+
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+    <div class="flexSlave03"><iframe src="https://player.vimeo.com/video/1088064972?loop=1" frameborder="0"></iframe></div>
+    <div class="flexSlave04"><img src="/images/ads video/Website Header September 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+  </div>
+  <div class="flexMasterRow">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn in 2024. I've edited it to fit the website, for time, done the transitions, and added text etc. (you know, editing! ;) )</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklett -->
 
 <div class="spacerLong">
 </div>
