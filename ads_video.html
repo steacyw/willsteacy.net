@@ -184,8 +184,6 @@ text {
 
 /* ******************** FLEX BOXES ******************** */
 iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
   }
 
 .flexMasterRow {
@@ -260,11 +258,14 @@ iframe {
   padding-left: 15px;
   }
 
-/*TEXT flex special (R)*/
-.flexSlaveProTips {
-  flex: 50%;
-  padding-left: 30px;
-  margin-top: -10px;
+.flexSubContainer01 {
+  flex-direction: column;
+  padding-top: 66.66%; /* 3:2 Aspect Ratio */
+  }
+
+.flexSubContainer02 {
+  flex-direction: column;
+  padding-top: 100%;
   }
 
 /*resize content divs when too thin*/
@@ -387,8 +388,12 @@ Click on a video and watch it play!
 <!-- begin two video + text description Flex Box Chunklette -->
 <div class="flexMasterColumn">
   <div class="flexMasterRow">
-    <div class="flexSlave01"><iframe src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
-    <div class="flexSlave02"><iframe src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+    <div class="flexSubContainer01">
+      <div class="flexSlave01"><iframe src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+    </div>
+    <div class="flexSubContainer02">
+      <div class="flexSlave02"><iframe src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+    </div>
   </div>
   <div class="flexMasterRowText">
     <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video in the office photo studio.</p>
