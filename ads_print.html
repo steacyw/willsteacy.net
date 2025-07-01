@@ -190,13 +190,28 @@ text {
   width: clamp(200px, 75vw, 1200px);
   }
 
-.flexColumn {
+.flexColumnL {
   display: flex;
   flex-direction: column;
   margin: auto;
+  padding-right: 15px;
   }
 
-/*flex div (C) FOR USE WITH COLUMN*/
+.flexColumnC {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  }
+
+.flexColumnR {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding-left: 15px;
+  }
+
 .flexSlave {
   width: 100%;
   flex: 100%%;
@@ -204,12 +219,20 @@ text {
 
 /*resize content divs when too thin*/
 @media (max-width: 800px) {
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
   .flexMasterRow {
     flex-direction: column;
+  }
+  .flexColumnL {
+    padding-right: 0px;
+  }
+  .flexColumnC {
+    padding-right: 0px;
+  }
+  .flexColumnR {
+    padding-right: 0px;
+  }
+  .flexSlave {
+    padding-right: 0px;
   }
 }
 /* ******************** /FLEX BOXES ******************** */
@@ -277,7 +300,7 @@ Click on an image to see the full-size version.
 <div class="flexMasterRow">
   <div class="flexColumn" style="flex: 50%">
     <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
-    <div class="flexSlave"><p>TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3</p></div>
+    <div class="flexSlave"><p style="font-size:clamp(12px, 1.5vw, 16px)">TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3</p></div>
   </div>
   <div class="flexColumn" style="flex: 50%">
     <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
@@ -287,12 +310,15 @@ Click on an image to see the full-size version.
 
 <!-- begin Flex Box Chunklette -->
 <div class="flexMasterRow">
-  <div class="flexColumn" style="flex: 66.6%">
+  <div class="flexColumn" style="flex: 33.3%">
     <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
   </div>
-  <div class="flexColumn" style="flex: 33.4%">
+  <div class="flexColumn" style="flex: 33.3%">
     <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
-    <div class="flexSlave"><p>TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3</p></div>
+    <div class="flexSlave"><p style="font-size:clamp(12px, 1.5vw, 16px)">TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3TEST TEXT testy textie! :3</p></div>
+  </div>
+  <div class="flexColumn" style="flex: 33.3%">
+    <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
   </div>
 </div>
 <!-- end Flex Box Chunklett -->
