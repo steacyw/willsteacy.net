@@ -183,11 +183,6 @@ text {
   }
 
 /* ******************** FLEX BOXES ******************** */
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  }
-
 .flexMasterRow {
   display: flex;
   flex-direction: row;
@@ -195,7 +190,7 @@ iframe {
   width: clamp(200px, 75vw, 1200px);
   }
 
-.flexMasterRowText {
+.flexText {
   display: flex;
   flex-direction: row;
   margin: auto;
@@ -203,75 +198,34 @@ iframe {
   text-align: center;
   }
 
-.flexMasterColumn {
+.flexColumn01 {
   display: flex;
+  flex: 50%;
   flex-direction: column;
-  padding-top: 15px;
-  padding-right: 30px;
-  padding-bottom: 15px;
-  padding-left: 30px;
   margin: auto;
   width: clamp(200px, 75vw, 1200px);
   }
 
-/*SUB-container*/
-.flexSubContainer {
+.flexColumn02 {
   display: flex;
-  flex-direction: row;
+  flex: 66.6%;
+  flex-direction: column;
   margin: auto;
-  padding-bottom: 15px;
-  width: 100%
+  width: clamp(200px, 75vw, 1200px);
   }
 
-/*flex div (L)*/
-.flexSlave01 {
-  flex: 50%;
-  padding-right: 15px;
-  }
-
-/*flex div (R)*/
-.flexSlave02 {
-  flex: 50%;
-  padding-left: 15px;
-  }
-
-/*flex div (L)*/
-.flexSlave03 {
-  flex: 66%;
-  padding-right: 15px;
-  }
-
-/*flex div (R)*/
-.flexSlave04 {
-  flex: 33%;
-  padding-left: 15px;
-  }
-
-/*flex div (L) ALT FOR VIDEO*/
-.flexSlave05 {
-  width: 100%;
-  flex: 73%;
-  padding-right: 15px;
-  }
-
-/*flex div (R) ALT FOR VIDEO*/
-.flexSlave06 {
-  width: 100%;
-  flex: 27%;
-  padding-left: 15px;
+.flexColumn03 {
+  display: flex;
+  flex: 33.4%;
+  flex-direction: column;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
   }
 
 /*flex div (C) FOR USE WITH COLUMN*/
-.flexSlave07 {
+.flexSlave {
   width: 100%;
-  flex: 50%%;
-  }
-
-/*TEXT flex special (R)*/
-.flexSlaveProTips {
-  flex: 50%;
-  padding-left: 30px;
-  margin-top: -10px;
+  flex: 100%%;
   }
 
 /*resize content divs when too thin*/
@@ -282,31 +236,6 @@ iframe {
   }
   .flexMasterRow {
     flex-direction: column;
-  }
-  .flexSubContainer {
-    flex-direction: column;
-  }
-  .flexSlaveImage {
-    padding: 0;
-	max-width: 100%;
-	padding-bottom: 20px;
-  }
-  .flexSlaveProTips {
-    padding: 0;
-	max-width: 100%;
-	margin-top: -25px;
-  }
-  .flexSlave01 {
-    padding-right: 0px;
-  }
-  .flexSlave02 {
-    padding-left: 0px;
-  }
-  .flexSlave03 {
-    padding-right: 0px;
-  }
-  .flexSlave04 {
-    padding-left: 0px;
   }
 }
 /* ******************** /FLEX BOXES ******************** */
@@ -372,13 +301,26 @@ Click on an image to see the full-size version.
 
 <!-- begin Flex Box Chunklette -->
 <div class="flexMasterRow">
-  <div class="flexMasterColumn">
-    <div class="flexSlave07"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
-    <div class="flexMasterRowText"><p>TEST TEXT testy textie! :3</p></div>
+  <div class="flexColumn01">
+    <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+    <div class="flexText"><p>TEST TEXT testy textie! :3</p></div>
   </div>
-  <div class="flexMasterColumn">
-    <div class="flexSlave07"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
-    <div class="flexMasterRowText"><p>TEST TEXT testy textie! :3</p></div>
+  <div class="flexColumn01">
+    <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+    <div class="flexText"><p>TEST TEXT testy textie! :3</p></div>
+  </div>
+</div>
+<!-- end Flex Box Chunklett -->
+
+<!-- begin Flex Box Chunklette -->
+<div class="flexMasterRow">
+  <div class="flexColumn02">
+    <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+    <div class="flexText"><p>TEST TEXT testy textie! :3</p></div>
+  </div>
+  <div class="flexColumn03">
+    <div class="flexSlave"><img src="/images/ads video/Website Header November 2024.jpg" style="max-width: 100%; padding-top:15px;"></div>
+    <div class="flexText"><p>TEST TEXT testy textie! :3</p></div>
   </div>
 </div>
 <!-- end Flex Box Chunklett -->
