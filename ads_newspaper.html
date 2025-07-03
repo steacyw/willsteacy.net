@@ -226,6 +226,74 @@ color: #DAD0C2;
 }
 /* ******************** FLEX BOXES ******************** */
 
+/* ******************** FLEX BOXES ******************** */
+.flexMasterRow {
+display: flex;
+flex-direction: row;
+margin: auto;
+width: clamp(200px, 75vw, 1200px);
+}
+
+.flexColumnL {
+display: flex;
+flex: 24%;
+flex-direction: column;
+padding-right: 15px;
+}
+
+.flexColumnC1 {
+display: flex;
+flex: 24%;
+flex-direction: column;
+padding-right: 15px;
+padding-left: 15px;
+}
+
+.flexColumnC2 {
+display: flex;
+flex: 24%;
+flex-direction: column;
+padding-right: 15px;
+padding-left: 15px;
+}
+
+.flexColumnR {
+display: flex;
+flex: 24%;
+flex-direction: column;
+padding-left: 15px;
+}
+
+.flexSlave {
+width: 100%;
+flex: 100%;
+}
+
+/*resize content divs when too thin*/
+@media (max-width: 600px) {
+.flexMasterRow {
+flex-direction: column;
+}
+.flexColumnL {
+padding-right: 15px;
+}
+.flexColumnC1 {
+padding-right: 0px;
+padding-left: 15px;
+}
+.flexColumnC2 {
+padding-right: 15px;
+padding-left: 0px;
+}
+.flexColumnR {
+padding-left: 15px;
+}
+.flexSlave {
+padding-right: 0px;
+}
+}
+/* ******************** /FLEX BOXES ******************** */
+
 /*resize topnav when too thin*/
 @media (max-width: 600px) {
   .topnavMaster {
@@ -282,6 +350,40 @@ color: #DAD0C2;
 
 <div class="spacerShort">
 </div>
+
+<!-- begin Flex Box Chunklette -->
+<div class="flexMasterRow">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnC1" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnC2" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+</div>
+<!-- end Flex Box Chunklett -->
+
+<!-- begin Flex Box Chunklette -->
+<div class="flexMasterRow">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnC1" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnC2" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><img src="/images/WSJ/WSJ0001.jpg" style="max-width: 100%; padding-top:15px;"></div>
+</div>
+</div>
+<!-- end Flex Box Chunklett -->
 
 <div class="row">
   <div class="column">
