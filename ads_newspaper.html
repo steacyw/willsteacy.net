@@ -198,8 +198,8 @@ text {
 
 /* Create four equal columns that sits next to each other */
 .column {
-  flex: 24%;
-  max-width: 24%;
+  flex: clamp(24%, 30%, 50%);
+  max-width: clamp(24%, 30%, 50%);
   padding: 4px;
   margin: auto;
   margin-top: 0px;
@@ -216,8 +216,8 @@ text {
 /* Responsive layout - makes a two column-layout instead of four columns */
 @media (max-width: 600px) {
   .column {
-    flex: 48%;
-    max-width: 48%;
+    flex: 45%;
+    max-width: 45%;
   }
 }
 /* ******************** FLEX BOXES ******************** */
