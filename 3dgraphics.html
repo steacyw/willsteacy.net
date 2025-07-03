@@ -1,157 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title>3D Graphics - willsteacy.net</title>
-  <link rel="icon" type="image/x-icon" href="/favicon.png">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>3D Graphics - willsteacy.net</title>
+<link rel="icon" type="image/x-icon" href="/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 
 /* heading */
 h1 {
-  font-family: courier new, serif;
-  font-size: clamp(15px, 3vw, 34px);
-  color: #FCC79B;
-  line-height: clamp(15px, 3vw, 34px);
-  text-transform: uppercase;
-  }
+font-family: courier new, serif;
+font-size: clamp(4vw, 4vw, 34px);
+color: #FCC79B;
+line-height: clamp(4vw, 4vw, 34px);
+text-transform: uppercase;
+margin: 0;
+}
 
 /* subheading */
 h2 {
-  font-family: courier new, serif;
-  font-size: clamp(10px, 2.5vw, 22px);
-  color: #B5DECB;
-  line-height: clamp(10px, 2.5vw, 22px);
-  padding: 0px;
-  text-transform: uppercase;
-  }
+font-family: courier new, serif;
+font-size: clamp(3vw, 3vw, 22px);
+color: #B5DECB;
+line-height: clamp(3vw, 3vw, 22px);
+padding: 0px;
+text-transform: uppercase;
+margin: 0;
+}
 
 /* page explanation font */
 p {
-  font-family: courier new, serif;
-  font-size: clamp(18px, 2vw, 24px);
-  color: #DAD0C2;
-  }
+font-family: courier new, serif;
+font-size: clamp(18px, 2vw, 24px);
+color: #DAD0C2;
+}
 
 /* longer-body-text font */
 p2 {
-  font-family: times new roman, serif;
-  font-size: clamp(20px, 2vw, 24px);
-  color: #DAD0C2;
-  }
+font-family: times new roman, serif;
+font-size: clamp(20px, 2vw, 24px);
+color: #DAD0C2;
+}
 
 /* under-image text */
 p3 {
-  font-family: times new roman, serif;
-  font-size: clamp(20px, 2vw, 24px);
-  color: #DAD0C2;
-  }
+font-family: times new roman, serif;
+font-size: clamp(20px, 2vw, 24px);
+color: #DAD0C2;
+}
 
 /* ******************** LINKS ******************** */
 
-.nav_slave_graphics a:link {
-  color:#E3FC3A;
-  }
-.nav_slave_graphics a:hover {
-  color:#E3FC3A;
-  font-style: normal;
-  }
+.nav_slave_photo a:link {
+color:#E3FC3A;
+}
+.nav_slave_photo a:hover {
+color:#E3FC3A;
+font-style: normal;
+}
 
 a:link {
-  color: #DAD0C2;
-  white-space: nowrap;
-  }
+color: #DAD0C2;
+white-space: nowrap;
+}
 a:visited {
-  color: #DAD0C2;
-  white-space: nowrap;
-  }
+color: #DAD0C2;
+white-space: nowrap;
+}
 a:hover {
-  color: #B5DECB;
-  font-style: italic;
-  white-space: nowrap;
-  }
+color: #B5DECB;
+font-style: italic;
+white-space: nowrap;
+}
 a:active {
-  color: #1c1c1c;
-  font-style: italic;
-  white-space: nowrap;
-  }
+color: #1c1c1c;
+font-style: italic;
+white-space: nowrap;
+}
 
-/* ******************** LINKS ******************** */
+/* ******************** /LINKS ******************** */
 
 text {
-  color: #DAD0C2;
-  }
+color: #DAD0C2;
+}
 
 .spacerShort {
-  margin: clamp(40px, 4vh, 60px);
-  }
+margin: clamp(40px, 4vh, 60px);
+}
 
 .spacer {
-  margin: 6vh;
-  }
+margin: 6vw;
+}
 
 .spacerLong {
-  margin: 8vh;
-  }
+margin: 8vw;
+}
 
 /* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
+
 .topnavMaster {
-  background-color:#2B3129;
-  font-family: 'Courier New', serif;
-  font-size: clamp(12px, 2vw, 20px);
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  line-height: 10px;
+background-color:#2B3129;
+font-family: 'Courier New', serif;
+font-size: clamp(12px, 2vw, 20px);
+display: flex;
+flex-direction: row;
+margin: auto;
+width: clamp(200px, 75vw, 750px);
+line-height: 10px;
 }
 
 /*home page master*/
 .slave_home_master {
-  display: flex;
-  min-width: 0;
-  margin: auto;
+display: flex;
+min-width: 0;
+margin: auto;
 }
 
 .slave_home_slave_L{
-  min-width: 0;
-  height: 40px;
-  float: left;
+min-width: 0;
+height: 40px;
+float: left;
 }
 
 .slave_home_slave_R {
-  min-width: 0;
-  margin:auto;
-  padding: 10px;
+min-width: 0;
+margin:auto;
+padding: 10px;
 }
 
 /*photography*/
 .slave_photo {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+min-width: 0;
+margin: auto;
+padding: 10px;
 }
 
 /*3d graphics*/
 .slave_graphics {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+min-width: 0;
+margin: auto;
+padding: 10px;
 }
 
 /*advertising*/
 .slave_advertising {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+min-width: 0;
+margin: auto;
+padding: 10px;
 }
 
 /*about*/
 .slave_about {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+min-width: 0;
+margin: auto;
+padding: 10px;
 }
+
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
 .title {
@@ -176,130 +180,91 @@ text {
   line-height: 1.2;
   }
 
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
-  }
-
 /* ******************** FLEX BOXES ******************** */
-
 iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  }
+width: 100%;
+aspect-ratio: 16 / 9;
+}
+
+.flexContainer {
+padding: 30px;
+margin: auto;
+width: clamp(200px, 75vw, 1200px);
+box-shadow: 1px 1px 10px #1c1c1c;
+}
 
 .flexMasterRow {
-  display: flex;
-  flex-direction: row;
-  padding: 30px;
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
-  box-shadow: 1px 1px 10px #1c1c1c;
-  }
-  
-.flexMasterColumn {
-  display: flex;
-  flex-direction: column;
-  padding: 30px;
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
-  box-shadow: 1px 1px 10px #1c1c1c;
-  }
+display: flex;
+flex-direction: row;
+margin: auto;
+width: clamp(200px, 75vw, 1200px);
+}
 
-/*SUB-container*/
-.flexSubContainer {
-  display: flex;
-  flex-direction: row;
-  margin: auto;
-  padding-bottom: 15px;
-  width: 100%
-  }
+.flexColumnL {
+display: flex;
+flex-direction: column;
+padding-right: 15px;
+}
 
-/*IMAGE flex div (L)*/
-.flexSlaveImage {
-  flex: 50%;
-  padding-top: 10px;
-  margin: auto;
-  }
+.flexColumnC {
+display: flex;
+flex-direction: column;
+padding-right: 15px;
+padding-left: 15px;
+margin: auto;
+}
 
-/*TEXT flex div (R)*/
-.flexSlaveText {
-  flex: 50%;
-  padding-left: 30px;
-  margin-top: -10px;
-  }
+.flexColumnR {
+display: flex;
+flex-direction: column;
+padding-left: 15px;
+}
 
-/*TEXT flex special (R)*/
-.flexSlaveProTips {
-  flex: 50%;
-  padding-left: 30px;
-  margin-top: -10px;
-  }
+.flexSlave {
+width: 100%;
+flex: 100%;
+}
 
 /*resize content divs when too thin*/
 @media (max-width: 800px) {
-  .flexMasterRow {
-    flex-direction: column;
-    flex: 100%;
-    max-width: 100%;
-  }
-  .flexSubContainer {
-    flex-direction: column;
-    flex: 100%;
-    max-width: 100%;
-  }
-  .flexSlaveImage {
-    flex: 100%;
-    max-width: 100%;
-    padding-bottom: 20px;
-  }
-  .flexSlaveText {
-    padding: 0;
-    padding-bottom: 15px;
-    margin-top: -25px;
-  }
-  .flexSlaveProTips {
-    padding: 0;
-    margin-top: -25px;
-  }
-  h1 {
-    font-size: clamp(30px, 100%, 40px);
-	line-height: 30px;
-  }
-  h2 {
-    font-size: clamp(20px, 100%, 30px);
-    line-height: 20px;
-  }
-  p {
-    font-size: clamp(18px, 2vw, 24px);
-  }
-  }
+.flexMasterRow {
+flex-direction: column;
 }
-
-/* ******************** FLEX BOXES ******************** */
+.flexColumnL {
+padding-right: 0px;
+}
+.flexColumnC {
+padding-right: 0px;
+padding-left: 0px;
+}
+.flexColumnR {
+padding-left: 0px;
+}
+.flexSlave {
+padding-right: 0px;
+}
+}
+/* ******************** /FLEX BOXES ******************** */
 
 /*resize topnav when too thin*/
 @media (max-width: 600px) {
-  .topnavMaster {
-    flex-direction: column;
-	font-size: clamp(18px, 2vw, 20px);
-  }
+.topnavMaster {
+flex-direction: column;
+font-size: clamp(18px, 2vw, 20px);
 }
- 
- /*footer copyright & funny quote*/
+}
+
+/*footer copyright & funny quote*/
 .info {
-  margin: auto;
-  width: 75%;
-  max-width: 600px;
-  font-size: larger;
-  font-family: 'Courier New', serif;
-  color: #f13333;
-  text-align: center;
-  overflow: visible;
-  }
+margin: auto;
+width: 75%;
+max-width: 600px;
+font-size: larger;
+font-family: 'Courier New', serif;
+color: #f13333;
+text-align: center;
+overflow: visible;
+}
 
 </style>
 </head>
@@ -308,14 +273,14 @@ iframe {
 <body style="background-color:#2B3129">
 
 <div class="topnavMaster">
-  <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
-    <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
-  </div>
-  <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
-  <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
-  <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
+<div class="slave_home_master">
+<div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
+<div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
+</div>
+<div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
+<div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
+<div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
+<div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
 <div class="spacerShort">
@@ -330,7 +295,7 @@ iframe {
   </div>
 </div>
 
-<div class="spacer">
+<div class="spacerShort">
 </div>
 
 <div class="bodyText">
@@ -339,74 +304,75 @@ On this page I've included my two thesis projects from FIT and one project I wor
 Scroll down to see videos and descriptions of the projects.</p>
 </div>
 
-<div class="spacer">
-</div>
+<div class="spacerShort">
+</div
 
-<!-- begin sinnerspit section -->
+<!-- begin SINNERSPIT Flex Box Chunklette -->
+<div class="flexContainer">
 <div class="flexMasterRow">
-	  <div class="flexSubContainer">
-  <div class="flexSlaveImage"><iframe src="https://www.youtube.com/embed/8xajg9MBK-4?rel=0" title="Sinnerspit music video - Yeenar" frameborder="0" allowfullscreen alt="Embedded iframe video of Yeenar's Sinnerspit music video"></iframe></div>
-  <div class="flexSlaveText"><h1>SINNERSPIT MUSIC VIDEO</h1><p>Music video for the Philadelphia-based band <a href="https://yeenar.bandcamp.com/" target="_blank" rel="noopener noreferrer" title=" check out yeenar on bandcamp">yeenar</a>.<br><br>I created the 3D animation segment (0:27-2:17) and did motion tracking, compositing, and other work in After Effects for the opening shot and other scenes. I also spent some time behind the camera and helped out with editing.</p></div>
-	  </div>
-	  </div>
-<!-- end sinnerspit section -->
-
-<div class="spacer">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><iframe src="https://www.youtube.com/embed/8xajg9MBK-4?rel=0" title="Sinnerspit music video - Yeenar" frameborder="0" allowfullscreen alt="Embedded iframe video of Yeenar's Sinnerspit music video"></iframe></div>
 </div>
-
-<!-- begin slugrunner section -->
-<div class="flexMasterColumn">
-  <div class="flexSubContainer">
-    <div class="flexSlaveImage"><iframe src="https://www.youtube.com/embed/lkf94Ix2Rgo?rel=0" title="SLUGRUNNER gameplay video" frameborder="0" allowfullscreen alt="Embedded video of SLUGRUNNER gameplay"></iframe></div>
-	<div class="flexSlaveText"><h1>SLUGRUNNER</h1>
-	  <p>I made this short FPS game to fulfill the interactive portion of my thesis project(s) at FIT.<br><br>
-             The goal of the game is to get to the end of the level in the shortest time possible. In order to progress, the player must shoot obstacles out of the way with their sawn-off shotgun.</p><br>
-	</div>
-  </div>
-  <div class="flexSubContainer">
-    <div class="flexSlaveImage">
-	  <a href="https://files.catbox.moe/835wot.gif" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/slugrunnergifsmall.gif" title="SLUGRUNNER reloading animation gif" width="100%" alt="SLUGRUNNER reloading animation gif"></a>
-	</div>
-    <div class="flexSlaveText">
-	  <h2>Reloading</h2>
-      <p>Something I wanted to focus on in this project was making a first person reload animation. I've always been a fan of them in FPS games.<br><br>
-         This .gif is a loop of the in-game reload animation with better textures and smoothed-poly models.<br><br>
-	 Click to see full size.</p>
-	</div>
-  </div>
-  <div class="flexSubContainer">
-    <div class="flexSlaveImage">
-      <a href="https://files.catbox.moe/kt55x2.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/slugrunner_instructions_small.jpg" title="SLUGRUNNER instruction sheet" width="100%" alt="SLUGRUNNER instruction sheet"></a>
-    </div>
-    <div class="flexSlaveProTips">
-      <h2>Pro Tips</h2>
-      <p>The instruction sheet I hung next to the computer when Slug Runner was being displayed in the FIT museum.<br><br>
-	 Click to see full size.</p>
-    </div>
-  </div>
-  <div class="flexSubContainer">
-    <div class="flexSlaveImage">
-	<h2 style="text-align: center;">DOWNLOAD THE GAME FOR WINDOWS PC (GOOGLE DRIVE)</h2>
-	<center><a href="https://drive.google.com/file/d/1K_PefARzZ9fBOLRtfKCcW_fQ6U34LCq7/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/button_downloadgame.png" width="50%" max-width="500px" title="DOWNLOAD SLUGRUNNER" alt="Click this button to downlaod the game from google drive."></a></center>
-    </div>
-  </div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><h1>SINNERSPIT MUSIC VIDEO</h1><p>Music video for the Philadelphia-based band <a href="https://yeenar.bandcamp.com/" target="_blank" rel="noopener noreferrer" title=" check out yeenar on bandcamp">yeenar</a>.<br><br>I created the 3D animation segment (0:27-2:17) and did motion tracking, compositing, and other work in After Effects for the opening shot and other scenes. I also spent some time behind the camera and helped out with editing.</p></div>
 </div>
-<!-- end slugrunner section -->
+</div>
+</div>
+<!-- end SINNERSPIT Flex Box Chunklette -->
 
 <div class="spacerShort">
-</div>
+</div
 
-<!-- begin trepidation section -->
+<!-- begin SLUGRUNNER Flex Box Chunklette -->
+<div class="flexContainer">
 <div class="flexMasterRow">
-  <div class="flexSlaveImage"><iframe src="https://www.youtube.com/embed/OqXDUifsxPk?rel=0" title="Trepidation - Will Steacy" frameborder="0" allowfullscreen alt="Embedded iframe video of Trepidation by Will Steacy"></iframe><p><br>The final comprehensive project I created at the Fashion Institute of Technology.</p></div>
-  <div class="flexSlaveText"><h1>TREPIDATION</h1>
-    <p>Backgrounds were photographed in West Philly on Baltimore Ave.<br>
-    Models, textures, rigging, animation, and rendering of the characters was accomplished in Maya.<br>
-    I recorded myself and another actor with motion capture software to animate the characters. (With lots of editing of the keyframes after importing the animation data into Maya).<br><br>
-    Sound design and score by Andy Slepman.</p>
-  </div>
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><iframe src="https://www.youtube.com/embed/lkf94Ix2Rgo?rel=0" title="SLUGRUNNER gameplay video" frameborder="0" allowfullscreen alt="Embedded video of SLUGRUNNER gameplay"></iframe></div>
 </div>
-<!-- end trepidation section -->
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><h1>SLUGRUNNER</h1><p>I made this short FPS game to fulfill the interactive portion of my thesis project(s) at FIT.<br><br>The goal of the game is to get to the end of the level in the shortest time possible. In order to progress, the player must shoot obstacles out of the way with their sawn-off shotgun.</p></div>
+</div>
+</div>
+<div class="flexMasterRow">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><a href="https://files.catbox.moe/835wot.gif" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/slugrunnergifsmall.gif" title="SLUGRUNNER reloading animation gif" width="100%" alt="SLUGRUNNER reloading animation gif"></a></div>
+</div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><h2>Reloading</h2><p>Something I wanted to focus on in this project was making a first person reload animation. I've always been a fan of them in FPS games.<br><br>This .gif is a loop of the in-game reload animation with better textures and smoothed-poly models.<br><br>Click to see full size.</p></div>
+</div>
+</div>
+<div class="flexMasterRow">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><a href="https://files.catbox.moe/kt55x2.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/slugrunner_instructions_small.jpg" title="SLUGRUNNER instruction sheet" width="100%" alt="SLUGRUNNER instruction sheet"></a></div>
+</div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><h2>Pro Tips</h2><p>The instruction sheet I hung next to the computer when Slug Runner was being displayed in the FIT museum.<br><br>Click to see full size.</p></div>
+</div>
+</div>
+<div class="flexMasterRow">
+<div class="flexColumnC" style="padding-top:15px">
+<div class="flexSlave"><h2 style="text-align: center; padding-bottom: 15px;">DOWNLOAD THE GAME FOR WINDOWS PC (GOOGLE DRIVE)</h2></div>
+<center><a href="https://drive.google.com/file/d/1K_PefARzZ9fBOLRtfKCcW_fQ6U34LCq7/view?usp=sharing" target="_blank" rel="noopener noreferrer"><img src="/images/3dgraphics/button_downloadgame.png" width="50%" max-width="500px" title="DOWNLOAD SLUGRUNNER" alt="Click this button to downlaod the game from google drive."></a></center>
+</div>
+</div>
+</div>
+<!-- end SLUGRUNNER Flex Box Chunklette -->
+
+<div class="spacerShort">
+</div
+
+<!-- begin TREPIDATION Flex Box Chunklette -->
+<div class="flexContainer">
+<div class="flexMasterRow">
+<div class="flexColumnL" style="flex: 50%">
+<div class="flexSlave"><iframe src="https://www.youtube.com/embed/OqXDUifsxPk?rel=0" title="Trepidation - Will Steacy" frameborder="0" allowfullscreen alt="Embedded iframe video of Trepidation by Will Steacy"></iframe><p>The final comprehensive project I created at the Fashion Institute of Technology.</p></div>
+</div>
+<div class="flexColumnR" style="flex: 50%">
+<div class="flexSlave"><h1>TREPIDATION</h1><p>Backgrounds were photographed in West Philly on Baltimore Ave.<br>Models, textures, rigging, animation, and rendering of the characters was accomplished in Maya.<br>I recorded myself and another actor with motion capture software to animate the characters. (With lots of editing of the keyframes after importing the animation data into Maya).<br><br>Sound design and score by Andy Slepman.</p></div>
+</div>
+</div>
+</div>
+<!-- end TREPIDATION Flex Box Chunklette -->
 
 <div class="spacerLong">
 </div>
@@ -422,7 +388,7 @@ r_text[2] = "at this time you gotta break it down and be showin' improvin'";
 r_text[3] = "you know what they say...";
 r_text[4] = "there will be the most beautiful silence never heard";
 r_text[5] = "the sun still hidden there, awaiting the next chapter";
-r_text[6] = "<marquee behavior='scroll' direction='left' scrollamount='40'>LAMB OVER RICE</marquee>";
+r_text[6] = "<marquee behavior='scroll' direction='left' scrollamount='20'>LAMB OVER RICE</marquee>";
 r_text[7] = "YOLO > FOMO";
 r_text[8] = "Toal Domination of the Website Industry™";
 r_text[9] = "welcome to the <i>OOPS ZONE</i>";
@@ -439,4 +405,3 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </div>
 
 </body>
-</html>
