@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Ads, Print - willsteacy.net</title>
+<title>willsteacy.net</title>
 <link rel="icon" type="image/x-icon" href="/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -224,24 +224,145 @@ width: 100%;
 flex: 100%;
 }
 
+iframe {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  }
+
+.flexMasterRow {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  }
+
+.flexMasterRowText {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  text-align: center;
+  }
+
+.flexMasterColumn {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  padding-right: 30px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
+  box-shadow: 1px 1px 10px #1c1c1c;
+  }
+
+/*SUB-container*/
+.flexSubContainer {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  padding-bottom: 15px;
+  width: 100%
+  }
+
+/*flex div (L)*/
+.flexSlave01 {
+  flex: 50%;
+  padding-right: 15px;
+  }
+
+/*flex div (R)*/
+.flexSlave02 {
+  flex: 50%;
+  padding-left: 15px;
+  }
+
+/*flex div (L)*/
+.flexSlave03 {
+  flex: 66.6%;
+  padding-right: 15px;
+  }
+
+/*flex div (R)*/
+.flexSlave04 {
+  flex: 33.4%;
+  padding-left: 15px;
+  }
+
+/*flex div (L) ALT VIDEO*/
+.flexSlave05 {
+  flex: 57%;
+  padding-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+
+/*flex div (R) ALT VIDEO*/
+.flexSlave06 {
+  flex: 43%;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  }
+
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
-.flexMasterRow {
-flex-direction: column;
-}
-.flexColumnL {
-padding-right: 0px;
-}
-.flexColumnC {
-padding-right: 0px;
-padding-left: 0px;
-}
-.flexColumnR {
-padding-left: 0px;
-}
-.flexSlave {
-padding-right: 0px;
-}
+   .flexMasterRow {
+   flex-direction: column;
+   }
+   .flexColumnL {
+   padding-right: 0px;
+   }
+   .flexColumnC {
+   padding-right: 0px;
+   padding-left: 0px;
+   }
+   .flexColumnR {
+   padding-left: 0px;
+   }
+   .flexSlave {
+   padding-right: 0px;
+   }
+  iframe {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
+  .flexMasterRow {
+    flex-direction: column;
+  }
+  .flexSubContainer {
+    flex-direction: column;
+  }
+  .flexSlaveImage {
+    padding: 0;
+	   max-width: 100%;
+	   padding-bottom: 20px;
+  }
+  .flexSlaveProTips {
+    padding: 0;
+	   max-width: 100%;
+	   margin-top: -25px;
+  }
+  .flexSlave01 {
+    padding-right: 0px;
+  }
+  .flexSlave02 {
+    padding-left: 0px;
+  }
+  .flexSlave03 {
+    padding-right: 0px;
+  }
+  .flexSlave04 {
+    padding-left: 0px;
+  }
+  .flexSlave05 {
+    padding-right: 0px;
+  }
+  .flexSlave06 {
+    padding-left: 0px;
+  }
 }
 /* ******************** /FLEX BOXES ******************** */
 
@@ -309,6 +430,18 @@ Click on an image to see the full-size version.
 </div>
 <!-- end Flex Box Chunklett -->
 
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+      <div class="flexSlave05"><iframe style="width: 100%; aspect-ratio: 4/3" src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+      <div class="flexSlave06"><iframe style="width: 100%; aspect-ratio: 1/1" src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+  </div>
+  <div class="flexMasterRowText">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video to advertise the Wild Child collection.</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklette -->
+
 <!-- begin Flex Box Chunklette -->
 <div class="flexMasterRow">
 <div class="flexColumnL" style="flex: 49.3%">
@@ -319,6 +452,19 @@ Click on an image to see the full-size version.
 </div>
 </div>
 <!-- end Flex Box Chunklett -->
+
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+    <div class="flexSlave03"><iframe src="https://player.vimeo.com/video/1088064696?loop=1&autopause=0" frameborder="0"></iframe></div>
+    <div class="flexSlave04"><iframe src="https://player.vimeo.com/video/1088064716?loop=1&autopause=0" frameborder="0"></iframe></div>
+  </div>
+  <div class="flexMasterRow">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">The very talented Eve Cohen shot this video in Brooklyn in 2024.<br>
+	    I've edited it to fit the website, for time, done the transitions, and added text etc.</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklette -->
 
 <div class="spacerLong">
 </div>
