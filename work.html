@@ -372,6 +372,7 @@ iframe {
             width: clamp(200px, 75vw, 1200px);
             margin: auto;
             overflow: hidden;
+		  box-shadow: 1px 1px 10px #1c1c1c;
         }
 
         .carousel-images {
@@ -464,6 +465,21 @@ More is available on other sections of this site.
 <div class="spacerShort">
 </div>
 
+<!-- begin two video + text description Flex Box Chunklette -->
+<div class="flexMasterColumn">
+  <div class="flexMasterRow">
+      <div class="flexSlave05"><iframe style="width: 100%; aspect-ratio: 4/3" src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+      <div class="flexSlave06"><iframe style="width: 100%; aspect-ratio: 1/1" src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
+  </div>
+  <div class="flexMasterRowText">
+    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video to advertise the Wild Child collection.</p>
+  </div>
+</div>
+<!-- end two video + text description Flex Box Chunklette -->
+
+<div class="spacerShort">
+</div>
+
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
 <div class="carousel">
         <div class="carousel-images">
@@ -528,21 +544,6 @@ More is available on other sections of this site.
         window.onload = startAutoPlay;
     </script>
 <!------------------------ end IMAGE CAROUSEL ------------------------>
-
-<div class="spacerShort">
-</div>
-
-<!-- begin two video + text description Flex Box Chunklette -->
-<div class="flexMasterColumn">
-  <div class="flexMasterRow">
-      <div class="flexSlave05"><iframe style="width: 100%; aspect-ratio: 4/3" src="https://player.vimeo.com/video/1088064551?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
-      <div class="flexSlave06"><iframe style="width: 100%; aspect-ratio: 1/1" src="https://player.vimeo.com/video/694585505?autoplay=1&loop=1&autopause=0&background=1" allow="autoplay" frameborder="0"></iframe></div>
-  </div>
-  <div class="flexMasterRowText">
-    <p style="font-size:clamp(12px, 1.5vw, 16px)">I shot and edited this video to advertise the Wild Child collection.</p>
-  </div>
-</div>
-<!-- end two video + text description Flex Box Chunklette -->
 
 <div class="spacerShort">
 </div>
