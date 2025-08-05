@@ -369,7 +369,7 @@ iframe {
 /* ******************** IMAGE CAROUSEL ******************** */
         .carousel {
             position: relative;
-            width: 60%;
+            width: clamp(200px, 75vw, 1200px);
             margin: auto;
             overflow: hidden;
         }
@@ -497,6 +497,10 @@ Click on an image to see the full-size version.
 
         // Function to start auto-play
         function startAutoPlay() {
+            // Clear any existing interval before starting a new one
+            if (interval) {
+                clearInterval(interval);
+            }
             interval = setInterval(() => {
                 moveSlide(1);  // Automatically move to the next slide
             }, 3000);  // Change slide every 3 seconds
@@ -504,13 +508,16 @@ Click on an image to see the full-size version.
 
         // Function to stop auto-play
         function stopAutoPlay() {
-            clearInterval(interval);
+            if (interval) {
+                clearInterval(interval);
+                interval = null; // Clean up the interval
+            }
         }
 
         // Function to reset auto-play after a delay
         function resetAutoPlay() {
             stopAutoPlay();
-            setTimeout(startAutoPlay, 3000);  // Restart auto-play after 3 seconds
+            setTimeout(startAutoPlay, 1000);  // Restart auto-play after 1 second
         }
 
         // Start auto-play when the page loads
