@@ -194,9 +194,16 @@ text {
 .flexMaster {
   display: flex;
   flex-direction: row;
-  padding: 30px;
-  width: clamp(200px, 50vw, 450px);
-	  border: 2px solid white;
+  margin: auto;
+  width: clamp(200px, 75vw, 750px);
+  border: 2px solid white;
+}
+
+.flexTaskMaster {
+  display: flex;
+  flex-direction: row;
+  width: clamp(200px, 75vw, 750px);
+  border: 2px solid blue;
 }
 
 /*newspaper*/
@@ -290,14 +297,16 @@ text {
 
 <div class="bodyText">
 <p>Welcome to my website! This site serves as a space to showcase my work, both personal and professional.<br></p>
-<p>The image carousel below showcases a small selection of my recent work; if you'd like to get a more in-depth look at what I've been up to, click on a category in the navigation bar at the top of the page :)<br>Thanks for visiting!</p>
+<p>The image carousel below cycles though a small selection of my recent work; if you'd like to get a more in-depth look at what I've been up to, click on a category in the navigation bar at the top of the page :)<br>Thanks for visiting!</p>
 <p style="font-size:clamp(12px, 1.5vw, 16px)">(In cases where the original image is not mine, the photographer will be noted.)<br></p>
 </div>
 
 <div class="flexMaster">
-  <div class="flexSlave01"><a href="ads_newspaper" title="Go to the Newspaper Advertising page"><img src="/images/thumbnails/newspaperThumb.png" alt="Welcome to the Newspaper Ads page." width="100%"></a></div>
-  <div class="flexSlave02"><a href="ads_video" title="Go to the Video Advertising page"><img src="/images/thumbnails/videoThumb.png" alt="Welcome to the Video Ads page." width="100%"></a></div>
-  <div class="flexSlave03"><a href="ads_print" title="Go to the Print Advertising page"><img src="/images/thumbnails/printThumb.png" alt="Welcome to the Print Ads page." width="100%"></a></div>
+  <div class="flexTaskMaster">
+    <div class="flexSlave01"><a href="ads_newspaper" title="Go to the Newspaper Advertising page"><img src="/images/thumbnails/newspaperThumb.png" alt="Welcome to the Newspaper Ads page." width="100%"></a></div>
+    <div class="flexSlave02"><a href="ads_video" title="Go to the Video Advertising page"><img src="/images/thumbnails/videoThumb.png" alt="Welcome to the Video Ads page." width="100%"></a></div>
+    <div class="flexSlave03"><a href="ads_print" title="Go to the Print Advertising page"><img src="/images/thumbnails/printThumb.png" alt="Welcome to the Print Ads page." width="100%"></a></div>
+  </div>
 </div>
 
 <div class="spacerLong">
