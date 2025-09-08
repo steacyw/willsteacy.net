@@ -239,6 +239,52 @@ text {
   border: 2px solid red;
 }
 
+/* ******************** IMAGE CAROUSEL ******************** */
+        .carousel {
+            position: relative;
+            width: clamp(200px, 75vw, 1200px);
+            margin: auto;
+            overflow: hidden;
+	    box-shadow: 1px 1px 10px #1c1c1c;
+        }
+
+        .carousel-images {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-images img {
+            width: 100%; /* This makes the images take up 100% of the width */
+	    height: auto; /* This keeps the height proportional to the width */
+	    object-fit: contain; /* Ensures the image retains its original aspect ratio */
+        }
+
+        button {
+            position: absolute;
+            top: 50%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        button:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .prev {
+            left: 0;
+        }
+
+        .next {
+            right: 0;
+        }
+/* ******************** /IMAGE CAROUSEL ******************** */
+
 @media (max-width: 500px) {
   .topnavMaster {
 	font-size: clamp(10px, 2vw, 20px);
@@ -296,13 +342,70 @@ text {
 <!--<p style="font-size:clamp(12px, 1.5vw, 16px)">(In cases where the original image is not mine, the photographer will be noted.)<br></p>-->
 </div>
 
-<div class="flexMaster">
-  <div class="flexTaskMaster">
-    <div class="flexSlave01"><a href="ads_newspaper" title="Go to the Newspaper Advertising page"><img src="/images/thumbnails/newspaperThumb.png" alt="Welcome to the Newspaper Ads page." width="100%"></a></div>
-    <div class="flexSlave02"><a href="ads_video" title="Go to the Video Advertising page"><img src="/images/thumbnails/videoThumb.png" alt="Welcome to the Video Ads page." width="100%"></a></div>
-    <div class="flexSlave03"><a href="ads_print" title="Go to the Print Advertising page"><img src="/images/thumbnails/printThumb.png" alt="Welcome to the Print Ads page." width="100%"></a></div>
-  </div>
-</div>
+<!------------------------ begin IMAGE CAROUSEL ------------------------>
+<div class="carousel">
+        <div class="carousel-images">
+            <img src="/images/work/work01.jpg">
+            <img src="/images/work/work02.jpg">
+            <img src="/images/work/work03.jpg">
+	    <img src="/images/work/work04.jpg">
+	    <img src="/images/work/work05.jpg">
+	    <img src="/images/work/work06.jpg">
+	    <img src="/images/work/work07.jpg">
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+	<script>
+        let index = 0;
+        let interval;
+        const slides = document.querySelectorAll('.carousel-images img');
+        const carouselImages = document.querySelector('.carousel-images');
+
+        // Function to move slides
+        function moveSlide(step) {
+            index += step;
+            if (index < 0) {
+                index = slides.length - 1;
+            } else if (index >= slides.length) {
+                index = 0;
+            }
+            carouselImages.style.transform = `translateX(${-index * 100}%)`;
+
+            // Reset the auto-play timer after user interaction
+            resetAutoPlay();
+        }
+
+        // Function to start auto-play
+        function startAutoPlay() {
+            // Clear any existing interval before starting a new one
+            if (interval) {
+                clearInterval(interval);
+            }
+            interval = setInterval(() => {
+                moveSlide(1);  // Automatically move to the next slide
+            }, 3000);  // Change slide every 3 seconds
+        }
+
+        // Function to stop auto-play
+        function stopAutoPlay() {
+            if (interval) {
+                clearInterval(interval);
+                interval = null; // Clean up the interval
+            }
+        }
+
+        // Function to reset auto-play after a delay
+        function resetAutoPlay() {
+            stopAutoPlay();
+            setTimeout(startAutoPlay, 1000);  // Restart auto-play after 1 second
+        }
+
+        // Start auto-play when the page loads
+        window.onload = startAutoPlay;
+    </script>
+<!------------------------ end IMAGE CAROUSEL ------------------------>
 
 <div class="spacerLong">
 </div>
