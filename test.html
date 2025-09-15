@@ -100,15 +100,7 @@ text {
   border: 1px solid red;
 }
 
-/*home page master*/
-.slave_home_master {
-  display: flex;
-  min-width: 0;
-  margin: auto;
-  border: 1px solid green;
-}
-
-.slave_home_slave_L{
+.slave_home{
   min-width: 0;
   height: 30px;
   width: clamp(30px, 8vw ,40px);
@@ -126,6 +118,7 @@ text {
   padding: 10px;
   border: 1px solid white;
   flex-grow: 24;
+  text-align: center;
 }
 
 /*3d graphics*/
@@ -320,9 +313,7 @@ text {
 <body style="background-color:#2B3129">
 
 <div class="topnavMaster">
-  <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
-  </div>
+  <div class="slave_home"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
