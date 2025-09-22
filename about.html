@@ -11,7 +11,7 @@
 h1 {
   font-family: times new roman, serif;
   font-size: clamp(30px, 20vh, 60px);
-  color: #DAD0C2;
+  color: #B5DECB;
   font-size: clamp(30px, 20vh, 60px);
   transform: scaleY(1.5);
   letter-spacing: 0px;
@@ -148,21 +148,21 @@ text {
 }
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
-.title {
-  display: flex;
-  flex-direction: row;
+.logo {
   margin: auto;
   width: clamp(200px, 75vw, 750px);
-  }
+  border: 1px solid green;
+}
 
-.titleitem01 {
-  flex: 57%;
-  margin: auto;
-  }
-.titleitem02 {
-  flex: 42%;
-  margin: auto;
-  }
+.logoimg {
+  width: clamp(300px, 30vw, 400px);
+  border: 1px solid white;
+}
+
+.logotext {
+  width: clamp(300px, 30vw, 400px);
+  border: 1px solid red;
+}
 
 .bodyText {
   margin: auto;
@@ -178,6 +178,7 @@ text {
   flex-direction: row;
   margin: auto;
   width: clamp(200px, 75vw, 750px);
+  border: 1px solid white;
   }
 
 /*MASTER-container COLUMN LEFT*/
@@ -187,6 +188,7 @@ text {
   margin-right: 15px;
   align-self: stretch;
   width: clamp(200px, 75vw, 750px);
+  border: 1px solid red;
   }
 
 /*MASTER-container COLUMN RIGHT*/
@@ -196,6 +198,7 @@ text {
   margin-left: 15px;
   align-self: stretch;
   width: clamp(200px, 75vw, 750px);
+  border: 1px solid green;
   }
 
 /* IMAGE flex div */
@@ -204,6 +207,7 @@ text {
   float: left;
   margin-top: 15px;
   max-height: 750px;
+  border: 1px solid blue;
   }
 
 /*resize content divs when too thin*/
@@ -279,14 +283,25 @@ text {
 <div class="spacerShort">
 </div>
 
+<div class="logo">
+  <div class="logoimg">
+    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" title="My favorite beverage." alt="About Will Steacy and his work." width="100%"></a>
+  </div>
+  <div class="logotext">
+    <h1>About Me</h1>
+  </div>
+</div>
+
+<!--
 <div class="title">
   <div class="titleitem02">
-    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" width="100%"></a>
+    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" title="My favorite beverage." alt="About Will Steacy and his work." width="100%"></a>
   </div>
   <div class="titleitem01">
     <img src="/images/thumbnails/aboutThumb_on.png" onmouseover="this.src='/images/thumbnails/aboutThumb.png'" onmouseout="this.src='/images/thumbnails/aboutThumb_on.png'" alt="Welcome to the About page." width="100%">
   </div>
 </div>
+-->
 
 <div class="spacerShort">
 </div>
@@ -337,6 +352,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 </body>
 </html>
+
 
 
 
