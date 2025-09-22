@@ -9,18 +9,19 @@
 
 /* heading */
 h1 {
-  font-family: courier new, serif;
-  font-size: clamp(15px, 3vw, 34px);
-  color: #FCC79B;
-  line-height: clamp(15px, 3vw, 34px);
-  text-transform: uppercase;
+  font-family: times new roman, serif;
+  font-size: clamp(30px, 20vh, 60px);
+  color: #DAD0C2;
+  font-size: clamp(30px, 20vh, 60px);
+  transform: scaleY(1.5);
+  letter-spacing: 0px;
   }
 
 /* subheading */
 h2 {
-  font-family: courier new, serif;
+  font-family: times new roman, serif;
   font-size: clamp(10px, 2.5vw, 22px);
-  color: #B5DECB;
+  color: #DAD0C2;
   line-height: clamp(10px, 2.5vw, 22px);
   padding: 0px;
   text-transform: uppercase;
@@ -28,22 +29,15 @@ h2 {
 
 /* page explanation font */
 p {
-  font-family: courier new, serif;
-  font-size: clamp(18px, 2vw, 24px);
+  font-family: times new roman, serif;
+  font-size: clamp(16px, 2vw, 24px);
   color: #DAD0C2;
   }
 
 /* longer-body-text font */
 p2 {
   font-family: times new roman, serif;
-  font-size: clamp(20px, 2vw, 24px);
-  color: #DAD0C2;
-  }
-
-/* under-image text */
-p3 {
-  font-family: times new roman, serif;
-  font-size: clamp(20px, 2vw, 24px);
+  font-size: clamp(16px, 2vw, 24px);
   color: #DAD0C2;
   }
 
@@ -158,47 +152,32 @@ text {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 350px);
+  width: clamp(200px, 75vw, 750px);
   }
 
 .titleitem01 {
   flex: 57%;
   margin: auto;
-  padding-left: 5px;
   }
 .titleitem02 {
   flex: 42%;
   margin: auto;
-  padding-right: 5px;
   }
 
 .bodyText {
-
-  line-height: 1.2;
-  }
-
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
   margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+  width: clamp(200px, 75vw, 750px);
+  line-height: 1.2;
   }
   
 /* ******************** FLEX BOXES ******************** */
-
-iframe {
-  display: flex;
-  flex-wrap: wrap;
-  width: clamp(200px, 75vw, 1000px);
-  }
 
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 1000px);
+  width: clamp(200px, 75vw, 750px);
   }
 
 /*MASTER-container COLUMN LEFT*/
@@ -207,7 +186,7 @@ iframe {
   flex-direction: column;
   margin-right: 15px;
   align-self: stretch;
-  width: clamp(200px, 75vw, 1000px);
+  width: clamp(200px, 75vw, 750px);
   }
 
 /*MASTER-container COLUMN RIGHT*/
@@ -229,10 +208,6 @@ iframe {
 
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
   .flexMasterRow {
     flex-direction: column;
   }
@@ -362,6 +337,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 </body>
 </html>
+
 
 
 
