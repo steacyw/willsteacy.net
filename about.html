@@ -9,33 +9,41 @@
 
 /* heading */
 h1 {
-  font-family: times new roman, serif;
-  font-size: clamp(30px, 20vh, 60px);
-  line-height: clamp(30px, 20vh, 60px);
-  letter-spacing: -5px;
-  vertical-align: top;
-  color: #B5DECB;
+  font-family: courier new, serif;
+  font-size: clamp(15px, 3vw, 34px);
+  color: #FCC79B;
+  line-height: clamp(15px, 3vw, 34px);
+  text-transform: uppercase;
   }
 
 /* subheading */
 h2 {
-  font-family: times new roman, serif;
+  font-family: courier new, serif;
   font-size: clamp(10px, 2.5vw, 22px);
-  color: #DAD0C2;
+  color: #B5DECB;
+  line-height: clamp(10px, 2.5vw, 22px);
+  padding: 0px;
+  text-transform: uppercase;
   }
 
 /* page explanation font */
 p {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
-  vertical-align: top;
+  font-family: courier new, serif;
+  font-size: clamp(18px, 2vw, 24px);
   color: #DAD0C2;
   }
 
 /* longer-body-text font */
 p2 {
   font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-size: clamp(20px, 2vw, 24px);
+  color: #DAD0C2;
+  }
+
+/* under-image text */
+p3 {
+  font-family: times new roman, serif;
+  font-size: clamp(20px, 2vw, 24px);
   color: #DAD0C2;
   }
 
@@ -146,40 +154,51 @@ text {
 }
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
-.logo {
-  margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  height: auto;
+.title {
   display: flex;
-  border: 1px solid green;
-}
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 350px);
+  }
 
-.logoimg {
-  width: clamp(60px, 70vw, 75px);
-  flex-grow: 5;
-  border: 1px solid white;
-}
-
-.logotext {
-  flex-grow: 95;
-  border: 1px solid red;
-}
+.titleitem01 {
+  flex: 57%;
+  margin: auto;
+  padding-left: 5px;
+  }
+.titleitem02 {
+  flex: 42%;
+  margin: auto;
+  padding-right: 5px;
+  }
 
 .bodyText {
-  margin: auto;
-  width: clamp(200px, 75vw, 750px);
+
   line-height: 1.2;
+  }
+
+.blogText {
+  text-align: justify;
+  text-justify: inter-word;
+  line-height: 1.5;
+  margin: auto;
+  width: clamp(200px, 75vw, 1200px);
   }
   
 /* ******************** FLEX BOXES ******************** */
+
+iframe {
+  display: flex;
+  flex-wrap: wrap;
+  width: clamp(200px, 75vw, 1000px);
+  }
 
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  border: 1px solid white;
+  width: clamp(200px, 75vw, 1000px);
   }
 
 /*MASTER-container COLUMN LEFT*/
@@ -188,9 +207,7 @@ text {
   flex-direction: column;
   margin-right: 15px;
   align-self: stretch;
-  width: clamp(200px, 75vw, 750px);
-  vertical-align: top;
-  border: 1px solid red;
+  width: clamp(200px, 75vw, 1000px);
   }
 
 /*MASTER-container COLUMN RIGHT*/
@@ -200,7 +217,6 @@ text {
   margin-left: 15px;
   align-self: stretch;
   width: clamp(200px, 75vw, 750px);
-  border: 1px solid green;
   }
 
 /* IMAGE flex div */
@@ -209,11 +225,14 @@ text {
   float: left;
   margin-top: 15px;
   max-height: 750px;
-  border: 1px solid blue;
   }
 
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
+  iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+  }
   .flexMasterRow {
     flex-direction: column;
   }
@@ -285,25 +304,14 @@ text {
 <div class="spacerShort">
 </div>
 
-<div class="logo">
-  <div class="logoimg">
-    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" title="My favorite beverage." alt="About Will Steacy and his work." width="100%"></a>
-  </div>
-  <div class="logotext">
-    <h1>about me</h1>
-  </div>
-</div>
-
-<!--
 <div class="title">
   <div class="titleitem02">
-    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" title="My favorite beverage." alt="About Will Steacy and his work." width="100%"></a>
+    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" width="100%"></a>
   </div>
   <div class="titleitem01">
     <img src="/images/thumbnails/aboutThumb_on.png" onmouseover="this.src='/images/thumbnails/aboutThumb.png'" onmouseout="this.src='/images/thumbnails/aboutThumb_on.png'" alt="Welcome to the About page." width="100%">
   </div>
 </div>
--->
 
 <div class="spacerShort">
 </div>
