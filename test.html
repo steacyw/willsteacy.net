@@ -88,8 +88,8 @@ text {
   margin: 8vw;
   }
 
-/* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
-.topnavMaster {
+/* *************************************** BEGIN TOPNAV A SECTION OF CSS *************************************** */
+.topnavMastera {
   background-color:#2B3129;
   font-family: 'Courier New', serif;
   font-size: clamp(12px, 2vw, 20px);
@@ -101,45 +101,104 @@ text {
 }
 
 /*home page master*/
-.slave_home_master {
+.slave_home_mastera {
   display: flex;
   min-width: 0;
   margin: auto;
 }
 
-.slave_home_slave_L{
+.slave_home_slave_La {
   min-width: 0;
   height: 40px;
   float: left;
 }
 
-.slave_home_slave_R {
+.slave_home_slave_Ra {
   min-width: 0;
   margin:auto;
   padding: 10px;
 }
 
 /*photography*/
-.slave_photo {
+.slave_photoa {
   min-width: 0;
   margin: auto;
   padding: 10px;
 }
 
 /*advertising*/
-.slave_advertising {
+.slave_advertisinga {
   min-width: 0;
   margin: auto;
   padding: 10px;
 }
 
 /*about*/
-.slave_about {
+.slave_abouta {
   min-width: 0;
   margin: auto;
   padding: 10px;
 }
-/* *************************************** END TOPNAV SECTION OF CSS *************************************** */
+/* *************************************** END TOPNAV A SECTION OF CSS *************************************** */
+
+/* *************************************** TOPNAV B CSS *************************************** */
+.topnavMasterb {
+  font-family: courier new, serif;
+  font-size: clamp(12px, 2vw, 24px);
+  display: flex;
+  flex-direction: row;
+  margin: auto;
+  width: clamp(200px, 75vw, 750px);
+  line-height: 10px;
+}
+
+/*homepage link logo button*/
+.slave_homeb {
+  padding-right: clamp(4px, 2vw, 10px);
+  padding-top: clamp(4px, 2vw, 10px);
+  padding-bottom: clamp(4px, 2vw, 10px);
+  width: clamp(12px, 4vw ,20px);
+  float: left;
+  flex-grow: 8;
+}
+
+/*photography*/
+.slave_photob {
+  min-width: 0;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 24;
+}
+
+/*3d graphics*/
+.slave_graphicsb {
+  min-width: 0;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 26;
+}
+
+/*advertising*/
+.slave_advertisingb {
+  min-width: 0;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 24;
+  
+}
+
+/*about*/
+.slave_aboutb {
+  min-width: 0;
+  margin: auto;
+  padding: 10px;
+  text-align: center;
+  flex-grow: 16;
+}
+/* *************************************** /TOPNAV B CSS *************************************** */
 
 .logo {
   margin: auto;
@@ -266,14 +325,22 @@ text {
 
 <body style="background-color:#2B3129">
 
-<div class="topnavMaster">
-  <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
-    <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
+<div class="topnavMastera">
+  <div class="slave_home_mastera">
+    <div class="slave_home_slave_La"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
+    <div class="slave_home_slave_Ra"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
   </div>
-  <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
-  <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
+  <div class="slave_photoa"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
+  <div class="slave_advertisinga"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
+  <div class="slave_abouta"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
+</div>
+
+<div class="topnavMasterb">
+  <div class="slave_hombe"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo_home.png" width="100%"></a></div>
+  <div class="slave_photob"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
+  <div class="slave_graphicsb"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
+  <div class="slave_advertisinbg"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
+  <div class="slave_aboutb"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
 <div class="spacerShort">
@@ -286,9 +353,6 @@ text {
   <div class="logoimg02">
     <img src="/images/willsteacy_logo_animated.gif" title="The personal website of... guess who!" alt="Will Steacy takes cool photographs!" height="100%" width="auto">
   </div>
-</div>
-
-<div class="spacerShort">
 </div>
 
 <div class="flexMasterRow">
