@@ -108,8 +108,12 @@ text {
 }
 
 .slave_home_slave_L {
-  float: left;
-  height: 100%;
+	  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  /*float: left;
+  height: 100%;*/
   width: clamp(24px, 8vw, 40px);
   border: 1px solid pink;
 }
@@ -239,15 +243,6 @@ text {
 
 /* ******************** FLEX BOXES ******************** */
 
-/*resize topnav when too thin*/
-/*
-@media (max-width: 600px) {
-  .topnavMaster {
-    flex-direction: column;
-	font-size: clamp(18px, 2vw, 20px);
-  }
-}
-
 /*footer copyright & funny quote*/
 .info {
   margin: auto;
@@ -267,10 +262,7 @@ text {
 <body style="background-color:#2B3129">
 
 <div class="topnavMaster">
-  <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
-    <!--<div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>-->
-  </div>
+  <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
@@ -280,10 +272,8 @@ text {
 </div>
 
 <div class="topnavMaster">
-  <!--<div class="slave_home_master">-->
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
-    <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
-  <!--</div>-->
+  <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
+  <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
