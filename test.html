@@ -249,7 +249,9 @@ text {
 
 .carousel-images {
   display: flex;
-  width: 100%;
+  width: 101%;
+  overflow: hidden; /*new and testing*/
+  margin: auto; /*new and testing*/
   transition: transform 0.5s ease-in-out;
 }
 
@@ -278,40 +280,10 @@ button:hover {
 }
 
 .prev {
-  left: 0;
+  left: -48px; /*new and testing*/
 }
 .next {
-  right: 0;
-}
-
-
-.carousel-wrapper {
-    display: flex;
-    align-items: center; /* vertical centering */
-    justify-content: center;
-    gap: clamp(8px, 2vw, 20px);
-    width: 100%;
-}
-
-/* buttons */
-.carousel-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    flex: 0 0 auto;
-}
-
-.carousel-btn img {
-    width: clamp(24px, 4vw, 40px);
-    height: auto;
-    opacity: 0.8;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.carousel-btn:hover img {
-    opacity: 1;
-    transform: scale(1.1);
+  right: -48px; /*new and testing*/
 }
 /* ******************** /IMAGE CAROUSEL ******************** */
 
