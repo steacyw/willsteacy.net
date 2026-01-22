@@ -283,6 +283,36 @@ button:hover {
 .next {
   right: 0;
 }
+
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center; /* vertical centering */
+    justify-content: center;
+    gap: clamp(8px, 2vw, 20px);
+    width: 100%;
+}
+
+/* buttons */
+.carousel-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    flex: 0 0 auto;
+}
+
+.carousel-btn img {
+    width: clamp(24px, 4vw, 40px);
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.carousel-btn:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
 /* ******************** /IMAGE CAROUSEL ******************** */
 
 /*footer copyright & funny quote*/
@@ -343,11 +373,11 @@ button:hover {
 
 <div class="flexMasterRow">
   <div class="flexMasterColumnLeft">
-		<p>Hi, nice to meet you!<br><br>My name is Will Steacy and I take photos for a living.<br>I've been specializing in jewelry photography for the last five years.<br><br>
-		   I am currently working as the Photographer/Marketing Content Producer for Paul Morelli Design.<br><br>
-		   I received a BFA in Computer Animation from the Fashion Institute of Technology in 2018.<br><br>
-		   My work has been featured in <i>The Wall Street Journal Magazine</i> and <i>The New York Times</i>.<br><br>
-		   <a href="mailto:will@willsteacy.net" target="_blank" rel="noopener noreferrer" title="Opens an email draft to will@willsteacy.net">Please get in touch</a> if you'd like to collaborate with me!</p>
+	<p>Hi, nice to meet you!<br><br>My name is Will Steacy and I take photos for a living.<br>I've been specializing in jewelry photography for the last five years.<br><br>
+	   I am currently working as the Photographer/Marketing Content Producer for Paul Morelli Design.<br><br>
+	   I received a BFA in Computer Animation from the Fashion Institute of Technology in 2018.<br><br>
+	   My work has been featured in <i>The Wall Street Journal Magazine</i> and <i>The New York Times</i>.<br><br>
+	   <a href="mailto:will@willsteacy.net" target="_blank" rel="noopener noreferrer" title="Opens an email draft to will@willsteacy.net">Please get in touch</a> if you'd like to collaborate with me!</p>
     </div>
   <div class="flexMasterColumnRight">
 	<div class="flexSlaveImage">
@@ -358,20 +388,20 @@ button:hover {
 
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
 <div class="carousel">
-        <div class="carousel-images">
-            <img src="/images/work/work01.jpg">
-            <img src="/images/work/work02.jpg">
-            <img src="/images/work/work03.jpg">
-	    <img src="/images/work/work04.jpg">
-	    <img src="/images/work/work05.jpg">
-	    <img src="/images/work/work06.jpg">
-	    <img src="/images/work/work07.jpg">
-        </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+  <div class="carousel-images">
+    <img src="/images/work/work01.jpg">
+    <img src="/images/work/work02.jpg">
+    <img src="/images/work/work03.jpg">
+	<img src="/images/work/work04.jpg">
+	<img src="/images/work/work05.jpg">
+	<img src="/images/work/work06.jpg">
+	<img src="/images/work/work07.jpg">
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
 
-	<script>
+<script>
 let index = 0;
 let interval;
 const slides = document.querySelectorAll('.carousel-images img');
@@ -429,7 +459,6 @@ window.addEventListener('load', () => {
 });
 </script>
 <!------------------------ end IMAGE CAROUSEL ------------------------>
-
 
 <div class="spacerLong">
 </div>
