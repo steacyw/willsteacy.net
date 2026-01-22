@@ -244,12 +244,12 @@ text {
   position: relative;
   width: clamp(200px, 90vw, 750px);
   margin: auto;
+  overflow: hidden;
 }
 
 .carousel-images {
   display: flex;
   width: 101%; /*new and testing*/
-  overflow: hidden; /*new and testing*/
   transition: transform 0.5s ease-in-out;
 }
 
@@ -281,7 +281,7 @@ button:hover {
   left: -10px;
 }
 .next {
-  right: 10px;
+  right: -10px;
 }
 /* ******************** /IMAGE CAROUSEL ******************** */
 
