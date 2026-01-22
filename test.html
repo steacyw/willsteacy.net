@@ -387,6 +387,30 @@ button:hover {
 </div>
 
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
+
+<div class="carousel-wrapper">
+  <button class="carousel-btn prev" onclick="moveSlide(-1)">
+    <img src="/images/ui/arrow-left.png" alt="Previous">
+  </button>
+
+    <div class="carousel">
+        <div class="carousel-images">
+            <img src="/images/work/work01.jpg">
+            <img src="/images/work/work02.jpg">
+            <img src="/images/work/work03.jpg">
+            <img src="/images/work/work04.jpg">
+            <img src="/images/work/work05.jpg">
+            <img src="/images/work/work06.jpg">
+            <img src="/images/work/work07.jpg">
+        </div>
+    </div>
+
+    <button class="carousel-btn next" onclick="moveSlide(1)">
+        <img src="/images/ui/arrow-right.png" alt="Next">
+    </button>
+</div>
+
+<!--
 <div class="carousel">
   <div class="carousel-images">
     <img src="/images/work/work01.jpg">
@@ -400,6 +424,7 @@ button:hover {
   <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
   <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
+-->
 
 <script>
 let index = 0;
