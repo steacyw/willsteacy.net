@@ -244,6 +244,9 @@ text {
   position: relative;
   width: clamp(200px, 90vw, 750px);
   margin: auto;
+}
+
+.carouselImageContainer {
   overflow: hidden;
 }
 
@@ -278,10 +281,10 @@ button:hover {
 }
 
 .prev {
-  left: -10px;
+  left: -40px;
 }
 .next {
-  right: 10px;
+  right: -40px;
 }
 /* ******************** /IMAGE CAROUSEL ******************** */
 
@@ -358,6 +361,9 @@ button:hover {
 
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
 <div class="carousel">
+	
+	<div class="carouselImageContainer">
+	
   <div class="carousel-images">
     <img src="/images/work/work01.jpg">
     <img src="/images/work/work02.jpg">
@@ -367,6 +373,9 @@ button:hover {
 	<img src="/images/work/work06.jpg">
 	<img src="/images/work/work07.jpg">
   </div>
+
+	</div>
+	
   <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
   <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
