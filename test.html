@@ -244,15 +244,16 @@ text {
   position: relative;
   width: clamp(200px, 90vw, 750px);
   margin: auto;
+  overflow: hidden;
 }
 
-.carouselImages {
+.carousel-images {
   display: flex;
   width: 101%; /*new and testing*/
   transition: transform 0.5s ease-in-out;
 }
 
-.carouselImages img {
+.carousel-images img {
   flex: 0 0 100%;
   max-width: 100%;
   height: auto; /* This keeps the height proportional to the width */
@@ -264,22 +265,23 @@ button {
   top: 50%;
   background-color: rgba(0, 0, 0, 0.3);
   color: white;
+  : none;
   padding: 10px;
   cursor: pointer;
   font-size: 30px;
   transform: translateY(-50%);
   z-index: 1;
-}
+        }
 
 button:hover {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
 .prev {
-  left: 0px;
+  left: -10px;
 }
 .next {
-  right: 0px;
+  right: 10px;
 }
 /* ******************** /IMAGE CAROUSEL ******************** */
 
@@ -356,15 +358,15 @@ button:hover {
 
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
 <div class="carousel">
-    <div class="carouselImages">
-      <img src="/images/work/work01.jpg">
-      <img src="/images/work/work02.jpg">
-      <img src="/images/work/work03.jpg">
-	  <img src="/images/work/work04.jpg">
-	  <img src="/images/work/work05.jpg">
-	  <img src="/images/work/work06.jpg">
-	  <img src="/images/work/work07.jpg">
-    </div>
+  <div class="carousel-images">
+    <img src="/images/work/work01.jpg">
+    <img src="/images/work/work02.jpg">
+    <img src="/images/work/work03.jpg">
+	<img src="/images/work/work04.jpg">
+	<img src="/images/work/work05.jpg">
+	<img src="/images/work/work06.jpg">
+	<img src="/images/work/work07.jpg">
+  </div>
   <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
   <button class="next" onclick="moveSlide(1)">&#10095;</button>
 </div>
