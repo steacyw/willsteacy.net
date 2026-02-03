@@ -70,11 +70,6 @@ a:active {
 
 /* ******************** LINKS ******************** */
 
-img {
-  object-fit: cover;
-	  z-index: -1;
-}
-
 text {
   color: #DAD0C2;
   }
@@ -199,7 +194,7 @@ text {
   flex-direction: row;
   margin: auto;
   width: clamp(200px, 90vw, 750px);
-  border: 1px solid white;
+  /*border: 1px solid white;*/
   }
 
 /*MASTER-container COLUMN LEFT*/
@@ -208,7 +203,7 @@ text {
   flex-direction: column;
   margin-right: 15px;
   width: clamp(200px, 90vw, 750px);
-  border: 1px solid red;
+  /*border: 1px solid red;*/
   }
 
 /*MASTER-container COLUMN RIGHT*/
@@ -217,7 +212,7 @@ text {
   flex-direction: column;
   margin-left: 15px;
   width: clamp(200px, 90vw, 750px);
-  border: 1px solid green;
+  /*border: 1px solid green;*/
   }
 
 /* IMAGE flex div */
@@ -226,10 +221,14 @@ text {
   float: left;
   margin-top: auto;
   max-height: 750px;
-  box-shadow: 0px 0px 10px #1c1c1c;
-  border: 1px solid blue;
+  box-shadow: inset 0px 0px 10px #1c1c1c;
+  /*border: 1px solid blue;*/
   }
 
+img {
+  object-fit: cover;
+  z-index: -1;
+}
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
   .flexMasterRow {
