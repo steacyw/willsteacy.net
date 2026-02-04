@@ -9,29 +9,33 @@
 
 /* heading */
 h1 {
-  font-family: times new roman, serif;
-  font-size: clamp(30px, 20vh, 60px);
-  color: #FCC79B;
+  font-family: georgia, serif;
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: -1px;
+  vertical-align: top;
+  color: #B5DECB;
   }
 
 /* subheading */
 h2 {
-  font-family: times new roman, serif;
-  font-size: clamp(10px, 2.5vw, 22px);
-  color: #B5DECB;
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
   }
 
 /* page explanation font */
 p {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin: auto;
   color: #DAD0C2;
+  /*border: 1px solid lightblue;*/
   }
 
 /* longer-body-text font */
 p2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
   color: #DAD0C2;
   }
 
@@ -84,109 +88,113 @@ text {
 
 /* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
 .topnavMaster {
-  background-color:#2B3129;
-  font-family: 'Courier New', serif;
-  font-size: clamp(12px, 2vw, 20px);
+  background-color: #2B3129;
+  font-family: georgia, serif;
+  font-size: clamp(16px, 2.8vw, 22px);
+  letter-spacing: -1px;
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  line-height: 10px;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 8vw, 40px);
+  /*border: 1px solid red;*/
 }
 
 /*home page master*/
 .slave_home_master {
   display: flex;
-  min-width: 0;
-  margin: auto;
+  height: 100%;
+  /*border: 1px solid blue;*/
 }
 
-.slave_home_slave_L{
-  min-width: 0;
-  height: 40px;
+.slave_home_slave_L {
   float: left;
+  height: 100%;
+  width: clamp(24px, 8vw, 40px);
+  /*border: 1px solid pink;*/
 }
 
 .slave_home_slave_R {
-  min-width: 0;
-  margin:auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
+  /*border: 1px solid pink;*/
 }
 
 /*photography*/
 .slave_photo {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-}
-
-/*3d graphics*/
-.slave_graphics {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid green;*/
 }
 
 /*advertising*/
 .slave_advertising {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid white;*/
 }
 
 /*about*/
 .slave_about {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid lightblue;*/
 }
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
-.title {
+.logo {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(40px, 8vw, 50px);
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: clamp(200px, 75vw, 350px);
-  }
+  flex-direction: horizontal;
+  /*border: 1px solid pink;*/
+}
 
-.titleitem01 {
-  flex: 57%;
-  margin: auto;
-  padding-left: 5px;
-  }
-.titleitem02 {
-  flex: 42%;
-  margin: auto;
-  padding-right: 5px;
-  }
+.logoimg01 {
+  height: clamp(40px, 8vw, 50px);
+  width: clamp(40px, 8vw, 50px);
+  /*border: 1px solid white;*/
+}
+
+.logoimg02 {
+  height: clamp(40px, 8vw, 50px);
+  width: auto;
+  max-width: 300px;
+  /*border: 1px solid white;*/
+}
 
 .bodyText {
-
-  line-height: 1.2;
-  }
-
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
   margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+  width: clamp(200px, 90vw, 750px);
+  line-height: 1.2;
   }
   
 /* ******************** FLEX BOXES ******************** */
-
-iframe {
-  display: flex;
-  flex-wrap: wrap;
-  width: clamp(200px, 75vw, 1000px);
-  }
 
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 1000px);
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid white;*/
   }
 
 /*MASTER-container COLUMN LEFT*/
@@ -194,8 +202,8 @@ iframe {
   flex: 48%;
   flex-direction: column;
   margin-right: 15px;
-  align-self: stretch;
-  width: clamp(200px, 75vw, 1000px);
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid red;*/
   }
 
 /*MASTER-container COLUMN RIGHT*/
@@ -203,70 +211,45 @@ iframe {
   flex: 52%;
   flex-direction: column;
   margin-left: 15px;
-  align-self: stretch;
-  width: clamp(200px, 75vw, 750px);
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid green;*/
   }
 
 /* IMAGE flex div */
 .flexSlaveImage {
   align-self: stretch;
   float: left;
-  margin-top: 15px;
+  margin-top: auto;
   max-height: 750px;
+  display: flex;
+  width: 100%;
+  /*border: 1px solid lightblue;*/
+  box-shadow: inset 0px 0px 15px #1c1c1c;
+  z-index: +1;
   }
 
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
   .flexMasterRow {
     flex-direction: column;
   }
   .flexMasterColumnLeft {
-    margin: auto;
+    margin-bottom: clamp(40px, 4vh, 60px);
   }
   .flexMasterColumnRight {
     margin: auto;
   }
-  h1 {
-    font-size: clamp(30px, 100%, 40px);
-	line-height: 30px;
-  }
-  h2 {
-    font-size: clamp(20px, 100%, 30px);
-	line-height: 20px;
-  }
-  p {
-    font-size: clamp(18px, 2vw, 24px);
-  }
-  p2 {
-    font-size: clamp(18px, 2vw, 24px);
-  }
-  p3 {
-    font-size: clamp(14px, 2vw, 18px);
-	text-align: center;
-  }
 }
 
-/* ******************** FLEX BOXES ******************** */
-
-/*resize topnav when too thin*/
-@media (max-width: 600px) {
-  .topnavMaster {
-    flex-direction: column;
-	font-size: clamp(18px, 2vw, 20px);
-  }
-}
+/* ******************** /FLEX BOXES ******************** */
 
 /*footer copyright & funny quote*/
 .info {
   margin: auto;
   width: 75%;
   max-width: 600px;
-  font-size: larger;
-  font-family: 'Courier New', serif;
+  font-size: clamp(12px, 2vw, 24px);
+  font-family: georgia, serif;
   color: #f13333;
   text-align: center;
   overflow: visible;
@@ -278,26 +261,25 @@ iframe {
 
 <body style="background-color:#2B3129">
 
+<!-- TOPNAV bar for About page -->
 <div class="topnavMaster">
   <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
+    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
     <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
   </div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
-  <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
 <div class="spacerShort">
 </div>
 
-<div class="title">
-  <div class="titleitem02">
-    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" width="100%"></a>
+<div class="logo">
+  <div class="logoimg01">
+    <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb.png" title="My favorite beverage" alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="titleitem01">
-    <img src="/images/thumbnails/aboutThumb_on.png" onmouseover="this.src='/images/thumbnails/aboutThumb.png'" onmouseout="this.src='/images/thumbnails/aboutThumb_on.png'" alt="Welcome to the About page." width="100%">
+  <div class="logoimg02">
+    <img src="/images/willsteacy_logo_animated.gif" title="The personal website of... guess who!" alt="Will Steacy takes cool photographs!" height="100%" width="auto">
   </div>
 </div>
 
@@ -306,15 +288,15 @@ iframe {
 
 <div class="flexMasterRow">
   <div class="flexMasterColumnLeft">
-		<p>I take photos for a living, and have been specializing in jewelry photography for the last five years.<br><br>
-		   I am currently the Marketing Content Producer at Paul Morelli Design.<br><br>
-		   I received a BFA in Computer Animation from the Fashion Institute of Technology in 2018.<br><br>
-		   My work has been featured in <i>The Wall Street Journal Magazine</i> and <i>The New York Times</i>.<br><br>
-		<p style="font-size:clamp(12px, 1.5vw, 16px)">Please get in touch if you'd like to collaborate with me!</p>
+	<p>Hi, nice to meet you!<br><br>My name is Will Steacy and I take photos for a living.<br>I've been specializing in jewelry photography for the last five years.<br><br>
+	   I am currently working as the Photographer/Marketing Content Producer for Paul Morelli Design.<br><br>
+	   I received a BFA in Computer Animation from the Fashion Institute of Technology in 2018.<br><br>
+	   My work has been featured in <i>The Wall Street Journal Magazine</i> and <i>The New York Times</i>.<br><br>
+	   <a href="mailto:will@willsteacy.net" target="_blank" rel="noopener noreferrer" title="Opens an email draft to will@willsteacy.net">Please get in touch</a> if you'd like to collaborate with me!</p>
     </div>
   <div class="flexMasterColumnRight">
 	<div class="flexSlaveImage">
-	<a href="https://files.catbox.moe/ck7597.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/portrait/willsteacy_small.jpg" width="100%" title="Click here to download my gorgeous mug in full resolution"></a>
+	<a href="https://files.catbox.moe/ck7597.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/portrait/willsteacy_small.jpg" width="100%" height="100%" overflow="hidden" z-index="-1" title="Click here to download a picture of the author in thrilling high-resolution"></a>
     </div>
   </div>
 </div>
@@ -350,5 +332,3 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 </body>
 </html>
-
-
