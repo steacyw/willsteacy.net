@@ -529,25 +529,49 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<!-- BEGIN SLIDESHOW V2 -->
+<!-- --------------- BEGIN SLIDESHOW V2 HTML --------------- -->
 <div class="slideshow-container">
 
 <div class="mySlides fade">
-  <div class="numbertext">1 / 3</div>
+  <div class="numbertext">1 / 7</div>
   <img src="images/jewelry/unity02.jpg" style="width:100%">
-  <div class="text">Unity Collection</div>
+  <div class="text">Social post feat. Unity Collection earrings</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">2 / 3</div>
-  <img src="images/jewelry/posy.jpg" style="width:100%">
-  <div class="text">Posy Collection</div>
+  <div class="numbertext">2 / 7</div>
+  <img src="/images/work/work03.jpg" style="width:100%">
+  <div class="text">Ad for the Ultimate Collection</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 3</div>
+  <div class="numbertext">3 / 7</div>
   <img src="images/jewelry/gonefishing.jpg" style="width:100%">
   <div class="text">Ad for the Fishbone Collection</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="images/jewelry/posy.jpg" style="width:100%">
+  <div class="text">Social post feat. Posy Collection earrings</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work04.jpg" style="width:100%">
+  <div class="text">Social post feat. Wild Child Collection bracelets</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work05.jpg" style="width:100%">
+  <div class="text">Ad feat. acrylic bracelets</div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work06.jpg" style="width:100%">
+  <div class="text">Ad for Craving Comps upgrade services</div>
 </div>
 
 <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -557,20 +581,79 @@ img {vertical-align: middle;}
 <br>
 
 <div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span> 
-  <span class="dot" onclick="currentSlide(2)"></span> 
-  <span class="dot" onclick="currentSlide(3)"></span> 
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
 </div>
 
 <script>
+/* ---------------- ORIGINAL VARIABLES ---------------- */
 let slideIndex = 1;
 showSlides(slideIndex);
 
+/* ---------------- AUTOPLAY SETTINGS (NEW) ---------------- */
+
+// Holds the interval that advances slides automatically
+let autoplayInterval = null;
+
+// Holds the timeout that waits before restarting autoplay after user interaction
+let autoplayRestartTimeout = null;
+
+// Time between automatic slide changes (in milliseconds)
+const AUTOPLAY_DELAY = 4000; // 4 seconds
+
+// How long to wait after user interaction before autoplay resumes
+const AUTOPLAY_RESTART_DELAY = 6000; // 6 seconds
+
+/* ---------------- AUTOPLAY FUNCTIONS (NEW) ---------------- */
+
+// Starts autoplay if it isn’t already running
+function startAutoplay() {
+  // Prevent multiple intervals from stacking
+  if (autoplayInterval) return;
+
+  autoplayInterval = setInterval(() => {
+    plusSlides(1); // Reuse existing logic to move forward
+  }, AUTOPLAY_DELAY);
+}
+
+// Stops autoplay immediately
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+  autoplayInterval = null;
+}
+
+// Stops autoplay and schedules it to restart later
+function pauseAndRestartAutoplay() {
+  // Stop autoplay right away
+  stopAutoplay();
+
+  // Clear any existing restart timers
+  clearTimeout(autoplayRestartTimeout);
+
+  // Restart autoplay after the user has stopped interacting
+  autoplayRestartTimeout = setTimeout(() => {
+    startAutoplay();
+  }, AUTOPLAY_RESTART_DELAY);
+}
+
+/* ---------------- ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) ---------------- */
+
 function plusSlides(n) {
+  // User interacted → pause autoplay and schedule restart
+  pauseAndRestartAutoplay();
+
   showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+  // User interacted → pause autoplay and schedule restart
+  pauseAndRestartAutoplay();
+
   showSlides(slideIndex = n);
 }
 
@@ -578,19 +661,28 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
+
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
+
+/* ---------------- START AUTOPLAY ON PAGE LOAD (NEW) ---------------- */
+
+// Begin autoplay as soon as the page loads
+startAutoplay();
 </script>
-<!-- END SLIDESHOW V2 -->
+<!-- ---------------- END SLIDESHOW V2 HTML ---------------- -->
 
 <!------------------------ begin IMAGE CAROUSEL ------------------------>
 <div class="carousel">
