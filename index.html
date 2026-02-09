@@ -470,13 +470,17 @@ const AUTOPLAY_RESTART_DELAY = 3500; // 3.5 seconds
 
 /* AUTOPLAY FUNCTIONS (NEW) */
 
+function nextSlideAuto() {
+  showSlides(slideIndex += 1);
+}
+
 // Starts autoplay if it isn’t already running
 function startAutoplay() {
   // Prevent multiple intervals from stacking
   if (autoplayInterval) return;
 
   autoplayInterval = setInterval(() => {
-    plusSlides(1); // Reuse existing logic to move forward
+    nextSlideAuto();
   }, AUTOPLAY_DELAY);
 }
 
@@ -573,6 +577,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
