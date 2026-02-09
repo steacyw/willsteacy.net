@@ -405,30 +405,30 @@ img {vertical-align: middle;}
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 7</div>
-  <img src="images/jewelry/gonefishing.jpg" style="width:100%">
+  <img src="/images/work/work02.jpg" style="width:100%">
   <div class="text">Ad for the Fishbone Collection</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 7</div>
+  <div class="numbertext">4 / 7</div>
   <img src="images/jewelry/posy.jpg" style="width:100%">
   <div class="text">Social post feat. Posy Collection earrings</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 7</div>
+  <div class="numbertext">5 / 7</div>
   <img src="/images/work/work04.jpg" style="width:100%">
   <div class="text">Social post feat. Wild Child Collection bracelets</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 7</div>
+  <div class="numbertext">6 / 7</div>
   <img src="/images/work/work05.jpg" style="width:100%">
   <div class="text">Ad feat. acrylic bracelets</div>
 </div>
 
 <div class="mySlides fade">
-  <div class="numbertext">3 / 7</div>
+  <div class="numbertext">7 / 7</div>
   <img src="/images/work/work06.jpg" style="width:100%">
   <div class="text">Ad for Craving Comps upgrade services</div>
 </div>
@@ -450,14 +450,69 @@ img {vertical-align: middle;}
 </div>
 
 <script>
+/* ORIGINAL VARIABLES */
 let slideIndex = 1;
 showSlides(slideIndex);
 
+/* AUTOPLAY SETTINGS (NEW) */
+
+// Holds the interval that advances slides automatically
+let autoplayInterval = null;
+
+// Holds the timeout that waits before restarting autoplay after user interaction
+let autoplayRestartTimeout = null;
+
+// Time between automatic slide changes (in milliseconds)
+const AUTOPLAY_DELAY = 2000; // 2 seconds
+
+// How long to wait after user interaction before autoplay resumes
+const AUTOPLAY_RESTART_DELAY = 4000; // 4 seconds
+
+/* AUTOPLAY FUNCTIONS (NEW) */
+
+// Starts autoplay if it isn’t already running
+function startAutoplay() {
+  // Prevent multiple intervals from stacking
+  if (autoplayInterval) return;
+
+  autoplayInterval = setInterval(() => {
+    plusSlides(1); // Reuse existing logic to move forward
+  }, AUTOPLAY_DELAY);
+}
+
+// Stops autoplay immediately
+function stopAutoplay() {
+  clearInterval(autoplayInterval);
+  autoplayInterval = null;
+}
+
+// Stops autoplay and schedules it to restart later
+function pauseAndRestartAutoplay() {
+  // Stop autoplay right away
+  stopAutoplay();
+
+  // Clear any existing restart timers
+  clearTimeout(autoplayRestartTimeout);
+
+  // Restart autoplay after the user has stopped interacting
+  autoplayRestartTimeout = setTimeout(() => {
+    startAutoplay();
+  }, AUTOPLAY_RESTART_DELAY);
+}
+
+/* ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) */
+
 function plusSlides(n) {
+  // User interacted → pause autoplay and schedule restart
+  pauseAndRestartAutoplay();
+
   showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+  // User interacted → pause autoplay and schedule restart
+  pauseAndRestartAutoplay();
+
   showSlides(slideIndex = n);
 }
 
@@ -465,17 +520,24 @@ function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   let dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1}    
-  if (n < 1) {slideIndex = slides.length}
+
+  if (n > slides.length) { slideIndex = 1 }
+  if (n < 1) { slideIndex = slides.length }
+
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
+
   for (i = 0; i < dots.length; i++) {
     dots[i].className = dots[i].className.replace(" active", "");
   }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
+
+  slides[slideIndex - 1].style.display = "block";
+  dots[slideIndex - 1].className += " active";
 }
+
+// Begin autoplay as soon as the page loads
+startAutoplay();
 </script>
 <!-- ---------------- END SLIDESHOW V2 HTML ---------------- -->
 
@@ -511,6 +573,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
