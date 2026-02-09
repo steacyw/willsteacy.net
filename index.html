@@ -9,33 +9,45 @@
 
 /* heading */
 h1 {
-  font-family: times new roman, serif;
-  font-size: clamp(24px, 6vh, 32px);
-  color: #FCC79B;
+  font-family: georgia, serif;
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: -1px;
+  vertical-align: top;
+  color: #B5DECB;
   }
 
 /* subheading */
 h2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 3vw, 26px);
-  color: #B5DECB;
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
   }
 
 /* page explanation font */
 p {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin: auto;
   color: #DAD0C2;
+  /*border: 1px solid lightblue;*/
   }
 
 /* longer-body-text font */
 p2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
   color: #DAD0C2;
   }
 
-/* ******************** LINKS CSS ******************** */
+/* ******************** LINKS ******************** */
+
+.nav_slave_about a:link {
+  color:#E3FC3A;
+  }
+.nav_slave_about a:hover {
+  color:#E3FC3A;
+  font-style: normal;
+  }
 
 a:link {
   color: #DAD0C2;
@@ -56,228 +68,269 @@ a:active {
   white-space: nowrap;
   }
 
-/* ******************** /LINKS CSS ******************** */
+/* ******************** LINKS ******************** */
 
 text {
   color: #DAD0C2;
   }
 
 .spacerShort {
-  margin: clamp(10px, 2vh, 20px);
+  margin: clamp(40px, 4vh, 60px);
   }
 
 .spacer {
-  margin: clamp(20px, 4vh, 40px);
+  margin: 6vw;
   }
 
 .spacerLong {
-  margin: clamp(30px, 6vh, 60px);
+  margin: 8vw;
   }
 
-/* *************************************** TOPNAV CSS *************************************** */
+/* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
 .topnavMaster {
-  font-family: courier new, serif;
-  font-size: clamp(12px, 2vw, 24px);
+  /*background-color: #2B3129;*/
+  font-family: georgia, serif;
+  font-size: clamp(16px, 2.8vw, 22px);
+  letter-spacing: -1px;
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  line-height: 10px;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 8vw, 40px);
+  /*border: 1px solid red;*/
 }
 
-/*homepage link logo button*/
-.slave_home {
-  padding-right: clamp(4px, 2vw, 10px);
-  padding-top: clamp(4px, 2vw, 10px);
-  padding-bottom: clamp(4px, 2vw, 10px);
-  width: clamp(12px, 4vw ,20px);
+/*home page master*/
+.slave_home_master {
+  display: flex;
+  height: 100%;
+  /*border: 1px solid blue;*/
+}
+
+.slave_home_slave_L {
   float: left;
-  flex-grow: 8;
+  height: 100%;
+  width: clamp(24px, 8vw, 40px);
+  /*border: 1px solid pink;*/
+}
+
+.slave_home_slave_R {
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
+  /*border: 1px solid pink;*/
 }
 
 /*photography*/
 .slave_photo {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-  flex-grow: 24;
-}
-
-/*3d graphics*/
-.slave_graphics {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-  flex-grow: 26;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid green;*/
 }
 
 /*advertising*/
 .slave_advertising {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-  flex-grow: 24;
-  
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid white;*/
 }
 
 /*about*/
 .slave_about {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-  text-align: center;
-  flex-grow: 16;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid lightblue;*/
 }
-/* *************************************** /TOPNAV CSS *************************************** */
+/* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
 .logo {
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-}
-
-.logoimg {
-  width: clamp(300px, 30vw, 400px);
-  margin-left: -10px;
-}
-
-.title {
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(40px, 8vw, 50px);
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: clamp(200px, 75vw, 450px);
-  }
+  flex-direction: horizontal;
+  /*border: 1px solid pink;*/
+}
 
-.titleitem01 {
-  flex: 66%;
-  margin: auto;
-  }
-.titleitem02 {
-  flex: 33%;
-  margin: auto;
-  }
+.logoimg01 {
+  height: clamp(40px, 8vw, 50px);
+  width: clamp(40px, 8vw, 50px);
+  /*border: 1px solid white;*/
+}
+
+.logoimg02 {
+  height: clamp(40px, 8vw, 50px);
+  width: auto;
+  max-width: 300px;
+  /*border: 1px solid white;*/
+}
 
 .bodyText {
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
+  width: clamp(200px, 90vw, 750px);
   line-height: 1.2;
   }
+  
+/* ******************** FLEX BOXES ******************** */
 
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
-  margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  }
-
-.flexMaster {
+/*MASTER-container ROW*/
+.flexMasterRow {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-}
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid white;*/
+  }
 
-.flexTaskMaster {
+/*MASTER-container COLUMN LEFT*/
+.flexMasterColumnLeft {
+  flex: 48%;
+  flex-direction: column;
+  margin-right: 15px;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid red;*/
+  }
+
+/*MASTER-container COLUMN RIGHT*/
+.flexMasterColumnRight {
+  flex: 52%;
+  flex-direction: column;
+  margin-left: 15px;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid green;*/
+  }
+
+/* IMAGE flex div */
+.flexSlaveImage {
+  align-self: stretch;
+  float: left;
+  margin-top: auto;
+  max-height: 750px;
   display: flex;
-  flex-direction: row;
-  width: clamp(200px, 50vw, 450px);
+  width: 100%;
+  /*border: 1px solid lightblue;*/
+  box-shadow: inset 0px 0px 15px #1c1c1c;
+  z-index: +1;
+  }
+
+/*resize content divs when too thin*/
+@media (max-width: 600px) {
+  .flexMasterRow {
+    flex-direction: column;
+  }
+  .flexMasterColumnLeft {
+    margin-bottom: clamp(40px, 4vh, 60px);
+  }
+  .flexMasterColumnRight {
+    margin: auto;
+  }
 }
 
-/*newspaper*/
-.flexSlave01 {
-  padding: 10px;
-  flex: 47.3%;
+/* ******************** /FLEX BOXES ******************** */
+
+/* ***************** BEGIN SLIDESHOW V2 CSS **************** */
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: clamp(200px, 90vw, 750px);
+  position: relative;
   margin: auto;
-  max-width: 300px;
 }
 
-/*video*/
-.flexSlave02 {
-  padding: 10px;
-  flex: 24.7%;
-  margin: auto;
-  max-width: 157px;
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
 }
 
-/*print*/
-.flexSlave03 {
-  padding: 10px;
-  flex: 27.9%;
-  margin: auto;
-  max-width: 177px;
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
 }
 
-/* ******************** IMAGE CAROUSEL ******************** */
-        .carousel {
-            position: relative;
-            width: clamp(200px, 75vw, 750px);
-            margin: auto;
-            overflow: hidden;
-	    box-shadow: 1px 1px 10px #1c1c1c;
-        }
-
-        .carousel-images {
-    display: flex;
-    width: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-
-        .carousel-images img {
-    flex: 0 0 100%;
-    max-width: 100%;
-	    height: auto; /* This keeps the height proportional to the width */
-	    object-fit: contain; /* Ensures the image retains its original aspect ratio */
-        }
-
-        button {
-            position: absolute;
-            top: 50%;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-            transform: translateY(-50%);
-            z-index: 1;
-        }
-
-        button:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-
-        .prev {
-            left: 0;
-        }
-
-        .next {
-            right: 0;
-        }
-/* ******************** /IMAGE CAROUSEL ******************** */
-
-@media (max-width: 500px) {
-  .topnavMaster {
-  font-size: clamp(10px, 2vw, 20px);
-  }
-  .slave_photo {
-  padding: 5px;
-  }
-  .slave_graphics {
-  padding: 5px;
-  }
-  .slave_advertising {
-  padding: 5px;
-  }
-  .slave_about {
-  padding: 5px;
-  }
-  .logoimg {
-  width: clamp(200px, 30vw, 500px);
-  }
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
 }
+
+/* Caption text */
+.text {
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* ****************** END SLIDESHOW V2 CSS ***************** */
 
  /*footer copyright & funny quote*/
 .info {
@@ -297,10 +350,13 @@ text {
 
 <body style="background-color:#2B3129">
 
+<!-- TOPNAV bar for homepage -->
 <div class="topnavMaster">
-  <div class="slave_home"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo_home.png" width="100%"></a></div>
-  <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
+  <div class="slave_home_master">
+    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
+    <!--<div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>-->
+  </div>
+  <div class="slave_photo"><a style="text-decoration:none;padding-left:10px;" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
@@ -308,8 +364,14 @@ text {
 <div class="spacerShort">
 </div>
 
+<!-- HOME -->
 <div class="logo">
-  <div class="logoimg">
+	<!--
+  <div class="logoimg01">
+    <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lensThumb02.png" title="A wonderful little lens" alt="About Will Steacy and his work." height="100%" width="100%""></a>
+  </div>
+	-->
+  <div class="logoimg02">
     <img src="/images/willsteacy_logo_animated.gif" title="The personal website of... guess who!" alt="Will Steacy takes cool photographs!" width=100%>
   </div>
 </div>
@@ -323,70 +385,95 @@ text {
 <div class="spacerShort">
 </div>
 
-<!------------------------ begin IMAGE CAROUSEL ------------------------>
-<div class="carousel">
-        <div class="carousel-images">
-            <img src="/images/work/work01.jpg">
-            <img src="/images/work/work02.jpg">
-            <img src="/images/work/work03.jpg">
-	    <img src="/images/work/work04.jpg">
-	    <img src="/images/work/work05.jpg">
-	    <img src="/images/work/work06.jpg">
-	    <img src="/images/work/work07.jpg">
-        </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
+<!-- --------------- BEGIN SLIDESHOW V2 CSS --------------- -->
+<div class="slideshow-container">
 
-	<script>
-        let index = 0;
-        let interval;
-        const slides = document.querySelectorAll('.carousel-images img');
-        const carouselImages = document.querySelector('.carousel-images');
+<div class="mySlides fade">
+  <div class="numbertext">1 / 7</div>
+  <img src="images/jewelry/unity02.jpg" style="width:100%">
+  <div class="text">Unity Collection</div>
+</div>
 
-        // Function to move slides
-        function moveSlide(step) {
-            index += step;
-            if (index < 0) {
-                index = slides.length - 1;
-            } else if (index >= slides.length) {
-                index = 0;
-            }
-            carouselImages.style.transform = `translateX(${-index * 100}%)`;
+<div class="mySlides fade">
+  <div class="numbertext">2 / 7</div>
+  <img src="/images/work/work03" style="width:100%">
+  <div class="text">Posy Collection</div>
+</div>
 
-            // Reset the auto-play timer after user interaction
-            resetAutoPlay();
-        }
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="images/jewelry/gonefishing.jpg" style="width:100%">
+  <div class="text">Ad for the Fishbone Collection</div>
+</div>
 
-        // Function to start auto-play
-        function startAutoPlay() {
-            // Clear any existing interval before starting a new one
-            if (interval) {
-                clearInterval(interval);
-            }
-            interval = setInterval(() => {
-                moveSlide(1);  // Automatically move to the next slide
-            }, 3000);  // Change slide every 3 seconds
-        }
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="images/jewelry/posy.jpg" style="width:100%">
+  <div class="text">Ad for the Fishbone Collection</div>
+</div>
 
-        // Function to stop auto-play
-        function stopAutoPlay() {
-            if (interval) {
-                clearInterval(interval);
-                interval = null; // Clean up the interval
-            }
-        }
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work04" style="width:100%">
+  <div class="text">Ad for the Fishbone Collection</div>
+</div>
 
-        // Function to reset auto-play after a delay
-        function resetAutoPlay() {
-            stopAutoPlay();
-            setTimeout(startAutoPlay, 1000);  // Restart auto-play after 1 second
-        }
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work05" style="width:100%">
+  <div class="text">Ad for the Fishbone Collection</div>
+</div>
 
-        // Start auto-play when the page loads
-        window.onload = startAutoPlay;
-    </script>
-<!------------------------ end IMAGE CAROUSEL ------------------------>
+<div class="mySlides fade">
+  <div class="numbertext">3 / 7</div>
+  <img src="/images/work/work06" style="width:100%">
+  <div class="text">Ad for the Fishbone Collection</div>
+</div>
+
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
+
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+</div>
+
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+}
+</script>
+<!-- ---------------- END SLIDESHOW V2 CSS ---------------- -->
 
 <div class="spacerLong">
 </div>
@@ -420,4 +507,5 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
