@@ -269,7 +269,7 @@ img {vertical-align: middle;}
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  text-decoration: none;
+  font-style: normal;
 }
 
 /* Position the "next button" to the right */
@@ -278,7 +278,7 @@ img {vertical-align: middle;}
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
+/* On hover, add a transparent black background color */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -433,8 +433,8 @@ img {vertical-align: middle;}
   <div class="text">Ad for Craving Comps upgrade services</div>
 </div>
 
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
+<a class="prev" style="font-style:normal;" onclick="plusSlides(-1)">❮</a>
+<a class="next" style="font-style:normal;" onclick="plusSlides(1)">❯</a>
 
 </div>
 <br>
@@ -573,6 +573,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
