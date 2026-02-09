@@ -463,10 +463,10 @@ let autoplayInterval = null;
 let autoplayRestartTimeout = null;
 
 // Time between automatic slide changes (in milliseconds)
-const AUTOPLAY_DELAY = 1500; // 1.5 seconds
+const AUTOPLAY_DELAY = 2000; // 2 seconds
 
 // How long to wait after user interaction before autoplay resumes
-const AUTOPLAY_RESTART_DELAY = 3500; // 3.5 seconds
+const AUTOPLAY_RESTART_DELAY = 4000; // 4 seconds
 
 /* AUTOPLAY FUNCTIONS (NEW) */
 
@@ -474,13 +474,12 @@ function nextSlideAuto() {
   showSlides(slideIndex += 1);
 }
 
-// Starts autoplay if it isn’t already running
 function startAutoplay() {
-  // Prevent multiple intervals from stacking
-  if (autoplayInterval) return;
+  stopAutoplay(); // defensive: guarantees only one interval exists
 
   autoplayInterval = setInterval(() => {
-    nextSlideAuto();
+    slideIndex++;
+    showSlides(slideIndex);
   }, AUTOPLAY_DELAY);
 }
 
@@ -490,34 +489,26 @@ function stopAutoplay() {
   autoplayInterval = null;
 }
 
-// Stops autoplay and schedules it to restart later
 function pauseAndRestartAutoplay() {
-  // Stop autoplay right away
   stopAutoplay();
 
-  // Clear any existing restart timers
   clearTimeout(autoplayRestartTimeout);
 
-  // Restart autoplay after the user has stopped interacting
-  autoplayRestartTimeout = setTimeout(() => {
-    startAutoplay();
-  }, AUTOPLAY_RESTART_DELAY);
+  autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
 }
 
 /* ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) */
 
 function plusSlides(n) {
-  // User interacted → pause autoplay and schedule restart
   pauseAndRestartAutoplay();
-
-  showSlides(slideIndex += n);
+  slideIndex += n;
+  showSlides(slideIndex);
 }
 
 function currentSlide(n) {
-  // User interacted → pause autoplay and schedule restart
   pauseAndRestartAutoplay();
-
-  showSlides(slideIndex = n);
+  slideIndex = n;
+  showSlides(slideIndex);
 }
 
 function showSlides(n) {
@@ -577,6 +568,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
