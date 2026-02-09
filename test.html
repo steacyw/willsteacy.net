@@ -243,60 +243,6 @@ text {
 
 /* ******************** /FLEX BOXES ******************** */
 
-/* ******************** IMAGE CAROUSEL ******************** */
-
-.carousel {
-  position: relative;
-  width: clamp(200px, 70vw, 670px);
-  margin: auto;
-}
-
-.carouselImageContainer {
-  width: clamp(200px, 65vw, 650px);
-  margin: auto;
-  overflow: hidden;
-}
-
-.carousel-images {
-  display: flex;
-  width: 100%;
-  transition: transform 0.5s ease-in-out;
-}
-
-.carousel-images img {
-  flex: 0 0 100%;
-  max-width: 100%;
-  height: auto; /* This keeps the height proportional to the width */
-  object-fit: contain; /* This ensures the image retains its original aspect ratio */
-}
-
-button {
-  position: absolute;
-  top: 50%;
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
-  : none;
-  padding: 10px;
-  cursor: pointer;
-  font-size: 30px;
-  transform: translateY(-50%);
-  z-index: 1;
-        }
-
-button:hover {
-  background-color: rgba(0, 0, 0, 0.6);
-}
-
-	/*
-.prev {
-  left: -40px;
-}
-.next {
-  right: -40px;
-}
-	*/
-/* ******************** /IMAGE CAROUSEL ******************** */
-
 /* ***************** BEGIN SLIDESHOW V2 CSS **************** */
 * {box-sizing: border-box}
 .mySlides {display: none}
@@ -591,11 +537,11 @@ img {vertical-align: middle;}
 </div>
 
 <script>
-/* ---------------- ORIGINAL VARIABLES ---------------- */
+/* ORIGINAL VARIABLES */
 let slideIndex = 1;
 showSlides(slideIndex);
 
-/* ---------------- AUTOPLAY SETTINGS (NEW) ---------------- */
+/* AUTOPLAY SETTINGS (NEW) */
 
 // Holds the interval that advances slides automatically
 let autoplayInterval = null;
@@ -609,7 +555,7 @@ const AUTOPLAY_DELAY = 4000; // 4 seconds
 // How long to wait after user interaction before autoplay resumes
 const AUTOPLAY_RESTART_DELAY = 6000; // 6 seconds
 
-/* ---------------- AUTOPLAY FUNCTIONS (NEW) ---------------- */
+/* AUTOPLAY FUNCTIONS (NEW) */
 
 // Starts autoplay if it isn’t already running
 function startAutoplay() {
@@ -641,7 +587,7 @@ function pauseAndRestartAutoplay() {
   }, AUTOPLAY_RESTART_DELAY);
 }
 
-/* ---------------- ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) ---------------- */
+/* ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) */
 
 function plusSlides(n) {
   // User interacted → pause autoplay and schedule restart
@@ -677,88 +623,10 @@ function showSlides(n) {
   dots[slideIndex - 1].className += " active";
 }
 
-/* ---------------- START AUTOPLAY ON PAGE LOAD (NEW) ---------------- */
-
 // Begin autoplay as soon as the page loads
 startAutoplay();
 </script>
 <!-- ---------------- END SLIDESHOW V2 HTML ---------------- -->
-
-<!------------------------ begin IMAGE CAROUSEL ------------------------>
-<div class="carousel">
-  <div class="carouselImageContainer">
-    <div class="carousel-images">
-      <img src="/images/work/work01.jpg">
-      <img src="/images/work/work02.jpg">
-      <img src="/images/work/work03.jpg">
-	  <img src="/images/work/work04.jpg">
-	  <img src="/images/work/work05.jpg">
-	  <img src="/images/work/work06.jpg">
-	  <img src="/images/work/work07.jpg">
-    </div>
-  </div>	
-  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
-
-<script>
-let index = 0;
-let interval;
-const slides = document.querySelectorAll('.carousel-images img');
-const carouselImages = document.querySelector('.carousel-images');
-const carousel = document.querySelector('.carousel');
-
-function updateCarouselHeight() {
-    const img = slides[index];
-
-    // If image not loaded yet, wait
-    if (!img.complete) {
-        img.onload = updateCarouselHeight;
-        return;
-    }
-
-    const aspectRatio = img.naturalHeight / img.naturalWidth;
-    const carouselWidth = carousel.clientWidth;
-
-    carousel.style.height = (carouselWidth * aspectRatio) + 'px';
-}
-
-function moveSlide(step) {
-    index += step;
-
-    if (index < 0) index = slides.length - 1;
-    if (index >= slides.length) index = 0;
-
-    carouselImages.style.transform = `translateX(${-index * 100}%)`;
-    updateCarouselHeight();
-    resetAutoPlay();
-}
-
-function startAutoPlay() {
-    if (interval) clearInterval(interval);
-    interval = setInterval(() => moveSlide(1), 3000);
-}
-
-function stopAutoPlay() {
-    clearInterval(interval);
-    interval = null;
-}
-
-function resetAutoPlay() {
-    stopAutoPlay();
-    setTimeout(startAutoPlay, 1000);
-}
-
-// Handle resize
-window.addEventListener('resize', updateCarouselHeight);
-
-// Init after images load
-window.addEventListener('load', () => {
-    updateCarouselHeight();
-    startAutoPlay();
-});
-</script>
-<!------------------------ end IMAGE CAROUSEL ------------------------>
 
 <div class="spacerLong">
 </div>
