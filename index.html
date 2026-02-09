@@ -269,6 +269,7 @@ img {vertical-align: middle;}
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
+  text-decoration: none;
 }
 
 /* Position the "next button" to the right */
@@ -307,17 +308,17 @@ img {vertical-align: middle;}
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
+  height: 20px;
+  width: 20px;
+  margin: 0 4px;
+  background-color: #DAD0C2;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
 }
 
 .active, .dot:hover {
-  background-color: #717171;
+  background-color: #B5DECB;
 }
 
 /* Fading animation */
@@ -463,10 +464,10 @@ let autoplayInterval = null;
 let autoplayRestartTimeout = null;
 
 // Time between automatic slide changes (in milliseconds)
-const AUTOPLAY_DELAY = 2000; // 2 seconds
+const AUTOPLAY_DELAY = 1500; // 1.5 seconds
 
 // How long to wait after user interaction before autoplay resumes
-const AUTOPLAY_RESTART_DELAY = 4000; // 4 seconds
+const AUTOPLAY_RESTART_DELAY = 3500; // 3.5 seconds
 
 /* AUTOPLAY FUNCTIONS (NEW) */
 
@@ -573,6 +574,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
