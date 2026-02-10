@@ -269,7 +269,7 @@ img {vertical-align: middle;}
   transition: 0.6s ease;
   border-radius: 0 3px 3px 0;
   user-select: none;
-  font-style: normal;
+  text-decoration: none;
 }
 
 /* Position the "next button" to the right */
@@ -278,7 +278,7 @@ img {vertical-align: middle;}
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a transparent black background color */
+/* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
@@ -366,13 +366,8 @@ img {vertical-align: middle;}
 
 <!-- HOME -->
 <div class="logo">
-	<!--
-  <div class="logoimg01">
-    <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lensThumb02.png" title="A wonderful little lens" alt="About Will Steacy and his work." height="100%" width="100%""></a>
-  </div>
-	-->
-  <div class="logoimg02">
-    <img src="/images/willsteacy_logo_animated.gif" title="The personal website of... guess who!" alt="Will Steacy takes cool photographs!" width=100%>
+  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+    <img src="images/willsteacy_logo_animated_alt_03.gif" title="Welcome to the photography page!" alt="Will Steacy takes cool photographs!" height="100%" width="auto">
   </div>
 </div>
 
@@ -394,47 +389,47 @@ img {vertical-align: middle;}
 <div class="mySlides fade">
   <div class="numbertext">1 / 7</div>
   <img src="images/jewelry/unity02.jpg" style="width:100%">
-  <div class="text">Social post feat. Unity Collection earrings</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">2 / 7</div>
   <img src="/images/work/work03.jpg" style="width:100%">
-  <div class="text">Ad for the Ultimate Collection</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">3 / 7</div>
   <img src="/images/work/work02.jpg" style="width:100%">
-  <div class="text">Ad for the Fishbone Collection</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">4 / 7</div>
   <img src="images/jewelry/posy.jpg" style="width:100%">
-  <div class="text">Social post feat. Posy Collection earrings</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">5 / 7</div>
   <img src="/images/work/work04.jpg" style="width:100%">
-  <div class="text">Social post feat. Wild Child Collection bracelets</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">6 / 7</div>
   <img src="/images/work/work05.jpg" style="width:100%">
-  <div class="text">Ad feat. acrylic bracelets</div>
+  <!-- <div class="text"></div> -->
 </div>
 
 <div class="mySlides fade">
   <div class="numbertext">7 / 7</div>
   <img src="/images/work/work06.jpg" style="width:100%">
-  <div class="text">Ad for Craving Comps upgrade services</div>
+  <!-- <div class="text"></div> -->
 </div>
 
-<a class="prev" style="font-style:normal;" onclick="plusSlides(-1)">❮</a>
-<a class="next" style="font-style:normal;" onclick="plusSlides(1)">❯</a>
+<a class="prev" onclick="plusSlides(-1)">❮</a>
+<a class="next" onclick="plusSlides(1)">❯</a>
 
 </div>
 <br>
@@ -463,23 +458,20 @@ let autoplayInterval = null;
 let autoplayRestartTimeout = null;
 
 // Time between automatic slide changes (in milliseconds)
-const AUTOPLAY_DELAY = 2800; // 2.8 seconds
+const AUTOPLAY_DELAY = 1500; // 1.5 seconds
 
 // How long to wait after user interaction before autoplay resumes
-const AUTOPLAY_RESTART_DELAY = 4000; // 4 seconds
+const AUTOPLAY_RESTART_DELAY = 3500; // 3.5 seconds
 
 /* AUTOPLAY FUNCTIONS (NEW) */
 
-function nextSlideAuto() {
-  showSlides(slideIndex += 1);
-}
-
+// Starts autoplay if it isn’t already running
 function startAutoplay() {
-  stopAutoplay(); // defensive: guarantees only one interval exists
+  // Prevent multiple intervals from stacking
+  if (autoplayInterval) return;
 
   autoplayInterval = setInterval(() => {
-    slideIndex++;
-    showSlides(slideIndex);
+    plusSlides(1); // Reuse existing logic to move forward
   }, AUTOPLAY_DELAY);
 }
 
@@ -489,26 +481,34 @@ function stopAutoplay() {
   autoplayInterval = null;
 }
 
+// Stops autoplay and schedules it to restart later
 function pauseAndRestartAutoplay() {
+  // Stop autoplay right away
   stopAutoplay();
 
+  // Clear any existing restart timers
   clearTimeout(autoplayRestartTimeout);
 
-  autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
+  // Restart autoplay after the user has stopped interacting
+  autoplayRestartTimeout = setTimeout(() => {
+    startAutoplay();
+  }, AUTOPLAY_RESTART_DELAY);
 }
 
 /* ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) */
 
 function plusSlides(n) {
+  // User interacted → pause autoplay and schedule restart
   pauseAndRestartAutoplay();
-  slideIndex += n;
-  showSlides(slideIndex);
+
+  showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+  // User interacted → pause autoplay and schedule restart
   pauseAndRestartAutoplay();
-  slideIndex = n;
-  showSlides(slideIndex);
+
+  showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
@@ -568,6 +568,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </body>
 
 </html>
+
 
 
 
