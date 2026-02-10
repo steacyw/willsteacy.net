@@ -9,38 +9,42 @@
 
 /* heading */
 h1 {
-  font-family: times new roman, serif;
-  font-size: clamp(24px, 6vh, 32px);
-  color: #FCC79B;
+  font-family: georgia, serif;
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: -1px;
+  vertical-align: top;
+  color: #B5DECB;
   }
 
 /* subheading */
 h2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 3vw, 26px);
-  color: #B5DECB;
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
   }
 
 /* page explanation font */
 p {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin: auto;
   color: #DAD0C2;
+  /*border: 1px solid lightblue;*/
   }
 
 /* longer-body-text font */
 p2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
   color: #DAD0C2;
   }
 
 /* ******************** LINKS ******************** */
 
-.nav_slave_advertising a:link {
+.nav_slave_about a:link {
   color:#E3FC3A;
   }
-.nav_slave_advertising a:hover {
+.nav_slave_about a:hover {
   color:#E3FC3A;
   font-style: normal;
   }
@@ -84,156 +88,257 @@ text {
 
 /* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
 .topnavMaster {
-  background-color:#2B3129;
-  font-family: 'Courier New', serif;
-  font-size: clamp(12px, 2vw, 20px);
+  /*background-color: #2B3129;*/
+  font-family: georgia, serif;
+  font-size: clamp(16px, 2.8vw, 22px);
+  letter-spacing: -1px;
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  line-height: 10px;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 8vw, 40px);
+  /*border: 1px solid red;*/
 }
 
 /*home page master*/
 .slave_home_master {
   display: flex;
-  min-width: 0;
-  margin: auto;
+  height: 100%;
+  /*border: 1px solid blue;*/
 }
 
-.slave_home_slave_L{
-  min-width: 0;
-  height: 40px;
+.slave_home_slave_L {
   float: left;
+  height: 100%;
+  width: clamp(24px, 8vw, 40px);
+  /*border: 1px solid pink;*/
 }
 
 .slave_home_slave_R {
-  min-width: 0;
-  margin:auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
+  /*border: 1px solid pink;*/
 }
 
 /*photography*/
 .slave_photo {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-}
-
-/*3d graphics*/
-.slave_graphics {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid green;*/
 }
 
 /*advertising*/
 .slave_advertising {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid white;*/
 }
 
 /*about*/
 .slave_about {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid lightblue;*/
 }
 /* *************************************** END TOPNAV SECTION OF CSS *************************************** */
 
-.title {
+.logo {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(40px, 8vw, 50px);
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: clamp(200px, 75vw, 450px);
-  }
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
 
-.titleitem01 {
-  flex: 66%;
-  margin: auto;
-  }
-.titleitem02 {
-  flex: 33%;
-  margin: auto;
-  }
+.logoimg01 {
+  height: clamp(40px, 8vw, 50px);
+  width: clamp(40px, 8vw, 50px);
+/*  border: 1px solid white; */
+}
+
+.logoimg02 {
+  height: clamp(40px, 8vw, 50px);
+  width: auto;
+/*  border: 1px solid white; */
+}
 
 .bodyText {
   margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+  width: clamp(200px, 90vw, 750px);
   line-height: 1.2;
   }
+  
+/* ******************** FLEX BOXES ******************** */
 
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.5;
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
-  }
-
-.flexMaster {
+/*MASTER-container ROW*/
+.flexMasterRow {
   display: flex;
   flex-direction: row;
-  padding: 30px;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-}
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid white;*/
+  }
 
-/*newspaper*/
-.flexSlave01 {
-  padding: 10px;
-  flex: 47.3%;
-  margin: auto;
-  max-width: 300px;
-}
+/*MASTER-container COLUMN LEFT*/
+.flexMasterColumnLeft {
+  flex: 48%;
+  flex-direction: column;
+  margin-right: 15px;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid red;*/
+  }
 
-/*video*/
-.flexSlave02 {
-  padding: 10px;
-  flex: 24.7%;
-  margin: auto;
-  max-width: 157px;
-}
+/*MASTER-container COLUMN RIGHT*/
+.flexMasterColumnRight {
+  flex: 52%;
+  flex-direction: column;
+  margin-left: 15px;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid green;*/
+  }
 
-/*print*/
-.flexSlave03 {
-  padding: 10px;
-  flex: 27.9%;
-  margin: auto;
-  max-width: 177px;
-}
+/* IMAGE flex div */
+.flexSlaveImage {
+  align-self: stretch;
+  float: left;
+  margin-top: auto;
+  max-height: 750px;
+  display: flex;
+  width: 100%;
+  /*border: 1px solid lightblue;*/
+  box-shadow: inset 0px 0px 15px #1c1c1c;
+  z-index: +1;
+  }
 
-/*resize flex boxes links when too thin*/
+/*resize content divs when too thin*/
 @media (max-width: 600px) {
-  .flexMaster {
+  .flexMasterRow {
     flex-direction: column;
-    width: clamp(150px, 50vw, 650px);
   }
-  .flexSlave02 {
-    max-width: 52.3%;
+  .flexMasterColumnLeft {
+    margin-bottom: clamp(40px, 4vh, 60px);
   }
-  .flexSlave03 {
-    max-width: 59%;
+  .flexMasterColumnRight {
+    margin: auto;
   }
 }
 
-/*resize topnav when too thin*/
-@media (max-width: 600px) {
-  .topnavMaster {
-    flex-direction: column;
-	font-size: clamp(18px, 2vw, 20px);
-  }
+/* ******************** /FLEX BOXES ******************** */
+
+/* ***************** BEGIN SLIDESHOW V2 CSS **************** */
+* {box-sizing: border-box}
+.mySlides {display: none}
+img {vertical-align: middle;}
+
+/* Slideshow container */
+.slideshow-container {
+  width: clamp(200px, 90vw, 750px);
+  position: relative;
+  margin: auto;
 }
- 
- /*footer copyright & funny quote*/
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  text-decoration: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 20px;
+  width: 20px;
+  margin: 0 4px;
+  background-color: #DAD0C2;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #B5DECB;
+}
+
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+/* ****************** END SLIDESHOW V2 CSS ***************** */
+
+/*footer copyright & funny quote*/
 .info {
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
   margin: auto;
-  width: 75%;
-  max-width: 600px;
-  font-size: larger;
-  font-family: 'Courier New', serif;
-  color: #f13333;
+  width: clamp(200px, 90vw, 750px);
   text-align: center;
   overflow: visible;
   }
@@ -244,26 +349,26 @@ text {
 
 <body style="background-color:#2B3129">
 
+<!-- TOPNAV bar for Advertising page -->
 <div class="topnavMaster">
   <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
+    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
     <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
   </div>
   <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
-  <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
 <div class="spacerShort">
 </div>
 
-<div class="title">
-  <div class="titleitem02">
-    <a href="https://files.catbox.moe/jpyt2s.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/stuffThumb.png" width="100%"></a>
+<!-- ADVERTISING -->
+<div class="logo">
+  <div class="logoimg01">
+    <a href="https://files.catbox.moe/jpyt2s.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/stuffThumb02.png" title="A collection of products for which one might design an advertisment..." alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="titleitem01">
-    <img src="/images/thumbnails/advertisingThumb_on.png" onmouseover="this.src='/images/thumbnails/advertisingThumb.png'" onmouseout="this.src='/images/thumbnails/advertisingThumb_on.png'" alt="Welcome to the Advertising page." width="100%">
+  <div class="logoimg02">
+    <img src="images/thumbnails/pageheaderthumbnails/advertising.png" title="Welcome to the advertising page" alt="Will Steacy has made some impressive advertising!" height="100%" width="auto">
   </div>
 </div>
 
@@ -313,6 +418,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 </body>
 </html>
+
 
 
 
