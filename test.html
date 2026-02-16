@@ -865,6 +865,10 @@ startAutoplay();
 <div class="spacerShort">
 </div>
 
+<script>
+baguetteBox.run('.gallery');
+</script>
+
 <div class="gallery">
     <a href="img/2-1.jpg" data-caption="Image caption">
         <img src="/images/work/work04.jpg" style="width:100%">
@@ -875,6 +879,13 @@ startAutoplay();
 </div>
 
 <!-- *************************************** BEGIN BAGUETTEBOX SECTION OF HTML *************************************** -->
+
+<script>
+window.addEventListener('load', function() {
+  baguetteBox.run('.gallery');
+});
+</script>
+
 <script>
 /*!
  * baguetteBox.js
