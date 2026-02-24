@@ -39,8 +39,7 @@ p2 {
   color: #DAD0C2;
   }
 
-/* ******************** LINKS ******************** */
-
+/* *************************************** BEGIN LINKS CSS *********************************************** */
 .nav_slave_about a:link {
   color:#E3FC3A;
   }
@@ -67,8 +66,7 @@ a:active {
   font-style: italic;
   white-space: nowrap;
   }
-
-/* ******************** LINKS ******************** */
+/* *************************************** END LINKS CSS ************************************************* */
 
 text {
   color: #DAD0C2;
@@ -86,7 +84,7 @@ text {
   margin: 8vw;
   }
 
-/* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
+/* *************************************** BEGIN TOPNAV CSS ************************************************ */
 .topnavMaster {
   /*background-color: #2B3129;*/
   font-family: georgia, serif;
@@ -156,7 +154,7 @@ text {
   padding-right: 15px;
   /*border: 1px solid lightblue;*/
 }
-/* *************************************** END TOPNAV SECTION OF CSS *************************************** */
+/* *************************************** END TOPNAV CSS ************************************************** */
 
 .logo {
   margin: auto;
@@ -185,7 +183,7 @@ text {
   line-height: 1.2;
   }
   
-/* ******************** FLEX BOXES ******************** */
+/* *************************************** BEGIN FLEX BOXES CSS ********************************************* */
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
@@ -238,174 +236,167 @@ text {
     margin: auto;
   }
 }
-/* ******************** /FLEX BOXES ******************** */
+/* *************************************** END FLEX BOXES CSS *********************************************** */
 
-/* ***************** BEGIN SLIDESHOW V2 CSS **************** */
-* {box-sizing: border-box}
-.mySlides {display: none}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  width: clamp(200px, 90vw, 750px);
-  position: relative;
-  margin: auto;
-}
-
-/* Next & previous buttons */
-.prev, .next {
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  width: auto;
-  padding: 16px;
-  margin-top: -22px;
-  color: white;
-  font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  text-decoration: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover, .next:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text {
-  font-family: georgia, serif;
-  font-size: clamp(18px, 2.8vw, 22px);
-  color: #DAD0C2;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  font-family: georgia, serif;
-  font-size: clamp(18px, 2.8vw, 22px);
-  color: #DAD0C2;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 20px;
-  width: 20px;
-  margin: 0 4px;
-  background-color: #DAD0C2;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #B5DECB;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4} 
-  to {opacity: 1}
-}
-/* ****************** END SLIDESHOW V2 CSS ***************** */
-
-/*footer copyright & funny quote*/
-.info {
-  font-family: georgia, serif;
-  font-size: clamp(18px, 2.8vw, 22px);
-  color: #DAD0C2;
-  margin: auto;
-  width: clamp(200px, 90vw, 750px);
-  text-align: center;
-  overflow: visible;
-  }
-
-/* *************************************** BEGIN NEW SLIDESHOW CSS (CLAUDE) *************************************** */
-/* ── Gallery Grid ───────────────────────────────────────────
-     The thumbnail grid that lives on your page.
-     .gallery          → the outer grid container
-     .gallery-item     → each individual thumbnail cell
-     .gallery-item img → the thumbnail image itself
+/* *************************************** BEGIN SLIDESHOW V3.1 CSS (CLAUDE) ******************************* */
+  /* ── Slideshow Wrapper ──────────────────────────────────────
+     The outer container that holds the whole slideshow.
+     Position:relative lets us absolutely-position children inside it.
   ─────────────────────────────────────────────────────────── */
-  .gallery {
-    display: grid;
-    /* Creates as many columns as fit, each at least 220px wide */
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 6px;                  /* tight gap between thumbnails */
-    margin: 2rem auto;
-    max-width: 1100px;
-    padding: 0 1rem;
-  }
-
-  .gallery-item {
-    overflow: hidden;
-    cursor: pointer;           /* pointer cursor signals clickability */
+  .slideshow {
     position: relative;
-    aspect-ratio: 1 / 1;      /* keeps all thumbs square */
-    background: #111;          /* dark placeholder before image loads */
+    max-width: 860px;          /* match your site's content width if needed */
+    margin: 2rem auto;
+    background: #000;
+    overflow: hidden;          /* clips images during transitions */
+    cursor: pointer;           /* tells users the slideshow is clickable */
   }
 
-  .gallery-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;         /* crops image to fill the square cell */
-    display: block;
-    transition: transform 0.35s ease, filter 0.35s ease;
-    filter: brightness(0.88);  /* slight darkening at rest */
-  }
-
-  /* Subtle zoom + brighten on hover — very clean, very Will */
-  .gallery-item:hover img {
-    transform: scale(1.04);
-    filter: brightness(1);
-  }
-
-  /* Small "expand" icon overlay that appears on hover */
-  .gallery-item::after {
-    content: '⊕';
+  /* ── Slide (individual image container) ────────────────────
+     All slides stack on top of each other via position:absolute.
+     Only the active one is visible (opacity:1).
+  ─────────────────────────────────────────────────────────── */
+  .slide {
     position: absolute;
-    bottom: 10px;
-    right: 12px;
-    color: rgba(255,255,255,0.7);
-    font-size: 1.2rem;
-    opacity: 0;
-    transition: opacity 0.25s ease;
-    pointer-events: none;      /* so it doesn't block clicks */
+    inset: 0;                  /* fills the slideshow container */
+    opacity: 0;                /* hidden by default */
+    transition: opacity 0.8s ease; /* crossfade duration */
   }
 
-  .gallery-item:hover::after {
+  /* The currently visible slide */
+  .slide.active {
+    opacity: 1;
+    position: relative;        /* takes up space in the document flow so the
+                                  container knows how tall to be */
+  }
+
+  .slide img {
+    width: 100%;
+    display: block;
+    height: auto;
+    /* Subtle brightness dim — lightens on hover to hint at clickability */
+    filter: brightness(0.9);
+    transition: filter 0.3s ease;
+  }
+
+  .slideshow:hover .slide.active img {
+    filter: brightness(1);     /* full brightness on hover */
+  }
+
+  /* Small "click to enlarge" hint that appears on hover */
+  .slideshow:hover .slide-hint {
     opacity: 1;
   }
 
+  .slide-hint {
+    position: absolute;
+    bottom: 48px;              /* sits above the counter bar */
+    right: 14px;
+    color: rgba(255,255,255,0.6);
+    font-family: 'Georgia', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;      /* doesn't block clicks */
+  }
+
+  /* ── Counter Bar ("1 / 7") ──────────────────────────────────
+     The strip at the bottom of the slideshow with prev/next arrows
+     and the slide counter, matching your existing site style.
+  ─────────────────────────────────────────────────────────── */
+  .slideshow-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0,0,0,0.75);
+    padding: 6px 12px;
+    position: relative;        /* sits in normal flow below the image */
+    z-index: 10;
+  }
+
+  /* Prev / Next arrows inside the slideshow bar */
+  .ss-arrow {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.55);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 2px 8px;
+    transition: color 0.2s ease;
+    user-select: none;
+    line-height: 1;
+  }
+
+  .ss-arrow:hover {
+    color: #fff;
+  }
+
+  /* "3 / 7" counter text */
+  .ss-counter {
+    color: rgba(255,255,255,0.4);
+    font-family: 'Georgia', serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+  }
+
+  /* ── Progress Bar ───────────────────────────────────────────
+     A thin line at the very bottom that fills up over 5 seconds,
+     showing the user how long until the next auto-advance.
+     Resets each time the slide changes.
+  ─────────────────────────────────────────────────────────── */
+  .ss-progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    width: 0%;
+    background: rgba(255,255,255,0.35);
+    /* JS restarts this animation each slide change */
+    animation: ss-fill 5s linear forwards;
+  }
+
+  @keyframes ss-fill {
+    from { width: 0%; }
+    to   { width: 100%; }
+  }
+
+  /* ── Caption inside slideshow (optional) ───────────────────
+     Shown as an overlay at the bottom of the image.
+     Remove this block if you don't want captions on the slideshow.
+  ─────────────────────────────────────────────────────────── */
+  .slide-caption {
+    position: absolute;
+    bottom: 36px;              /* just above the bar */
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: rgba(255,255,255,0.45);
+    font-family: 'Georgia', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.09em;
+    text-transform: uppercase;
+    pointer-events: none;
+    padding: 6px 12px;
+    /* Fades in with the slide */
+    opacity: 0;
+    transition: opacity 0.5s ease 0.4s; /* slight delay so it fades in after image */
+  }
+
+  .slide.active .slide-caption {
+    opacity: 1;
+  }
+
+
   /* ── Lightbox Overlay ───────────────────────────────────────
-     The full-screen dark overlay that appears when you click
-     a thumbnail. Hidden by default; JS adds .lb-active to show it.
+     Full-screen dark backdrop. Hidden until JS adds .lb-active.
+     (Identical to the previous version you're familiar with.)
   ─────────────────────────────────────────────────────────── */
   .lb-overlay {
-    display: none;             /* hidden until JS opens it */
+    display: none;
     position: fixed;
-    inset: 0;                  /* shorthand for top/right/bottom/left: 0 */
+    inset: 0;
     z-index: 9999;
     background: rgba(0, 0, 0, 0.95);
     align-items: center;
@@ -413,7 +404,6 @@ img {vertical-align: middle;}
     animation: lb-fadeIn 0.2s ease;
   }
 
-  /* JS adds this class to actually show the overlay */
   .lb-overlay.lb-active {
     display: flex;
   }
@@ -423,10 +413,7 @@ img {vertical-align: middle;}
     to   { opacity: 1; }
   }
 
-  /* ── Lightbox Inner Container ───────────────────────────────
-     Holds the image + caption + nav buttons.
-     max-width/max-height keep it from touching the screen edges.
-  ─────────────────────────────────────────────────────────── */
+  /* Centered image + caption container */
   .lb-container {
     position: relative;
     max-width: 90vw;
@@ -436,17 +423,12 @@ img {vertical-align: middle;}
     align-items: center;
   }
 
-  /* ── Main Lightbox Image ────────────────────────────────────
-     The large image shown in the lightbox.
-     object-fit: contain makes sure the full image is always visible.
-  ─────────────────────────────────────────────────────────── */
+  /* The big image in the lightbox */
   .lb-img {
     max-width: 90vw;
     max-height: 80vh;
     object-fit: contain;
     display: block;
-    border: none;
-    /* Slide animation — JS toggles .lb-slide-left / .lb-slide-right */
     transition: opacity 0.18s ease;
   }
 
@@ -455,35 +437,33 @@ img {vertical-align: middle;}
     opacity: 0;
   }
 
-  /* ── Caption ────────────────────────────────────────────────
-     Sits below the image. Reads from data-caption on each thumbnail.
-  ─────────────────────────────────────────────────────────── */
+  /* Caption below lightbox image */
   .lb-caption {
-    color: rgba(255, 255, 255, 0.55);
-    font-family: 'Georgia', serif;   /* matches willsteacy.net body font feel */
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Georgia', serif;
     font-size: 0.8rem;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     margin-top: 14px;
     text-align: center;
-    min-height: 1.2em;               /* prevents layout jump when caption is empty */
+    min-height: 1.2em;
   }
 
-  /* ── Counter (e.g. "3 / 7") ─────────────────────────────── */
+  /* "3 / 7" counter in lightbox */
   .lb-counter {
-    color: rgba(255, 255, 255, 0.3);
+    color: rgba(255, 255, 255, 0.25);
     font-family: 'Georgia', serif;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
     margin-top: 6px;
   }
 
-  /* ── Close Button (×) ───────────────────────────────────── */
+  /* × close button */
   .lb-close {
-    position: fixed;           /* stays in corner regardless of image size */
+    position: fixed;
     top: 20px;
     right: 24px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(255,255,255,0.45);
     font-size: 2rem;
     cursor: pointer;
     background: none;
@@ -494,19 +474,17 @@ img {vertical-align: middle;}
     z-index: 10000;
   }
 
-  .lb-close:hover {
-    color: #fff;
-  }
+  .lb-close:hover { color: #fff; }
 
-  /* ── Prev / Next Arrow Buttons ──────────────────────────── */
+  /* ← → navigation arrows */
   .lb-prev,
   .lb-next {
-    position: fixed;           /* pinned to left/right edges of the viewport */
+    position: fixed;
     top: 50%;
     transform: translateY(-50%);
     background: none;
     border: none;
-    color: rgba(255, 255, 255, 0.4);
+    color: rgba(255,255,255,0.35);
     font-size: 2.4rem;
     cursor: pointer;
     padding: 12px 20px;
@@ -520,28 +498,28 @@ img {vertical-align: middle;}
 
   .lb-prev:hover {
     color: #fff;
-    transform: translateY(-50%) translateX(-3px); /* nudge left on hover */
+    transform: translateY(-50%) translateX(-3px);
   }
 
   .lb-next:hover {
     color: #fff;
-    transform: translateY(-50%) translateX(3px);  /* nudge right on hover */
+    transform: translateY(-50%) translateX(3px);
   }
 
-  /* ── Keyboard hint ──────────────────────────────────────── */
+  /* Keyboard hint at the bottom of lightbox */
   .lb-hint {
     position: fixed;
     bottom: 18px;
     left: 50%;
     transform: translateX(-50%);
-    color: rgba(255,255,255,0.2);
+    color: rgba(255,255,255,0.18);
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     font-family: 'Georgia', serif;
     text-transform: uppercase;
     pointer-events: none;
   }
-/* *************************************** END NEW SLIDESHOW CSS (CLAUDE) *************************************** */
+/* *************************************** END SLIDESHOW V3.1 CSS (CLAUDE) ********************************* */
 
 </style>
 </head>
@@ -669,227 +647,94 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<!-- --------------- BEGIN SLIDESHOW V2 HTML --------------- -->
-<div class="slideshow-container">
-
-<div class="mySlides fade">
-  <div class="numbertext">1 / 7</div>
-  <img src="images/jewelry/unity02.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">2 / 7</div>
-  <img src="/images/work/work03.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">3 / 7</div>
-  <img src="/images/work/work02.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">4 / 7</div>
-  <img src="images/jewelry/posy.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">5 / 7</div>
-  <img src="/images/work/work04.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">6 / 7</div>
-  <img src="/images/work/work05.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<div class="mySlides fade">
-  <div class="numbertext">7 / 7</div>
-  <img src="/images/work/work06.jpg" style="width:100%">
-  <!-- <div class="text"></div> -->
-</div>
-
-<a class="prev" onclick="plusSlides(-1)">❮</a>
-<a class="next" onclick="plusSlides(1)">❯</a>
-
-</div>
-<br>
-
-<div style="text-align:center">
-  <span class="dot" onclick="currentSlide(1)"></span>
-  <span class="dot" onclick="currentSlide(2)"></span>
-  <span class="dot" onclick="currentSlide(3)"></span>
-  <span class="dot" onclick="currentSlide(4)"></span>
-  <span class="dot" onclick="currentSlide(5)"></span>
-  <span class="dot" onclick="currentSlide(6)"></span>
-  <span class="dot" onclick="currentSlide(7)"></span>
-</div>
-
-<script>
-/* ORIGINAL VARIABLES */
-let slideIndex = 1;
-showSlides(slideIndex);
-
-/* AUTOPLAY SETTINGS (NEW) */
-
-// Holds the interval that advances slides automatically
-let autoplayInterval = null;
-
-// Holds the timeout that waits before restarting autoplay after user interaction
-let autoplayRestartTimeout = null;
-
-// Time between automatic slide changes (in milliseconds)
-const AUTOPLAY_DELAY = 1500; // 1.5 seconds
-
-// How long to wait after user interaction before autoplay resumes
-const AUTOPLAY_RESTART_DELAY = 3500; // 3.5 seconds
-
-/* AUTOPLAY FUNCTIONS (NEW) */
-
-// Starts autoplay if it isn’t already running
-function startAutoplay() {
-  // Prevent multiple intervals from stacking
-  if (autoplayInterval) return;
-
-  autoplayInterval = setInterval(() => {
-    plusSlides(1); // Reuse existing logic to move forward
-  }, AUTOPLAY_DELAY);
-}
-
-// Stops autoplay immediately
-function stopAutoplay() {
-  clearInterval(autoplayInterval);
-  autoplayInterval = null;
-}
-
-// Stops autoplay and schedules it to restart later
-function pauseAndRestartAutoplay() {
-  // Stop autoplay right away
-  stopAutoplay();
-
-  // Clear any existing restart timers
-  clearTimeout(autoplayRestartTimeout);
-
-  // Restart autoplay after the user has stopped interacting
-  autoplayRestartTimeout = setTimeout(() => {
-    startAutoplay();
-  }, AUTOPLAY_RESTART_DELAY);
-}
-
-/* ORIGINAL FUNCTIONS (SLIGHTLY MODIFIED) */
-
-function plusSlides(n) {
-  // User interacted → pause autoplay and schedule restart
-  pauseAndRestartAutoplay();
-
-  showSlides(slideIndex += n);
-}
-
-function currentSlide(n) {
-  // User interacted → pause autoplay and schedule restart
-  pauseAndRestartAutoplay();
-
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("dot");
-
-  if (n > slides.length) { slideIndex = 1 }
-  if (n < 1) { slideIndex = slides.length }
-
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-
-  slides[slideIndex - 1].style.display = "block";
-  dots[slideIndex - 1].className += " active";
-}
-
-// Begin autoplay as soon as the page loads
-startAutoplay();
-</script>
-<!-- ---------------- END SLIDESHOW V2 HTML ---------------- -->
-
-<div class="spacerShort">
-</div>
-
-<!-- -------------------------------- BEGIN SLIDESHOW V3 HTML (CLAUDE) -------------------------------- -->
-<!-- ── Gallery Thumbnails ─────────────────────────────────────
-     Add or remove .gallery-item divs to add/remove photos.
-     Replace src="" with your image paths.
-     Replace data-caption="" with your caption (or remove it).
+<!-- -------------------------------- BEGIN SLIDESHOW V3.1 HTML (CLAUDE) -------------------------------- -->
+<!-- ── Slideshow ──────────────────────────────────────────────
+     Clicking anywhere on the slideshow image opens the lightbox.
+     The JS listens for clicks on .slideshow-slides, not the arrows.
 ─────────────────────────────────────────────────────────────── -->
-<div class="gallery" id="lightbox-gallery">
+<div class="slideshow" id="slideshow">
 
-  <div class="gallery-item" data-caption="Unity No. 02 — 2023">
-    <img src="https://www.willsteacy.net/images/jewelry/unity02.jpg" alt="Unity 02" loading="lazy" />
+  <!-- All slides live here. JS cycles through them. -->
+  <div class="slideshow-slides" id="slideshow-slides">
+
+    <!-- SLIDE 1 — give the first one class="slide active", the rest just class="slide" -->
+    <div class="slide active" data-caption="Unity No. 02 — 2023">
+      <img src="https://www.willsteacy.net/images/jewelry/unity02.jpg" alt="Unity 02" loading="lazy" />
+      <div class="slide-caption">Unity No. 02 — 2023</div>
+    </div>
+
+    <!-- SLIDE 2 -->
+    <div class="slide" data-caption="Work Series — 03">
+      <img src="https://www.willsteacy.net/images/work/work03.jpg" alt="Work 03" loading="lazy" />
+      <div class="slide-caption">Work Series — 03</div>
+    </div>
+
+    <!-- SLIDE 3 -->
+    <div class="slide" data-caption="Work Series — 02">
+      <img src="https://www.willsteacy.net/images/work/work02.jpg" alt="Work 02" loading="lazy" />
+      <div class="slide-caption">Work Series — 02</div>
+    </div>
+
+    <!-- SLIDE 4 -->
+    <div class="slide" data-caption="Posy — Jewelry Study">
+      <img src="https://www.willsteacy.net/images/jewelry/posy.jpg" alt="Posy" loading="lazy" />
+      <div class="slide-caption">Posy — Jewelry Study</div>
+    </div>
+
+    <!-- SLIDE 5 -->
+    <div class="slide" data-caption="Work Series — 04">
+      <img src="https://www.willsteacy.net/images/work/work04.jpg" alt="Work 04" loading="lazy" />
+      <div class="slide-caption">Work Series — 04</div>
+    </div>
+
+    <!-- SLIDE 6 -->
+    <div class="slide" data-caption="Work Series — 05">
+      <img src="https://www.willsteacy.net/images/work/work05.jpg" alt="Work 05" loading="lazy" />
+      <div class="slide-caption">Work Series — 05</div>
+    </div>
+
+    <!-- SLIDE 7 -->
+    <div class="slide" data-caption="Work Series — 06">
+      <img src="https://www.willsteacy.net/images/work/work06.jpg" alt="Work 06" loading="lazy" />
+      <div class="slide-caption">Work Series — 06</div>
+    </div>
+
+  </div><!-- end .slideshow-slides -->
+
+  <!-- "click to enlarge" hint — appears on hover -->
+  <div class="slide-hint">click to enlarge</div>
+
+  <!-- ── Bottom Bar: arrows + counter ──────────────────────── -->
+  <div class="slideshow-bar">
+    <button class="ss-arrow" id="ss-prev" aria-label="Previous slide">&#10094;</button>
+    <span class="ss-counter" id="ss-counter">1 / 7</span>
+    <button class="ss-arrow" id="ss-next" aria-label="Next slide">&#10095;</button>
+    <!-- Progress bar fills over 5s then resets on each slide change -->
+    <div class="ss-progress" id="ss-progress"></div>
   </div>
 
-  <div class="gallery-item" data-caption="Work Series — 03">
-    <img src="https://www.willsteacy.net/images/work/work03.jpg" alt="Work 03" loading="lazy" />
-  </div>
+</div><!-- end .slideshow -->
 
-  <div class="gallery-item" data-caption="Work Series — 02">
-    <img src="https://www.willsteacy.net/images/work/work02.jpg" alt="Work 02" loading="lazy" />
-  </div>
-
-  <div class="gallery-item" data-caption="Posy — Jewelry Study">
-    <img src="https://www.willsteacy.net/images/jewelry/posy.jpg" alt="Posy" loading="lazy" />
-  </div>
-
-  <div class="gallery-item" data-caption="Work Series — 04">
-    <img src="https://www.willsteacy.net/images/work/work04.jpg" alt="Work 04" loading="lazy" />
-  </div>
-
-  <div class="gallery-item" data-caption="Work Series — 05">
-    <img src="https://www.willsteacy.net/images/work/work05.jpg" alt="Work 05" loading="lazy" />
-  </div>
-
-  <div class="gallery-item" data-caption="Work Series — 06">
-    <img src="https://www.willsteacy.net/images/work/work06.jpg" alt="Work 06" loading="lazy" />
-  </div>
-
-</div>
 
 <!-- ── Lightbox Overlay ───────────────────────────────────────
-     This is the full-screen popup. Paste this once on your page.
-     You don't need to edit anything inside here.
+     Paste this once anywhere in your <body>. Don't edit the internals.
 ─────────────────────────────────────────────────────────────── -->
 <div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image lightbox">
 
-  <!-- Close button — click to exit lightbox -->
   <button class="lb-close" id="lb-close" aria-label="Close lightbox">&times;</button>
+  <button class="lb-prev"  id="lb-prev"  aria-label="Previous image">&#8592;</button>
 
-  <!-- Previous image button -->
-  <button class="lb-prev" id="lb-prev" aria-label="Previous image">&#8592;</button>
-
-  <!-- The image + caption live inside this centered container -->
   <div class="lb-container">
     <img class="lb-img" id="lb-img" src="" alt="" />
     <div class="lb-caption" id="lb-caption"></div>
     <div class="lb-counter" id="lb-counter"></div>
   </div>
 
-  <!-- Next image button -->
   <button class="lb-next" id="lb-next" aria-label="Next image">&#8594;</button>
-
-  <!-- Keyboard hint at the bottom -->
   <div class="lb-hint">← → to navigate &nbsp;·&nbsp; esc to close</div>
 
 </div>
-<!-- -------------------------------- END SLIDESHOW V3 HTML (CLAUDE) -------------------------------- -->
+<!-- -------------------------------- END SLIDESHOW V3.1 HTML (CLAUDE) -------------------------------- -->
 
 <div class="spacerLong">
 </div>
@@ -922,119 +767,202 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 <!-- -------------------------------- START JS (CLAUDE) -------------------------------- -->
 <script>
-  // ── Grab all DOM references we need ─────────────────────────
-  const gallery   = document.getElementById('lightbox-gallery'); // the grid
-  const overlay   = document.getElementById('lb-overlay');       // the dark fullscreen overlay
-  const lbImg     = document.getElementById('lb-img');           // the big image inside lightbox
-  const lbCaption = document.getElementById('lb-caption');       // caption text below image
-  const lbCounter = document.getElementById('lb-counter');       // "3 / 7" counter
-  const btnClose  = document.getElementById('lb-close');         // × close button
-  const btnPrev   = document.getElementById('lb-prev');          // ← arrow
-  const btnNext   = document.getElementById('lb-next');          // → arrow
+  // ── DOM references ───────────────────────────────────────────
+  const slidesContainer = document.getElementById('slideshow-slides'); // holds all slides
+  const ssCounter       = document.getElementById('ss-counter');        // "1 / 7" in slideshow
+  const ssPrev          = document.getElementById('ss-prev');           // slideshow ← button
+  const ssNext          = document.getElementById('ss-next');           // slideshow → button
+  const ssProgress      = document.getElementById('ss-progress');       // progress bar element
 
-  // ── Build the image list from the gallery items ──────────────
-  // We collect every .gallery-item into an array so we can navigate between them.
-  const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+  const lbOverlay  = document.getElementById('lb-overlay');  // lightbox dark backdrop
+  const lbImg      = document.getElementById('lb-img');       // big image in lightbox
+  const lbCaption  = document.getElementById('lb-caption');   // caption in lightbox
+  const lbCounter  = document.getElementById('lb-counter');   // "3 / 7" in lightbox
+  const lbClose    = document.getElementById('lb-close');     // × button
+  const lbPrev     = document.getElementById('lb-prev');      // lightbox ← button
+  const lbNext     = document.getElementById('lb-next');      // lightbox → button
 
-  // currentIndex tracks which image is currently shown in the lightbox
+  // ── Build slide list ─────────────────────────────────────────
+  // Collect every .slide element into an array so we can index into them
+  const slides = Array.from(slidesContainer.querySelectorAll('.slide'));
+  const total  = slides.length;
+
+  // currentIndex is the single source of truth — both slideshow and lightbox use it
   let currentIndex = 0;
 
-  // ── Helper: open the lightbox at a specific index ────────────
-  function openLightbox(index) {
-    currentIndex = index;
-    showImage(index, false); // false = no transition animation on first open
-    overlay.classList.add('lb-active'); // makes the overlay visible (display:flex)
-    document.body.style.overflow = 'hidden'; // prevent page scrolling while lightbox is open
+  // ── Auto-advance timer ───────────────────────────────────────
+  // 5000ms = 5 seconds between slides, matching your site's current timing
+  const SLIDE_INTERVAL = 5000;
+  let autoTimer = null; // we store the timer ID so we can cancel it when needed
+
+  // ── Helper: restart the progress bar animation ───────────────
+  // We do this by cloning the element — the simplest way to restart a CSS animation
+  function resetProgressBar() {
+    const bar = document.getElementById('ss-progress');
+    const fresh = bar.cloneNode(true); // create a fresh copy (resets animation)
+    bar.parentNode.replaceChild(fresh, bar); // swap it in
   }
 
-  // ── Helper: close the lightbox ───────────────────────────────
-  function closeLightbox() {
-    overlay.classList.remove('lb-active'); // hide the overlay
-    document.body.style.overflow = '';     // restore page scrolling
-  }
+  // ── Core: jump to a specific slide index ─────────────────────
+  // This is the central function — it updates BOTH the slideshow and the lightbox.
+  // `updateLightbox` is only true when the lightbox is already open.
+  function goToSlide(index, updateLightbox = false) {
+    // Remove .active from the current slide
+    slides[currentIndex].classList.remove('active');
 
-  // ── Helper: show a specific image in the lightbox ────────────
-  // `animate` — when true, briefly fades the image out then back in
-  function showImage(index, animate = true) {
-    const item = items[index];
-    const img  = item.querySelector('img');
+    // Clamp index with wraparound (so going past the last loops to the first)
+    currentIndex = (index + total) % total;
 
-    // Read the data-caption attribute; fall back to empty string if missing
-    const caption = item.dataset.caption || '';
+    // Add .active to the new slide — CSS handles the crossfade
+    slides[currentIndex].classList.add('active');
 
-    // If animating (navigating between images), fade out first
-    if (animate) {
-      lbImg.classList.add('lb-transitioning'); // triggers opacity:0 via CSS
+    // Update the "3 / 7" counter in the slideshow bar
+    ssCounter.textContent = `${currentIndex + 1} / ${total}`;
+
+    // Restart the progress bar so it fills again from zero
+    resetProgressBar();
+
+    // If the lightbox is open, update it to show the same image
+    if (updateLightbox && lbOverlay.classList.contains('lb-active')) {
+      showInLightbox(currentIndex);
     }
+  }
 
-    // Small timeout so the fade-out CSS transition has time to play
+  // ── Auto-advance: start ──────────────────────────────────────
+  function startAuto() {
+    // Clear any existing timer first to avoid duplicates
+    stopAuto();
+    // Set a repeating timer that advances to the next slide
+    autoTimer = setInterval(() => {
+      goToSlide(currentIndex + 1);
+    }, SLIDE_INTERVAL);
+  }
+
+  // ── Auto-advance: stop ───────────────────────────────────────
+  // Called when the lightbox opens, or when the user clicks an arrow
+  function stopAuto() {
+    clearInterval(autoTimer);
+    autoTimer = null;
+  }
+
+  // ── Lightbox: show a specific image ─────────────────────────
+  // Reads the image src and data-caption from the corresponding slide
+  function showInLightbox(index) {
+    const slide = slides[index];
+    const img   = slide.querySelector('img');
+    const caption = slide.dataset.caption || ''; // falls back to empty if no caption
+
+    // Brief fade-out, swap image, fade back in
+    lbImg.classList.add('lb-transitioning');    // triggers opacity:0 in CSS
+
     setTimeout(() => {
-      lbImg.src         = img.src;           // swap in the new image URL
-      lbImg.alt         = img.alt || '';
-      lbCaption.textContent = caption;        // update caption
-      lbCounter.textContent = `${index + 1} / ${items.length}`; // update counter
-
-      // Fade back in
-      lbImg.classList.remove('lb-transitioning');
-    }, animate ? 120 : 0); // 120ms matches the CSS transition duration
+      lbImg.src             = img.src;
+      lbImg.alt             = img.alt || '';
+      lbCaption.textContent = caption;
+      lbCounter.textContent = `${index + 1} / ${total}`;
+      lbImg.classList.remove('lb-transitioning'); // fade back in
+    }, 120); // matches CSS transition duration
   }
 
-  // ── Helper: navigate forward or backward ─────────────────────
-  // direction: +1 (next) or -1 (prev)
-  // The modulo trick wraps around: going past the last image loops back to the first
-  function navigate(direction) {
-    currentIndex = (currentIndex + direction + items.length) % items.length;
-    showImage(currentIndex);
+  // ── Lightbox: open ───────────────────────────────────────────
+  // Called when user clicks the slideshow image.
+  // Opens at whichever slide is currently active.
+  function openLightbox() {
+    showInLightbox(currentIndex);              // load the current slide's image
+    lbOverlay.classList.add('lb-active');      // show the overlay (CSS: display:flex)
+    document.body.style.overflow = 'hidden';   // prevent page from scrolling behind
+    stopAuto();                                // pause slideshow while lightbox is open
   }
 
-  // ── Attach click listeners to every thumbnail ────────────────
-  items.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
+  // ── Lightbox: close ──────────────────────────────────────────
+  function closeLightbox() {
+    lbOverlay.classList.remove('lb-active');   // hide the overlay
+    document.body.style.overflow = '';         // restore page scroll
+    startAuto();                               // resume slideshow auto-advance
+  }
+
+  // ── Lightbox: navigate (prev/next) ───────────────────────────
+  // When user navigates in the lightbox, we also update the slideshow behind it
+  function lbNavigate(direction) {
+    goToSlide(currentIndex + direction, false); // update slideshow (no lb update needed — we do it below)
+    showInLightbox(currentIndex);               // update lightbox
+  }
+
+
+  // ────────────────────────────────────────────────────────────
+  // EVENT LISTENERS
+  // ────────────────────────────────────────────────────────────
+
+  // ── Slideshow: clicking the image area opens the lightbox ───
+  slidesContainer.addEventListener('click', openLightbox);
+
+  // ── Slideshow: prev/next arrows ─────────────────────────────
+  // stopAuto + goToSlide + startAuto resets the timer so it doesn't
+  // fire immediately after a manual navigation
+  ssPrev.addEventListener('click', (e) => {
+    e.stopPropagation();   // prevent the click from also triggering openLightbox
+    stopAuto();
+    goToSlide(currentIndex - 1);
+    startAuto();
   });
 
-  // ── Close button click ───────────────────────────────────────
-  btnClose.addEventListener('click', closeLightbox);
+  ssNext.addEventListener('click', (e) => {
+    e.stopPropagation();   // same here
+    stopAuto();
+    goToSlide(currentIndex + 1);
+    startAuto();
+  });
 
-  // ── Arrow button clicks ──────────────────────────────────────
-  btnPrev.addEventListener('click', () => navigate(-1)); // go left
-  btnNext.addEventListener('click', () => navigate(+1)); // go right
+  // ── Lightbox: close button ───────────────────────────────────
+  lbClose.addEventListener('click', closeLightbox);
 
-  // ── Click on the dark overlay backdrop to close ──────────────
-  // We check that the click was directly on the overlay (not on the image or buttons)
-  overlay.addEventListener('click', (e) => {
-    if (e.target === overlay) closeLightbox();
+  // ── Lightbox: prev/next arrows ───────────────────────────────
+  lbPrev.addEventListener('click', () => lbNavigate(-1));
+  lbNext.addEventListener('click', () => lbNavigate(+1));
+
+  // ── Lightbox: click dark backdrop to close ───────────────────
+  lbOverlay.addEventListener('click', (e) => {
+    if (e.target === lbOverlay) closeLightbox();
   });
 
   // ── Keyboard navigation ──────────────────────────────────────
   document.addEventListener('keydown', (e) => {
-    // Only respond to keypresses when the lightbox is open
-    if (!overlay.classList.contains('lb-active')) return;
-
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    navigate(-1); // previous
-    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  navigate(+1); // next
-    if (e.key === 'Escape')                                closeLightbox(); // close
+    if (!lbOverlay.classList.contains('lb-active')) return; // only when lightbox is open
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   lbNavigate(-1);
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  lbNavigate(+1);
+    if (e.key === 'Escape')                               closeLightbox();
   });
 
-  // ── Touch / swipe support ───────────────────────────────────
-  // Lets mobile users swipe left/right to navigate images
-  let touchStartX = null; // records where the finger first touched
+  // ── Touch / swipe in lightbox ────────────────────────────────
+  let touchStartX = null;
 
-  overlay.addEventListener('touchstart', (e) => {
-    touchStartX = e.touches[0].clientX; // grab the starting X position
+  lbOverlay.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
   }, { passive: true });
 
-  overlay.addEventListener('touchend', (e) => {
+  lbOverlay.addEventListener('touchend', (e) => {
     if (touchStartX === null) return;
-
-    const deltaX = e.changedTouches[0].clientX - touchStartX; // how far they swiped
-
-    if (Math.abs(deltaX) > 50) {            // only count swipes longer than 50px
-      navigate(deltaX < 0 ? +1 : -1);      // swipe left = next, swipe right = prev
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(deltaX) > 50) {             // only register swipes longer than 50px
+      lbNavigate(deltaX < 0 ? +1 : -1);     // swipe left = next, swipe right = prev
     }
-
-    touchStartX = null; // reset for next swipe
+    touchStartX = null;
   }, { passive: true });
 
+  // ── Pause auto-advance when user hovers over the slideshow ──
+  // Resumes when they move the mouse away — a nice quality-of-life touch
+  const slideshowEl = document.getElementById('slideshow');
+
+  slideshowEl.addEventListener('mouseenter', stopAuto);
+  slideshowEl.addEventListener('mouseleave', () => {
+    // Only restart if the lightbox isn't open
+    if (!lbOverlay.classList.contains('lb-active')) startAuto();
+  });
+
+  // ── Kick everything off ──────────────────────────────────────
+  // Initialize the counter display and start the auto-advance timer
+  ssCounter.textContent = `1 / ${total}`;
+  startAuto();
 </script>
 <!-- -------------------------------- END JS (CLAUDE) -------------------------------- -->
 
