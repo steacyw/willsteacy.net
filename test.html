@@ -245,11 +245,11 @@ text {
   ─────────────────────────────────────────────────────────── */
   .slideshow {
     position: relative;
-    max-width: 860px;          /* match your site's content width if needed */
+    width: clamp(200px, 90vw, 750px);  /* match your site's content width if needed */
     margin: 2rem auto;
     background: #000;
-    overflow: hidden;          /* clips images during transitions */
-    cursor: pointer;           /* tells users the slideshow is clickable */
+    overflow: hidden;                  /* clips images during transitions */
+    cursor: pointer;                   /* tells users the slideshow is clickable */
   }
 
   /* ── Slide (individual image container) ────────────────────
