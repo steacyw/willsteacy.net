@@ -238,8 +238,8 @@ text {
 }
 /* *************************************** END FLEX BOXES CSS *********************************************** */
 
-/* *************************************** BEGIN SLIDESHOW V3.1 CSS (CLAUDE) ******************************* */
-  /* ── Slideshow Wrapper ──────────────────────────────────────
+/* *************************************** BEGIN SLIDESHOW V3.3 CSS (CLAUDE) ******************************* */
+/* ── Slideshow Wrapper ──────────────────────────────────────
      The outer container that holds the whole slideshow.
      Position:relative lets us absolutely-position children inside it.
   ─────────────────────────────────────────────────────────── */
@@ -274,13 +274,8 @@ text {
     width: 100%;
     display: block;
     height: auto;
-    /* Subtle brightness dim — lightens on hover to hint at clickability */
-    filter: brightness(0.9);
-    transition: filter 0.3s ease;
-  }
-
-  .slideshow:hover .slide.active img {
-    filter: brightness(1);     /* full brightness on hover */
+    /* Full brightness at all times — no dimming or hover effect */
+    filter: brightness(1);
   }
 
   /* Small "click to enlarge" hint that appears on hover */
@@ -354,7 +349,7 @@ text {
     width: 0%;
     background: rgba(255,255,255,0.35);
     /* JS restarts this animation each slide change */
-    animation: ss-fill 5s linear forwards;
+    animation: ss-fill 4s linear forwards; /* ← change this number to match SLIDE_INTERVAL in the JS */
   }
 
   @keyframes ss-fill {
@@ -362,30 +357,34 @@ text {
     to   { width: 100%; }
   }
 
-  /* ── Caption inside slideshow (optional) ───────────────────
-     Shown as an overlay at the bottom of the image.
-     Remove this block if you don't want captions on the slideshow.
-  ─────────────────────────────────────────────────────────── */
-  .slide-caption {
-    position: absolute;
-    bottom: 36px;              /* just above the bar */
-    left: 0;
-    right: 0;
-    text-align: center;
-    color: rgba(255,255,255,0.45);
-    font-family: 'Georgia', serif;
-    font-size: 0.72rem;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    pointer-events: none;
-    padding: 6px 12px;
-    /* Fades in with the slide */
-    opacity: 0;
-    transition: opacity 0.5s ease 0.4s; /* slight delay so it fades in after image */
-  }
+  /* .slide-caption styles removed — captions are only shown in the lightbox */
 
-  .slide.active .slide-caption {
-    opacity: 1;
+
+  /* ── Mobile: 768px and below ───────────────────────────────
+     On touch screens we disable the lightbox entirely and let
+     users swipe the slideshow directly instead.
+
+     ↓↓ TWEAK THIS BREAKPOINT if needed ↓↓
+     Change "768px" here AND in the isMobile() function in the JS.
+  ─────────────────────────────────────────────────────────── */
+  @media (max-width: 768px) {
+
+    /* Remove the pointer cursor — tapping won't open a lightbox on mobile */
+    .slideshow {
+      cursor: default;
+    }
+
+    /* Hide the "click to enlarge" desktop hint — not relevant on touch */
+    .slide-hint {
+      display: none;
+    }
+
+    /* Make sure the lightbox can never appear on mobile, even if JS
+       somehow fires. Belt-and-suspenders safety net. */
+    .lb-overlay {
+      display: none !important;
+    }
+
   }
 
 
@@ -519,7 +518,7 @@ text {
     text-transform: uppercase;
     pointer-events: none;
   }
-/* *************************************** END SLIDESHOW V3.1 CSS (CLAUDE) ********************************* */
+/* *************************************** END SLIDESHOW V3.3 CSS (CLAUDE) ********************************* */
 
 </style>
 </head>
@@ -647,7 +646,7 @@ text {
 <div class="spacerLong">
 </div>
 
-<!-- -------------------------------- BEGIN SLIDESHOW V3.1 HTML (CLAUDE) -------------------------------- -->
+<!-- -------------------------------- BEGIN SLIDESHOW V3.3 HTML (CLAUDE) -------------------------------- -->
 <!-- ── Slideshow ──────────────────────────────────────────────
      Clicking anywhere on the slideshow image opens the lightbox.
      The JS listens for clicks on .slideshow-slides, not the arrows.
@@ -660,43 +659,36 @@ text {
     <!-- SLIDE 1 — give the first one class="slide active", the rest just class="slide" -->
     <div class="slide active" data-caption="Unity No. 02 — 2023">
       <img src="https://www.willsteacy.net/images/jewelry/unity02.jpg" alt="Unity 02" loading="lazy" />
-      <div class="slide-caption">Unity No. 02 — 2023</div>
     </div>
 
     <!-- SLIDE 2 -->
     <div class="slide" data-caption="Work Series — 03">
       <img src="https://www.willsteacy.net/images/work/work03.jpg" alt="Work 03" loading="lazy" />
-      <div class="slide-caption">Work Series — 03</div>
     </div>
 
     <!-- SLIDE 3 -->
     <div class="slide" data-caption="Work Series — 02">
       <img src="https://www.willsteacy.net/images/work/work02.jpg" alt="Work 02" loading="lazy" />
-      <div class="slide-caption">Work Series — 02</div>
     </div>
 
     <!-- SLIDE 4 -->
     <div class="slide" data-caption="Posy — Jewelry Study">
       <img src="https://www.willsteacy.net/images/jewelry/posy.jpg" alt="Posy" loading="lazy" />
-      <div class="slide-caption">Posy — Jewelry Study</div>
     </div>
 
     <!-- SLIDE 5 -->
     <div class="slide" data-caption="Work Series — 04">
       <img src="https://www.willsteacy.net/images/work/work04.jpg" alt="Work 04" loading="lazy" />
-      <div class="slide-caption">Work Series — 04</div>
     </div>
 
     <!-- SLIDE 6 -->
     <div class="slide" data-caption="Work Series — 05">
       <img src="https://www.willsteacy.net/images/work/work05.jpg" alt="Work 05" loading="lazy" />
-      <div class="slide-caption">Work Series — 05</div>
     </div>
 
     <!-- SLIDE 7 -->
     <div class="slide" data-caption="Work Series — 06">
       <img src="https://www.willsteacy.net/images/work/work06.jpg" alt="Work 06" loading="lazy" />
-      <div class="slide-caption">Work Series — 06</div>
     </div>
 
   </div><!-- end .slideshow-slides -->
@@ -734,7 +726,7 @@ text {
   <div class="lb-hint">← → to navigate &nbsp;·&nbsp; esc to close</div>
 
 </div>
-<!-- -------------------------------- END SLIDESHOW V3.1 HTML (CLAUDE) -------------------------------- -->
+<!-- -------------------------------- END SLIDESHOW V3.3 HTML (CLAUDE) -------------------------------- -->
 
 <div class="spacerLong">
 </div>
@@ -765,7 +757,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 <div class="spacerLong">
 </div>
 
-<!-- -------------------------------- START JS (CLAUDE) -------------------------------- -->
+<!-- -------------------------------- START JS V3.3 (CLAUDE) -------------------------------- -->
 <script>
   // ── DOM references ───────────────────────────────────────────
   const slidesContainer = document.getElementById('slideshow-slides'); // holds all slides
@@ -791,8 +783,12 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
   let currentIndex = 0;
 
   // ── Auto-advance timer ───────────────────────────────────────
-  // 5000ms = 5 seconds between slides, matching your site's current timing
-  const SLIDE_INTERVAL = 5000;
+  // ↓↓ TWEAK THIS to change how long each slide stays on screen ↓↓
+  // The number is in milliseconds: 1000ms = 1 second
+  // Examples: 3000 = 3s, 4000 = 4s, 6000 = 6s
+  // If you change this, also update the animation duration in the CSS:
+  //   look for "animation: ss-fill Xs linear forwards" and change X to match.
+  const SLIDE_INTERVAL = 4000; // ← change me!
   let autoTimer = null; // we store the timer ID so we can cancel it when needed
 
   // ── Helper: restart the progress bar animation ───────────────
@@ -889,12 +885,24 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
   }
 
 
+  // ── Mobile detection ─────────────────────────────────────────
+  // Returns true when the viewport is 768px wide or narrower.
+  // ↓↓ TWEAK THIS BREAKPOINT if needed ↓↓
+  // Change "768" here AND the "@media (max-width: 768px)" value in the CSS.
+  function isMobile() {
+    return window.matchMedia('(max-width: 768px)').matches;
+  }
+
+
   // ────────────────────────────────────────────────────────────
   // EVENT LISTENERS
   // ────────────────────────────────────────────────────────────
 
   // ── Slideshow: clicking the image area opens the lightbox ───
-  slidesContainer.addEventListener('click', openLightbox);
+  // On mobile we skip this — tapping is reserved for swipe navigation.
+  slidesContainer.addEventListener('click', () => {
+    if (!isMobile()) openLightbox(); // desktop only
+  });
 
   // ── Slideshow: prev/next arrows ─────────────────────────────
   // stopAuto + goToSlide + startAuto resets the timer so it doesn't
@@ -928,25 +936,58 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
   // ── Keyboard navigation ──────────────────────────────────────
   document.addEventListener('keydown', (e) => {
     if (!lbOverlay.classList.contains('lb-active')) return; // only when lightbox is open
-    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   lbNavigate(-1);
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    lbNavigate(-1);
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  lbNavigate(+1);
-    if (e.key === 'Escape')                               closeLightbox();
+    if (e.key === 'Escape')                                closeLightbox();
   });
 
-  // ── Touch / swipe in lightbox ────────────────────────────────
+  // ── Touch / swipe — unified handler ─────────────────────────
+  // On MOBILE:  swiping the slideshow advances or retreats slides directly.
+  // On DESKTOP: swiping inside the open lightbox navigates lightbox images.
+  // Both use the same 50px threshold to distinguish a swipe from a tap.
   let touchStartX = null;
+  let touchStartY = null; // tracked so we can ignore mostly-vertical scrolls
 
+  // Record where the finger first lands
+  slidesContainer.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
+  }, { passive: true });
+
+  // When the finger lifts, decide if it was a swipe
+  slidesContainer.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+
+    const deltaX = e.changedTouches[0].clientX - touchStartX;
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+
+    // Only count it as a horizontal swipe if it's more horizontal than vertical
+    // (prevents accidental advances when the user is just scrolling the page)
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      stopAuto();
+      goToSlide(currentIndex + (deltaX < 0 ? +1 : -1)); // swipe left = next, right = prev
+      startAuto();
+    }
+
+    touchStartX = null;
+    touchStartY = null;
+  }, { passive: true });
+
+  // Desktop lightbox swipe (only active when lightbox is open)
   lbOverlay.addEventListener('touchstart', (e) => {
     touchStartX = e.touches[0].clientX;
+    touchStartY = e.touches[0].clientY;
   }, { passive: true });
 
   lbOverlay.addEventListener('touchend', (e) => {
     if (touchStartX === null) return;
     const deltaX = e.changedTouches[0].clientX - touchStartX;
-    if (Math.abs(deltaX) > 50) {             // only register swipes longer than 50px
-      lbNavigate(deltaX < 0 ? +1 : -1);     // swipe left = next, swipe right = prev
+    const deltaY = e.changedTouches[0].clientY - touchStartY;
+    if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+      lbNavigate(deltaX < 0 ? +1 : -1);
     }
     touchStartX = null;
+    touchStartY = null;
   }, { passive: true });
 
   // ── Pause auto-advance when user hovers over the slideshow ──
@@ -964,7 +1005,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
   ssCounter.textContent = `1 / ${total}`;
   startAuto();
 </script>
-<!-- -------------------------------- END JS (CLAUDE) -------------------------------- -->
+<!-- -------------------------------- END JS V3.3 (CLAUDE) -------------------------------- -->
 
 </body>
 </html>
