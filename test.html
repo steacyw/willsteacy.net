@@ -186,7 +186,6 @@ text {
   }
   
 /* ******************** FLEX BOXES ******************** */
-
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
@@ -239,7 +238,6 @@ text {
     margin: auto;
   }
 }
-
 /* ******************** /FLEX BOXES ******************** */
 
 /* ***************** BEGIN SLIDESHOW V2 CSS **************** */
@@ -342,6 +340,208 @@ img {vertical-align: middle;}
   text-align: center;
   overflow: visible;
   }
+
+/* *************************************** BEGIN NEW SLIDESHOW CSS (CLAUDE) *************************************** */
+/* ── Gallery Grid ───────────────────────────────────────────
+     The thumbnail grid that lives on your page.
+     .gallery          → the outer grid container
+     .gallery-item     → each individual thumbnail cell
+     .gallery-item img → the thumbnail image itself
+  ─────────────────────────────────────────────────────────── */
+  .gallery {
+    display: grid;
+    /* Creates as many columns as fit, each at least 220px wide */
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 6px;                  /* tight gap between thumbnails */
+    margin: 2rem auto;
+    max-width: 1100px;
+    padding: 0 1rem;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    cursor: pointer;           /* pointer cursor signals clickability */
+    position: relative;
+    aspect-ratio: 1 / 1;      /* keeps all thumbs square */
+    background: #111;          /* dark placeholder before image loads */
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         /* crops image to fill the square cell */
+    display: block;
+    transition: transform 0.35s ease, filter 0.35s ease;
+    filter: brightness(0.88);  /* slight darkening at rest */
+  }
+
+  /* Subtle zoom + brighten on hover — very clean, very Will */
+  .gallery-item:hover img {
+    transform: scale(1.04);
+    filter: brightness(1);
+  }
+
+  /* Small "expand" icon overlay that appears on hover */
+  .gallery-item::after {
+    content: '⊕';
+    position: absolute;
+    bottom: 10px;
+    right: 12px;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+    pointer-events: none;      /* so it doesn't block clicks */
+  }
+
+  .gallery-item:hover::after {
+    opacity: 1;
+  }
+
+  /* ── Lightbox Overlay ───────────────────────────────────────
+     The full-screen dark overlay that appears when you click
+     a thumbnail. Hidden by default; JS adds .lb-active to show it.
+  ─────────────────────────────────────────────────────────── */
+  .lb-overlay {
+    display: none;             /* hidden until JS opens it */
+    position: fixed;
+    inset: 0;                  /* shorthand for top/right/bottom/left: 0 */
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.95);
+    align-items: center;
+    justify-content: center;
+    animation: lb-fadeIn 0.2s ease;
+  }
+
+  /* JS adds this class to actually show the overlay */
+  .lb-overlay.lb-active {
+    display: flex;
+  }
+
+  @keyframes lb-fadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* ── Lightbox Inner Container ───────────────────────────────
+     Holds the image + caption + nav buttons.
+     max-width/max-height keep it from touching the screen edges.
+  ─────────────────────────────────────────────────────────── */
+  .lb-container {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* ── Main Lightbox Image ────────────────────────────────────
+     The large image shown in the lightbox.
+     object-fit: contain makes sure the full image is always visible.
+  ─────────────────────────────────────────────────────────── */
+  .lb-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    display: block;
+    border: none;
+    /* Slide animation — JS toggles .lb-slide-left / .lb-slide-right */
+    transition: opacity 0.18s ease;
+  }
+
+  /* Fade out briefly when switching images */
+  .lb-img.lb-transitioning {
+    opacity: 0;
+  }
+
+  /* ── Caption ────────────────────────────────────────────────
+     Sits below the image. Reads from data-caption on each thumbnail.
+  ─────────────────────────────────────────────────────────── */
+  .lb-caption {
+    color: rgba(255, 255, 255, 0.55);
+    font-family: 'Georgia', serif;   /* matches willsteacy.net body font feel */
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 14px;
+    text-align: center;
+    min-height: 1.2em;               /* prevents layout jump when caption is empty */
+  }
+
+  /* ── Counter (e.g. "3 / 7") ─────────────────────────────── */
+  .lb-counter {
+    color: rgba(255, 255, 255, 0.3);
+    font-family: 'Georgia', serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.12em;
+    margin-top: 6px;
+  }
+
+  /* ── Close Button (×) ───────────────────────────────────── */
+  .lb-close {
+    position: fixed;           /* stays in corner regardless of image size */
+    top: 20px;
+    right: 24px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 2rem;
+    cursor: pointer;
+    background: none;
+    border: none;
+    line-height: 1;
+    padding: 4px 8px;
+    transition: color 0.2s ease;
+    z-index: 10000;
+  }
+
+  .lb-close:hover {
+    color: #fff;
+  }
+
+  /* ── Prev / Next Arrow Buttons ──────────────────────────── */
+  .lb-prev,
+  .lb-next {
+    position: fixed;           /* pinned to left/right edges of the viewport */
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 2.4rem;
+    cursor: pointer;
+    padding: 12px 20px;
+    transition: color 0.2s ease, transform 0.15s ease;
+    z-index: 10000;
+    user-select: none;
+  }
+
+  .lb-prev { left: 10px; }
+  .lb-next { right: 10px; }
+
+  .lb-prev:hover {
+    color: #fff;
+    transform: translateY(-50%) translateX(-3px); /* nudge left on hover */
+  }
+
+  .lb-next:hover {
+    color: #fff;
+    transform: translateY(-50%) translateX(3px);  /* nudge right on hover */
+  }
+
+  /* ── Keyboard hint ──────────────────────────────────────── */
+  .lb-hint {
+    position: fixed;
+    bottom: 18px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255,255,255,0.2);
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    font-family: 'Georgia', serif;
+    text-transform: uppercase;
+    pointer-events: none;
+  }
+/* *************************************** END NEW SLIDESHOW CSS (CLAUDE) *************************************** */
 
 </style>
 </head>
@@ -622,6 +822,75 @@ startAutoplay();
 </script>
 <!-- ---------------- END SLIDESHOW V2 HTML ---------------- -->
 
+<div class="spacerShort">
+</div>
+
+<!-- -------------------------------- BEGIN SLIDESHOW V3 HTML (CLAUDE) -------------------------------- -->
+<!-- ── Gallery Thumbnails ─────────────────────────────────────
+     Add or remove .gallery-item divs to add/remove photos.
+     Replace src="" with your image paths.
+     Replace data-caption="" with your caption (or remove it).
+─────────────────────────────────────────────────────────────── -->
+<div class="gallery" id="lightbox-gallery">
+
+  <div class="gallery-item" data-caption="Unity No. 02 — 2023">
+    <img src="https://www.willsteacy.net/images/jewelry/unity02.jpg" alt="Unity 02" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Work Series — 03">
+    <img src="https://www.willsteacy.net/images/work/work03.jpg" alt="Work 03" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Work Series — 02">
+    <img src="https://www.willsteacy.net/images/work/work02.jpg" alt="Work 02" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Posy — Jewelry Study">
+    <img src="https://www.willsteacy.net/images/jewelry/posy.jpg" alt="Posy" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Work Series — 04">
+    <img src="https://www.willsteacy.net/images/work/work04.jpg" alt="Work 04" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Work Series — 05">
+    <img src="https://www.willsteacy.net/images/work/work05.jpg" alt="Work 05" loading="lazy" />
+  </div>
+
+  <div class="gallery-item" data-caption="Work Series — 06">
+    <img src="https://www.willsteacy.net/images/work/work06.jpg" alt="Work 06" loading="lazy" />
+  </div>
+
+</div>
+
+<!-- ── Lightbox Overlay ───────────────────────────────────────
+     This is the full-screen popup. Paste this once on your page.
+     You don't need to edit anything inside here.
+─────────────────────────────────────────────────────────────── -->
+<div class="lb-overlay" id="lb-overlay" role="dialog" aria-modal="true" aria-label="Image lightbox">
+
+  <!-- Close button — click to exit lightbox -->
+  <button class="lb-close" id="lb-close" aria-label="Close lightbox">&times;</button>
+
+  <!-- Previous image button -->
+  <button class="lb-prev" id="lb-prev" aria-label="Previous image">&#8592;</button>
+
+  <!-- The image + caption live inside this centered container -->
+  <div class="lb-container">
+    <img class="lb-img" id="lb-img" src="" alt="" />
+    <div class="lb-caption" id="lb-caption"></div>
+    <div class="lb-counter" id="lb-counter"></div>
+  </div>
+
+  <!-- Next image button -->
+  <button class="lb-next" id="lb-next" aria-label="Next image">&#8594;</button>
+
+  <!-- Keyboard hint at the bottom -->
+  <div class="lb-hint">← → to navigate &nbsp;·&nbsp; esc to close</div>
+
+</div>
+<!-- -------------------------------- END SLIDESHOW V3 HTML (CLAUDE) -------------------------------- -->
+
 <div class="spacerLong">
 </div>
 
@@ -650,6 +919,124 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 <div class="spacerLong">
 </div>
+
+<!-- -------------------------------- START JS (CLAUDE) -------------------------------- -->
+<script>
+  // ── Grab all DOM references we need ─────────────────────────
+  const gallery   = document.getElementById('lightbox-gallery'); // the grid
+  const overlay   = document.getElementById('lb-overlay');       // the dark fullscreen overlay
+  const lbImg     = document.getElementById('lb-img');           // the big image inside lightbox
+  const lbCaption = document.getElementById('lb-caption');       // caption text below image
+  const lbCounter = document.getElementById('lb-counter');       // "3 / 7" counter
+  const btnClose  = document.getElementById('lb-close');         // × close button
+  const btnPrev   = document.getElementById('lb-prev');          // ← arrow
+  const btnNext   = document.getElementById('lb-next');          // → arrow
+
+  // ── Build the image list from the gallery items ──────────────
+  // We collect every .gallery-item into an array so we can navigate between them.
+  const items = Array.from(gallery.querySelectorAll('.gallery-item'));
+
+  // currentIndex tracks which image is currently shown in the lightbox
+  let currentIndex = 0;
+
+  // ── Helper: open the lightbox at a specific index ────────────
+  function openLightbox(index) {
+    currentIndex = index;
+    showImage(index, false); // false = no transition animation on first open
+    overlay.classList.add('lb-active'); // makes the overlay visible (display:flex)
+    document.body.style.overflow = 'hidden'; // prevent page scrolling while lightbox is open
+  }
+
+  // ── Helper: close the lightbox ───────────────────────────────
+  function closeLightbox() {
+    overlay.classList.remove('lb-active'); // hide the overlay
+    document.body.style.overflow = '';     // restore page scrolling
+  }
+
+  // ── Helper: show a specific image in the lightbox ────────────
+  // `animate` — when true, briefly fades the image out then back in
+  function showImage(index, animate = true) {
+    const item = items[index];
+    const img  = item.querySelector('img');
+
+    // Read the data-caption attribute; fall back to empty string if missing
+    const caption = item.dataset.caption || '';
+
+    // If animating (navigating between images), fade out first
+    if (animate) {
+      lbImg.classList.add('lb-transitioning'); // triggers opacity:0 via CSS
+    }
+
+    // Small timeout so the fade-out CSS transition has time to play
+    setTimeout(() => {
+      lbImg.src         = img.src;           // swap in the new image URL
+      lbImg.alt         = img.alt || '';
+      lbCaption.textContent = caption;        // update caption
+      lbCounter.textContent = `${index + 1} / ${items.length}`; // update counter
+
+      // Fade back in
+      lbImg.classList.remove('lb-transitioning');
+    }, animate ? 120 : 0); // 120ms matches the CSS transition duration
+  }
+
+  // ── Helper: navigate forward or backward ─────────────────────
+  // direction: +1 (next) or -1 (prev)
+  // The modulo trick wraps around: going past the last image loops back to the first
+  function navigate(direction) {
+    currentIndex = (currentIndex + direction + items.length) % items.length;
+    showImage(currentIndex);
+  }
+
+  // ── Attach click listeners to every thumbnail ────────────────
+  items.forEach((item, index) => {
+    item.addEventListener('click', () => openLightbox(index));
+  });
+
+  // ── Close button click ───────────────────────────────────────
+  btnClose.addEventListener('click', closeLightbox);
+
+  // ── Arrow button clicks ──────────────────────────────────────
+  btnPrev.addEventListener('click', () => navigate(-1)); // go left
+  btnNext.addEventListener('click', () => navigate(+1)); // go right
+
+  // ── Click on the dark overlay backdrop to close ──────────────
+  // We check that the click was directly on the overlay (not on the image or buttons)
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  // ── Keyboard navigation ──────────────────────────────────────
+  document.addEventListener('keydown', (e) => {
+    // Only respond to keypresses when the lightbox is open
+    if (!overlay.classList.contains('lb-active')) return;
+
+    if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')    navigate(-1); // previous
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown')  navigate(+1); // next
+    if (e.key === 'Escape')                                closeLightbox(); // close
+  });
+
+  // ── Touch / swipe support ───────────────────────────────────
+  // Lets mobile users swipe left/right to navigate images
+  let touchStartX = null; // records where the finger first touched
+
+  overlay.addEventListener('touchstart', (e) => {
+    touchStartX = e.touches[0].clientX; // grab the starting X position
+  }, { passive: true });
+
+  overlay.addEventListener('touchend', (e) => {
+    if (touchStartX === null) return;
+
+    const deltaX = e.changedTouches[0].clientX - touchStartX; // how far they swiped
+
+    if (Math.abs(deltaX) > 50) {            // only count swipes longer than 50px
+      navigate(deltaX < 0 ? +1 : -1);      // swipe left = next, swipe right = prev
+    }
+
+    touchStartX = null; // reset for next swipe
+  }, { passive: true });
+
+</script>
+<!-- -------------------------------- END JS (CLAUDE) -------------------------------- -->
 
 </body>
 </html>
