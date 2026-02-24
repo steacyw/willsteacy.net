@@ -360,14 +360,14 @@ text {
   /* .slide-caption styles removed — captions are only shown in the lightbox */
 
 
-  /* ── Mobile: 768px and below ───────────────────────────────
+  /* ── Mobile: 600px and below ───────────────────────────────
      On touch screens we disable the lightbox entirely and let
      users swipe the slideshow directly instead.
 
      ↓↓ TWEAK THIS BREAKPOINT if needed ↓↓
-     Change "768px" here AND in the isMobile() function in the JS.
+     Change "600px" here AND in the isMobile() function in the JS.
   ─────────────────────────────────────────────────────────── */
-  @media (max-width: 768px) {
+  @media (max-width: 600px) {
 
     /* Remove the pointer cursor — tapping won't open a lightbox on mobile */
     .slideshow {
@@ -886,11 +886,11 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 
 
   // ── Mobile detection ─────────────────────────────────────────
-  // Returns true when the viewport is 768px wide or narrower.
+  // Returns true when the viewport is 600px wide or narrower.
   // ↓↓ TWEAK THIS BREAKPOINT if needed ↓↓
-  // Change "768" here AND the "@media (max-width: 768px)" value in the CSS.
+  // Change "768" here AND the "@media (max-width: 600px)" value in the CSS.
   function isMobile() {
-    return window.matchMedia('(max-width: 768px)').matches;
+    return window.matchMedia('(max-width: 600px)').matches;
   }
 
 
@@ -1006,6 +1006,5 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
   startAuto();
 </script>
 <!-- -------------------------------- END JS V3.3 (CLAUDE) -------------------------------- -->
-
 </body>
 </html>
