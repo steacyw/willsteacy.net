@@ -9,38 +9,41 @@
 
 /* heading */
 h1 {
-  font-family: times new roman, serif;
-  font-size: clamp(24px, 6vh, 32px);
-  color: #FCC79B;
+  font-family: georgia, serif;
+  font-size: clamp(24px, 4vw, 40px);
+  letter-spacing: -1px;
+  vertical-align: top;
+  color: #B5DECB;
   }
 
 /* subheading */
 h2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 3vw, 26px);
-  color: #B5DECB;
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  color: #DAD0C2;
   }
 
 /* page explanation font */
 p {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
+  margin: auto;
   color: #DAD0C2;
+  /*border: 1px solid lightblue;*/
   }
 
 /* longer-body-text font */
 p2 {
-  font-family: times new roman, serif;
-  font-size: clamp(16px, 2vw, 24px);
+  font-family: georgia, serif;
+  font-size: clamp(18px, 2.8vw, 22px);
   color: #DAD0C2;
   }
 
-/* ******************** LINKS ******************** */
-
-.nav_slave_photo a:link {
+/* *************************************** BEGIN LINKS CSS *********************************************** */
+.nav_slave_about a:link {
   color:#E3FC3A;
   }
-.nav_slave_photo a:hover {
+.nav_slave_about a:hover {
   color:#E3FC3A;
   font-style: normal;
   }
@@ -63,8 +66,7 @@ a:active {
   font-style: italic;
   white-space: nowrap;
   }
-
-/* ******************** LINKS ******************** */
+/* *************************************** END LINKS CSS ************************************************* */
 
 text {
   color: #DAD0C2;
@@ -82,193 +84,167 @@ text {
   margin: 8vw;
   }
 
-/* *************************************** BEGIN TOPNAV SECTION OF CSS *************************************** */
+/* *************************************** BEGIN TOPNAV CSS ************************************************ */
 .topnavMaster {
-  background-color:#2B3129;
-  font-family: 'Courier New', serif;
-  font-size: clamp(12px, 2vw, 20px);
+  /*background-color: #2B3129;*/
+  font-family: georgia, serif;
+  font-size: clamp(16px, 2.8vw, 22px);
+  letter-spacing: -1px;
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 750px);
-  line-height: 10px;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 8vw, 40px);
+  /*border: 1px solid red;*/
 }
 
 /*home page master*/
 .slave_home_master {
   display: flex;
-  min-width: 0;
-  margin: auto;
+  height: 100%;
+  /*border: 1px solid blue;*/
 }
 
-.slave_home_slave_L{
-  min-width: 0;
-  height: 40px;
+.slave_home_slave_L {
   float: left;
+  height: 100%;
+  width: clamp(24px, 8vw, 40px);
+  /*border: 1px solid pink;*/
 }
 
 .slave_home_slave_R {
-  min-width: 0;
-  margin:auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 5px;
+  padding-right: 15px;
+  /*border: 1px solid pink;*/
 }
 
 /*photography*/
 .slave_photo {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-}
-
-/*3d graphics*/
-.slave_graphics {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid green;*/
 }
 
 /*advertising*/
 .slave_advertising {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
+  height: clamp(30px, 8vw, 40px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid white;*/
 }
 
 /*about*/
 .slave_about {
-  min-width: 0;
-  margin: auto;
-  padding: 10px;
-}
-/* *************************************** END TOPNAV SECTION OF CSS *************************************** */
-
-.title {
+  height: clamp(30px, 8vw, 40px);
   display: flex;
-  flex-direction: row;
-  margin: auto;
-  width: clamp(200px, 75vw, 450px);
-  }
+  justify-content: center;
+  align-items: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  /*border: 1px solid lightblue;*/
+}
+/* *************************************** END TOPNAV CSS ************************************************** */
 
-.titleitem01 {
-  flex: 66%;
+.logo {
   margin: auto;
-  padding-left: 5px;
-  }
-.titleitem02 {
-  flex: 33%;
-  margin: auto;
-  padding-right: 5px;
-  }
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(40px, 8vw, 50px);
+  display: flex;
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
+
+.logoimg01 {
+  height: clamp(40px, 8vw, 50px);
+  width: clamp(40px, 8vw, 50px);
+/*  border: 1px solid white; */
+}
+
+.logoimg02 {
+  height: clamp(40px, 8vw, 50px);
+  width: auto;
+/*  border: 1px solid white; */
+}
 
 .bodyText {
   margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+  width: clamp(200px, 90vw, 750px);
   line-height: 1.2;
   }
-
-.blogText {
-  text-align: justify;
-  text-justify: inter-word;
-  line-height: 1.2;
-  margin: auto;
-  width: clamp(200px, 75vw, 1200px);
-  }
-
-/* ******************** FLEX BOXES ******************** */
-
-iframe {
-  width: 100%;
-  aspect-ratio: 16 / 9;
-  }
-
+  
+/* *************************************** BEGIN FLEX BOXES CSS ********************************************* */
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
   flex-direction: row;
   margin: auto;
-  width: clamp(200px, 75vw, 1200px);
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid white;*/
   }
 
 /*MASTER-container COLUMN LEFT*/
 .flexMasterColumnLeft {
-  flex: 50%;
+  flex: 48%;
   flex-direction: column;
   margin-right: 15px;
-  width: clamp(200px, 75vw, 1200px);
-  box-shadow: 1px 1px 10px #1c1c1c;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid red;*/
   }
 
 /*MASTER-container COLUMN RIGHT*/
 .flexMasterColumnRight {
-  flex: 50%;
+  flex: 52%;
   flex-direction: column;
   margin-left: 15px;
-  width: clamp(200px, 75vw, 1200px);
-  box-shadow: 1px 1px 10px #1c1c1c;
+  width: clamp(200px, 90vw, 750px);
+  /*border: 1px solid green;*/
   }
 
-/*IMAGE flex div (L)*/
+/* IMAGE flex div */
 .flexSlaveImage {
+  align-self: stretch;
   float: left;
-  margin-left: 30px;
-  margin-right: 30px;
-  margin-top: 15px;
-  margin-bottom: 15px;
+  margin-top: auto;
+  max-height: 750px;
+  display: flex;
+  width: 100%;
+  /*border: 1px solid lightblue;*/
+  box-shadow: inset 0px 0px 15px #1c1c1c;
+  z-index: +1;
   }
 
 /*resize content divs when too thin*/
 @media (max-width: 600px) {
-  iframe {
-    width: 100%;
-    aspect-ratio: 16 / 9;
-  }
   .flexMasterRow {
     flex-direction: column;
   }
   .flexMasterColumnLeft {
-    margin: auto;
+    margin-bottom: clamp(40px, 4vh, 60px);
   }
   .flexMasterColumnRight {
     margin: auto;
   }
-  h1 {
-    font-size: clamp(30px, 100%, 40px);
-	line-height: 30px;
-  }
-  h2 {
-    font-size: clamp(20px, 100%, 30px);
-	line-height: 20px;
-  }
-  p {
-    font-size: clamp(18px, 2vw, 24px);
-  }
-  p2 {
-    font-size: clamp(18px, 2vw, 24px);
-  }
-  p3 {
-    font-size: clamp(14px, 2vw, 18px);
-	text-align: center;
-  }
 }
+/* *************************************** END FLEX BOXES CSS *********************************************** */
 
-/* ******************** FLEX BOXES ******************** */
-
-/*resize topnav when too thin*/
-@media (max-width: 600px) {
-  .topnavMaster {
-    flex-direction: column;
-	font-size: clamp(18px, 2vw, 20px);
-  }
-}
- 
- /*footer copyright & funny quote*/
+/*footer copyright & funny quote*/
 .info {
+  font-family: georgia, serif;
+  font-size: clamp(16px, 2.8vw, 22px);
+  color: #DAD0C2;
   margin: auto;
-  width: 75%;
-  max-width: 600px;
-  font-size: larger;
-  font-family: 'Courier New', serif;
-  color: #f13333;
+  width: clamp(200px, 90vw, 750px);
   text-align: center;
   overflow: visible;
   }
@@ -279,13 +255,13 @@ iframe {
 
 <body style="background-color:#2B3129">
 
+<!-- TOPNAV bar for homepage -->
 <div class="topnavMaster">
   <div class="slave_home_master">
-    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" height="40px"></a></div>
-    <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
+    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
+    <!--<div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>-->
   </div>
-  <div class="slave_photo"><a style="text-decoration:none" href="photography" title="Go to the Photography page">Photography</a></div>
-  <div class="slave_graphics"><a style="text-decoration:none" href="3dgraphics" title="Go to the 3D Graphics page">3D Graphics</a></div>
+  <div class="slave_photo"><a style="text-decoration:none;padding-left:10px;" href="photography" title="Go to the Photography page">Photography</a></div>
   <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
   <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
@@ -293,122 +269,26 @@ iframe {
 <div class="spacerShort">
 </div>
 
-<div class="title">
-  <div class="titleitem02">
-    <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lensThumb02.png" width="100%"></a>
+<!-- TOPNAV bar for Photography page -->
+<div class="topnavMaster">
+  <div class="slave_home_master">
+    <div class="slave_home_slave_L"><a href="/" title="Go to the Home page"><img src="/images/thumbnails/willsteacydotnet_topnavlogo.png" width="100%"></a></div>
+    <div class="slave_home_slave_R"><a style="text-decoration:none; color:#E3FC3A" href="/" title="Go to the Home page"> willsteacy.net</a></div>
   </div>
-  <div class="titleitem01">
-    <img src="/images/thumbnails/photoThumb_on.png" onmouseover="this.src='/images/thumbnails/photoThumb.png'" onmouseout="this.src='/images/thumbnails/photoThumb_on.png'" alt="Welcome to the About page." width="100%">
-  </div>
+  <div class="slave_advertising"><a style="text-decoration:none" href="advertising" title="Go to the Advertising page">Advertising</a></div>
+  <div class="slave_about"><a style="text-decoration:none" href="about" title="Go to the About page">About</a></div>
 </div>
 
 <div class="spacerShort">
 </div>
 
-<div class="bodyText">
-<p>Scroll down to see my work categorized by subject.<br>
-   Click on an image to see the full-size version.</p>
-</div>
-
-<div class="spacerShort">
-</div>
-
-<div class="flexMasterRow">
-  <div class="flexMasterColumnLeft">
-    <h1><center>JEWELRY</center></h1>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/itv025.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/tasselstudio.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/35vj9o.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/BR4899-1405-FRONT.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/lb5w8v.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/BR4899-left-side-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/ixrffu.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/BR4899-right-side-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/fjj9j9.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/gonefishing.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/sjuwce.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/ER4690-D-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/8lsblm.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/ER4952-DTQE-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/1sw3cn.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/RG4852-PLPAD-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/xdk3qn.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/unity01.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/q9xxwk.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/unity02.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/jox2zp.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/BR4661-GPRQ.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/26bkoi.png" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/BR4909-V2-web.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/xnkux5.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/posy.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/onnbl0.JPG" target="_blank" rel="noopener noreferrer"><img src="/images/jewelry/b&w.jpg" width="100%"></a>
-    	</div>
+<!-- PHOTOGRAPHY -->
+<div class="logo">
+  <div class="logoimg01">
+    <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lensThumb02.png" title="A wonderful little lens" alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="flexMasterColumnRight">
-    <h1><center>COMPUTERS</center></h1>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/o5ynzo.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/customdesktop.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/nzn4m1.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/customlaptop.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/0rto3i.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/banner.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/8x1okv.jpg" target="_blank" rel="noopener noreferrer"><img src="/images/computers/grouping.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/yzc9k1.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/ebc.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/bsh2o5.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/component.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/quk1v6.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/exciting.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/t6pfzm.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/dual.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/cw1rf9.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/cyberpower.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/3s4a3z.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/funproduct.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/od1j4c.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/sides.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/w92zk4.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/msieyegrab.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/rxghsz.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/spaceshipsnvidia.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/ej5hjd.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/msicontents.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/y5efl2.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/lifestyleretouch.jpg" width="100%"></a>
-    	</div>
-	<div class="flexSlaveImage">
-		<a href="https://files.catbox.moe/rnnt59.png" target="_blank" rel="noopener noreferrer"><img src="/images/computers/mainimagehomepage.jpg" width="100%"></a>
-    	</div>
+  <div class="logoimg02">
+    <img src="images/thumbnails/pageheaderthumbnails/photography.png" title="Welcome to the photography page!" alt="Will Steacy takes cool photographs!" height="100%" width="auto">
   </div>
 </div>
 
@@ -442,7 +322,5 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 </div>
 
 </body>
+
 </html>
-
-
-
