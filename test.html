@@ -73,19 +73,19 @@ text {
   }
 
 .spacerXtraShort {
-  margin: clamp(10px, 2vw, 30px);
+  margin: clamp(10px, 2vw, 20px);
   }
 
 .spacerShort {
-  margin: clamp(24px, 4vw, 60px);
+  margin: clamp(24px, 4vw, 40px);
   }
 
 .spacer {
-  margin: clamp(40px, 6vw, 90px);
+  margin: clamp(40px, 6vw, 60px);
   }
 
 .spacerLong {
-  margin: clamp(56px, 8vw, 130px);
+  margin: clamp(56px, 8vw, 80px);
   }
 
 /* *************************************** BEGIN TOPNAV CSS ************************************************ */
@@ -227,19 +227,6 @@ text {
   box-shadow: inset 0px 0px 15px #1c1c1c;
   z-index: +1;
   }
-
-/*resize content divs when too thin*/
-@media (max-width: 600px) {
-  .flexMasterRow {
-    flex-direction: column;
-  }
-  .flexMasterColumnLeft {
-    margin-bottom: clamp(40px, 4vh, 60px);
-  }
-  .flexMasterColumnRight {
-    margin: auto;
-  }
-}
 /* *************************************** END FLEX BOXES CSS *********************************************** */
 
 /* *************************************** BEGIN SLIDESHOW V3 CSS ******************************************* */
@@ -342,6 +329,32 @@ img {vertical-align: middle;}
   text-align: center;
   overflow: visible;
   }
+
+/* ****************************************** MEDIA QUERIES ************************************************* */
+@media (max-width: 600px) {
+  .flexMasterRow {
+    flex-direction: column;
+  }
+  .flexMasterColumnLeft {
+    margin-bottom: clamp(40px, 4vh, 60px);
+  }
+  .flexMasterColumnRight {
+    margin: auto;
+  }
+  .spacerXtraShort {
+  margin: clamp(10px, 2vw, 30px);
+  }
+  .spacerShort {
+  margin: clamp(24px, 4vw, 60px);
+  }
+  .spacer {
+  margin: clamp(40px, 6vw, 90px);
+  }
+  .spacerLong {
+  margin: clamp(56px, 8vw, 130px);
+  }
+}
+/* ****************************************** MEDIA QUERIES ************************************************* */
 
 </style>
 </head>
