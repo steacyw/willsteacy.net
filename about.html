@@ -445,6 +445,78 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 <div class="spacerLong">
 </div>
 
+<!-- ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
+	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ----->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const AUTOPLAY_DELAY = 1500;          // time between auto-advances (ms)
+  const AUTOPLAY_RESTART_DELAY = 3500;  // wait after user interacts before resuming (ms)
+
+  document.querySelectorAll('.carousel').forEach(function (carousel) {
+    const slides  = carousel.querySelectorAll('.mySlides');
+    const dots    = carousel.querySelectorAll('.dot');
+    const prevBtn = carousel.querySelector('.prev');
+    const nextBtn = carousel.querySelector('.next');
+
+    let slideIndex = 1;
+    let autoplayInterval = null;
+    let autoplayRestartTimeout = null;
+
+    function showSlides(n) {
+      if (n > slides.length) slideIndex = 1;
+      if (n < 1) slideIndex = slides.length;
+
+      slides.forEach(function (slide) { slide.style.display = 'none'; });
+      dots.forEach(function (dot) { dot.classList.remove('active'); });
+
+      slides[slideIndex - 1].style.display = 'block';
+      dots[slideIndex - 1].classList.add('active');
+    }
+
+    function startAutoplay() {
+      if (autoplayInterval) return; // already running, don't stack intervals
+      autoplayInterval = setInterval(function () {
+        plusSlides(1);
+      }, AUTOPLAY_DELAY);
+    }
+
+    function stopAutoplay() {
+      clearInterval(autoplayInterval);
+      autoplayInterval = null;
+    }
+
+    function pauseAndRestartAutoplay() {
+      stopAutoplay();
+      clearTimeout(autoplayRestartTimeout);
+      autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
+    }
+
+    function plusSlides(n) {
+      pauseAndRestartAutoplay();
+      showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+      pauseAndRestartAutoplay();
+      showSlides(slideIndex = n);
+    }
+
+    if (prevBtn) prevBtn.addEventListener('click', function () { plusSlides(-1); });
+    if (nextBtn) nextBtn.addEventListener('click', function () { plusSlides(1); });
+
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { currentSlide(i + 1); });
+    });
+
+    // Kick things off
+    showSlides(slideIndex);
+    startAutoplay();
+  });
+});
+</script>
+<!-- / ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
+	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ------->
+
 </body>
 
 </html>
