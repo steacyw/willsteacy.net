@@ -160,7 +160,23 @@ text {
 }
 /* *************************************** END TOPNAV CSS ************************************************** */
 
+/* **************************************** BEGIN HEADERS CSS ********************************************** */
 .logo {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(50px, 10vw, 60px);
+  display: flex;
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
+
+.logoimg {
+  height: clamp(50px, 10vw, 60px);
+  width: auto;
+/*  border: 1px solid white; */
+}
+
+.header {
   margin: auto;
   width: clamp(200px, 90vw, 750px);
   height: clamp(40px, 8vw, 50px);
@@ -169,25 +185,41 @@ text {
 /*  border: 1px solid pink; */
 }
 
-.logoimg01 {
+.headerimg01 {
   height: clamp(40px, 8vw, 50px);
   width: clamp(40px, 8vw, 50px);
 /*  border: 1px solid white; */
 }
 
-.logoimg02 {
+.headerimg02 {
   height: clamp(40px, 8vw, 50px);
   width: auto;
 /*  border: 1px solid white; */
 }
+
+.subheader {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 6vw, 40px);
+  display: flex;
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
+
+.subheaderimg {
+  height: clamp(30px, 6vw, 40px);
+  width: auto;
+/*  border: 1px solid white; */
+}
+/* ***************************************** END HEADERS CSS *********************************************** */
 
 .bodyText {
   margin: auto;
   width: clamp(200px, 90vw, 750px);
   line-height: 1.2;
   }
-  
-/* *************************************** BEGIN FLEX BOXES CSS ********************************************* */
+
+/* *************************************** BEGIN FLEX BOXES CSS ******************************************** */
 /*MASTER-container ROW*/
 .flexMasterRow {
   display: flex;
@@ -380,7 +412,7 @@ img {vertical-align: middle;}
 
 <!-- HOME -->
 <div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+  <div class="logoimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/willsteacy_logo_animated_web.gif" title="Welcome to willsteacy.net!" alt="willsteacy.net" height="100%" width="auto">
   </div>
 </div>
@@ -397,11 +429,11 @@ img {vertical-align: middle;}
 </div>
 
 <!-- PHOTOGRAPHY -->
-<div class="logo">
-  <div class="logoimg01">
+<div class="header">
+  <div class="headerimg01">
     <a href="https://files.catbox.moe/5if6vr.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/lensThumb02.png" title="A wonderful little lens" alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="logoimg02">
+  <div class="headerimg02">
     <img src="images/thumbnails/pageheaderthumbnails/photography.png" title="Welcome to the photography page!" alt="Will Steacy takes cool photographs!" height="100%" width="auto">
   </div>
 </div>
@@ -419,8 +451,8 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+<div class="subheader">
+  <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/thumbnails/pagesubheaderthumbnails/art&sculpture_subheader.png" title="Art & Sculpture" alt="Images of artwork and sculptures made by the photographer's friends." height="100%" width="auto">
   </div>
 </div>
@@ -489,8 +521,8 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+<div class="subheader">
+  <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/thumbnails/pagesubheaderthumbnails/food_subheader.png" title="Food" alt="Images of food and drink. Cocktails, beers, burgers, fries, and more." height="100%" width="auto">
   </div>
 </div>
@@ -557,8 +589,8 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+<div class="subheader">
+  <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/thumbnails/pagesubheaderthumbnails/jewelry_subheader.png" title="Jewelry" alt="Glamorous images of fine jewelry wrought from gold with precious stones." height="100%" width="auto">
   </div>
 </div>
@@ -626,11 +658,11 @@ img {vertical-align: middle;}
 </div>
 
 <!-- ADVERTISING -->
-<div class="logo">
-  <div class="logoimg01">
+<div class="header">
+  <div class="headerimg01">
     <a href="https://files.catbox.moe/jpyt2s.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/stuffThumb02.png" title="A collection of products for which one might design an advertisment..." alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="logoimg02">
+  <div class="headerimg02">
     <img src="images/thumbnails/pageheaderthumbnails/advertising.png" title="Welcome to the advertising page" alt="Will Steacy has made some impressive advertising!" height="100%" width="auto">
   </div>
 </div>
@@ -646,8 +678,8 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+<div class="subheader">
+  <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/thumbnails/pagesubheaderthumbnails/print_subheader.png" title="Print ads" alt="Advertisements that have appeared in print publications." height="100%" width="auto">
   </div>
 </div>
@@ -716,8 +748,8 @@ img {vertical-align: middle;}
 <div class="spacerLong">
 </div>
 
-<div class="logo">
-  <div class="logoimg02" stlye="height:clamp(40px, 8vw, 50px);">
+<div class="subheader">
+  <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
     <img src="images/thumbnails/pagesubheaderthumbnails/newspaper_subheader.png" title="Newspaper ads " alt="Jewelry ads that have appeared in the Wall Street Journal" height="100%" width="auto">
   </div>
 </div>
