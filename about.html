@@ -160,7 +160,23 @@ text {
 }
 /* *************************************** END TOPNAV CSS ************************************************** */
 
+/* **************************************** BEGIN HEADERS CSS ********************************************** */
 .logo {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(50px, 10vw, 60px);
+  display: flex;
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
+
+.logoimg {
+  height: clamp(50px, 10vw, 60px);
+  width: auto;
+/*  border: 1px solid white; */
+}
+
+.header {
   margin: auto;
   width: clamp(200px, 90vw, 750px);
   height: clamp(40px, 8vw, 50px);
@@ -169,17 +185,33 @@ text {
 /*  border: 1px solid pink; */
 }
 
-.logoimg01 {
+.headerimg01 {
   height: clamp(40px, 8vw, 50px);
   width: clamp(40px, 8vw, 50px);
 /*  border: 1px solid white; */
 }
 
-.logoimg02 {
+.headerimg02 {
   height: clamp(40px, 8vw, 50px);
   width: auto;
 /*  border: 1px solid white; */
 }
+
+.subheader {
+  margin: auto;
+  width: clamp(200px, 90vw, 750px);
+  height: clamp(30px, 6vw, 40px);
+  display: flex;
+  flex-direction: horizontal;
+/*  border: 1px solid pink; */
+}
+
+.subheaderimg {
+  height: clamp(30px, 6vw, 40px);
+  width: auto;
+/*  border: 1px solid white; */
+}
+/* ***************************************** END HEADERS CSS *********************************************** */
 
 .bodyText {
   margin: auto;
@@ -378,11 +410,11 @@ img {vertical-align: middle;}
 </div>
 
 <!-- ABOUT -->
-<div class="logo">
-  <div class="logoimg01">
+<div class="header">
+  <div class="headerimg01">
     <a href="https://files.catbox.moe/gox3hx.png" target="_blank" rel="noopener noreferrer"><img src="/images/thumbnails/pageheaderthumbnails/mugThumb02.png" title="My favorite beverage" alt="About Will Steacy and his work." height="100%" width="100%""></a>
   </div>
-  <div class="logoimg02">
+  <div class="headerimg02">
     <img src="images/thumbnails/pageheaderthumbnails/aboutMe.png" title="The personal website of... guess who!" alt="All about your favorite Photographer, Will Steacy!" height="100%" width="auto">
   </div>
 </div>
