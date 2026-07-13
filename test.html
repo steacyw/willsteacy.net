@@ -385,6 +385,11 @@ img {vertical-align: middle;}
   .spacerLong {
   margin: clamp(56px, 8vw, 130px);
   }
+  .text {
+  font-size: clamp(14px, 2vw, 16px);
+  padding: 0px 6px;
+  bottom: -5vw;
+  }
 }
 /* ****************************************** MEDIA QUERIES ************************************************* */
 
@@ -730,7 +735,7 @@ img {vertical-align: middle;}
 
 <div class="subheader">
   <div class="subheaderimg" stlye="height:clamp(40px, 8vw, 50px);">
-    <img src="images/thumbnails/pagesubheaderthumbnails/print_subheader.png" title="Print ads" alt="Advertisements that have appeared in print publications." height="100%" width="auto">
+    <img src="images/thumbnails/pagesubheaderthumbnails/print_subheader.png" title="Print ads" alt="Advertisements that have appeared in magazines and other print publications." height="100%" width="auto">
   </div>
 </div>
 
@@ -744,46 +749,55 @@ img {vertical-align: middle;}
 
     <div class="mySlides fade">
       <div class="numbertext">1 / 9</div>
+	  <div class="text">Photo Cass Bird</div>
       <img src="images/print/print01.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">2 / 9</div>
+	  <div class="text">Photo W. Maser, jewelry edit W. Steacy</div>
       <img src="images/print/print02.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">3 / 9</div>
+	  <div class="text">Frames from video Eve Cohen, edit W. Steacy</div>
       <img src="images/print/print03.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">4 / 9</div>
+	  <div class="text">Photo Cass Bird, jewelry edit W. Steacy</div>
       <img src="images/print/print04.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">5 / 9</div>
+	  <div class="text">Photo left Cass Bird, jewelry edit W. Steacy. Photo right J. Pushnik</div>
       <img src="images/print/print05.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">6 / 9</div>
+	  <div class="text">Frame from video Eve Cohen, edit W. Steacy</div>
       <img src="images/print/print06.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">7 / 9</div>
+	  <div class="text">Photo left J. Pushnik. Photo right Cass Bird</div>
       <img src="images/print/print07.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">8 / 9</div>
+	  <div class="text">Photo Cass Bird, jewelry edit W. Steacy</div>
       <img src="images/print/print08.jpg" style="width:100%">
     </div>
 
     <div class="mySlides fade">
       <div class="numbertext">9 / 9</div>
+	  <div class="text">Photo left W. Steacy. Photo right W. Maser</div>
       <img src="images/print/print09.jpg" style="width:100%">
     </div>
 
@@ -931,6 +945,7 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 document.addEventListener('DOMContentLoaded', function () {
   const AUTOPLAY_DELAY = 1500;          // time between auto-advances (ms)
   const AUTOPLAY_RESTART_DELAY = 3500;  // wait after user interacts before resuming (ms)
+  const FIRST_SLIDE_DELAY = 4000;       // extra-long linger time for the very first slide (ms)
 
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     const slides  = carousel.querySelectorAll('.mySlides');
@@ -941,6 +956,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let slideIndex = 1;
     let autoplayInterval = null;
     let autoplayRestartTimeout = null;
+    let firstSlideTimeout = null;
 
     function showSlides(n) {
       if (n > slides.length) slideIndex = 1;
@@ -953,11 +969,15 @@ document.addEventListener('DOMContentLoaded', function () {
       dots[slideIndex - 1].classList.add('active');
     }
 
+    // Called ONLY by the running interval — a pure automatic tick.
+    // Does NOT touch the interval itself, so the cadence stays steady.
+    function autoAdvance() {
+      showSlides(slideIndex += 1);
+    }
+
     function startAutoplay() {
       if (autoplayInterval) return; // already running, don't stack intervals
-      autoplayInterval = setInterval(function () {
-        plusSlides(1);
-      }, AUTOPLAY_DELAY);
+      autoplayInterval = setInterval(autoAdvance, AUTOPLAY_DELAY);
     }
 
     function stopAutoplay() {
@@ -968,9 +988,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function pauseAndRestartAutoplay() {
       stopAutoplay();
       clearTimeout(autoplayRestartTimeout);
+      clearTimeout(firstSlideTimeout); // cancel the special first-slide timer if user interacts early
       autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
     }
 
+    // Called ONLY by manual interaction (buttons/dots) — pauses,
+    // shows the requested slide, then resumes autoplay after a breather.
     function plusSlides(n) {
       pauseAndRestartAutoplay();
       showSlides(slideIndex += n);
@@ -990,7 +1013,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Kick things off
     showSlides(slideIndex);
-    startAutoplay();
+
+    // Give the first slide its own longer "linger" delay, then drop into
+    // steady-cadence autoplay (every slide after this ticks at AUTOPLAY_DELAY,
+    // uninterrupted, since autoAdvance never resets the interval).
+    firstSlideTimeout = setTimeout(function () {
+      autoAdvance();
+      startAutoplay();
+    }, FIRST_SLIDE_DELAY);
   });
 });
 </script>
