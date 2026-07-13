@@ -385,12 +385,6 @@ img {vertical-align: middle;}
   .spacerLong {
   margin: clamp(56px, 8vw, 130px);
   }
-  .text {
-  font-size: clamp(14px, 2vw, 16px);
-  padding: 0px 6px;
-  bottom: -5vw;
-  /* bottom: clamp(-20px, -6vw, -10px); */
-  }
 }
 /* ****************************************** MEDIA QUERIES ************************************************* */
 
@@ -445,13 +439,6 @@ img {vertical-align: middle;}
 </div>
 
 <div class="spacerShort">
-</div>
-
-<div class="bodyText">
-<p>The images below are a sampling of work I've done for my employer, as a freelancer, and for friends.</p>
-</div>
-
-<div class="spacerLong">
 </div>
 
 <div class="subheader">
@@ -729,7 +716,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <div class="bodyText">
@@ -738,7 +725,7 @@ img {vertical-align: middle;}
    (In cases where the original image is not mine, the photographer will be noted.)</p>
 </div>
 
-<div class="spacerLong">
+<div class="spacerShort">
 </div>
 
 <div class="subheader">
@@ -906,7 +893,7 @@ img {vertical-align: middle;}
 
 <div class="bodyText">
 <p>Thank you for viewing my website!<br>
-If you've got an inexhaustible hunger for more of my work, don't hesitate to send me a message! You can get in touch with me via email using the address below.</p>
+If you'd like to see more of my work or collaborate on a project, reach out via email using the address below.</p>
 </div>
 
 <div class="spacerLong">
@@ -944,7 +931,6 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 document.addEventListener('DOMContentLoaded', function () {
   const AUTOPLAY_DELAY = 1500;          // time between auto-advances (ms)
   const AUTOPLAY_RESTART_DELAY = 3500;  // wait after user interacts before resuming (ms)
-  const FIRST_SLIDE_DELAY = 4000;       // extra-long linger time for the very first slide (ms)
 
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     const slides  = carousel.querySelectorAll('.mySlides');
@@ -955,7 +941,6 @@ document.addEventListener('DOMContentLoaded', function () {
     let slideIndex = 1;
     let autoplayInterval = null;
     let autoplayRestartTimeout = null;
-    let firstSlideTimeout = null;
 
     function showSlides(n) {
       if (n > slides.length) slideIndex = 1;
@@ -983,7 +968,6 @@ document.addEventListener('DOMContentLoaded', function () {
     function pauseAndRestartAutoplay() {
       stopAutoplay();
       clearTimeout(autoplayRestartTimeout);
-      clearTimeout(firstSlideTimeout); // cancel the special first-slide timer if user interacts early
       autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
     }
 
@@ -1006,25 +990,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Kick things off
     showSlides(slideIndex);
-
-    // Wait until the first slide's image has actually finished loading before
-    // starting any timer, so the countdown doesn't run out while the image
-    // is still downloading. Then give the first slide its own longer "linger"
-    // delay before advancing, and drop into normal-speed autoplay after that.
-    function beginFirstAutoplay() {
-      firstSlideTimeout = setTimeout(function () {
-        showSlides(slideIndex += 1);
-        startAutoplay();
-      }, FIRST_SLIDE_DELAY);
-    }
-
-    const firstImg = slides[0] ? slides[0].querySelector('img') : null;
-    if (firstImg && !firstImg.complete) {
-      firstImg.addEventListener('load', beginFirstAutoplay);
-      firstImg.addEventListener('error', beginFirstAutoplay); // don't hang forever if the image fails
-    } else {
-      beginFirstAutoplay();
-    }
+    startAutoplay();
   });
 });
 </script>
