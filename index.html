@@ -939,9 +939,11 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 <div class="spacerLong">
 </div>
 
+<!-- ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
+	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ----->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const AUTOPLAY_DELAY = 3500;          // time between auto-advances (ms)
+  const AUTOPLAY_DELAY = 3000;          // time between auto-advances (ms)
   const AUTOPLAY_RESTART_DELAY = 3500;  // wait after user interacts before resuming (ms)
   const FIRST_SLIDE_DELAY = 4000;       // extra-long linger time for the very first slide (ms)
 
@@ -1022,6 +1024,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 </script>
+<!-- / ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
+	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ------->
 
 </body>
 
