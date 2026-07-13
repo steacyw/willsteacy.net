@@ -939,12 +939,11 @@ document.write("<center><font size='02vmin'><font color='#F15A31'>" + r_text[ran
 <div class="spacerLong">
 </div>
 
-<!-- ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
-	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ----->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
   const AUTOPLAY_DELAY = 1500;          // time between auto-advances (ms)
   const AUTOPLAY_RESTART_DELAY = 3500;  // wait after user interacts before resuming (ms)
+  const FIRST_SLIDE_DELAY = 4000;       // extra-long linger time for the very first slide (ms)
 
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     const slides  = carousel.querySelectorAll('.mySlides');
@@ -955,6 +954,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let slideIndex = 1;
     let autoplayInterval = null;
     let autoplayRestartTimeout = null;
+    let firstSlideTimeout = null;
 
     function showSlides(n) {
       if (n > slides.length) slideIndex = 1;
@@ -967,11 +967,15 @@ document.addEventListener('DOMContentLoaded', function () {
       dots[slideIndex - 1].classList.add('active');
     }
 
+    // Called ONLY by the running interval — a pure automatic tick.
+    // Does NOT touch the interval itself, so the cadence stays steady.
+    function autoAdvance() {
+      showSlides(slideIndex += 1);
+    }
+
     function startAutoplay() {
       if (autoplayInterval) return; // already running, don't stack intervals
-      autoplayInterval = setInterval(function () {
-        plusSlides(1);
-      }, AUTOPLAY_DELAY);
+      autoplayInterval = setInterval(autoAdvance, AUTOPLAY_DELAY);
     }
 
     function stopAutoplay() {
@@ -982,9 +986,12 @@ document.addEventListener('DOMContentLoaded', function () {
     function pauseAndRestartAutoplay() {
       stopAutoplay();
       clearTimeout(autoplayRestartTimeout);
+      clearTimeout(firstSlideTimeout); // cancel the special first-slide timer if user interacts early
       autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
     }
 
+    // Called ONLY by manual interaction (buttons/dots) — pauses,
+    // shows the requested slide, then resumes autoplay after a breather.
     function plusSlides(n) {
       pauseAndRestartAutoplay();
       showSlides(slideIndex += n);
@@ -1004,12 +1011,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Kick things off
     showSlides(slideIndex);
-    startAutoplay();
+
+    // Give the first slide its own longer "linger" delay, then drop into
+    // steady-cadence autoplay (every slide after this ticks at AUTOPLAY_DELAY,
+    // uninterrupted, since autoAdvance never resets the interval).
+    firstSlideTimeout = setTimeout(function () {
+      autoAdvance();
+      startAutoplay();
+    }, FIRST_SLIDE_DELAY);
   });
 });
 </script>
-<!-- / ONE shared script that initializes EVERY carousel on the page.  Each carousel gets its own private state via
-	 a closure, so having multiple carousels on the page all work independently with no naming collisions. ------->
 
 </body>
 
