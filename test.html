@@ -325,7 +325,7 @@ img {vertical-align: middle;}
   display: block;
 }
 
-/* The dots/bullets/indicators
+/* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
   height: 20px;
@@ -340,7 +340,6 @@ img {vertical-align: middle;}
 .active, .dot:hover {
   background-color: #B5DECB;
 }
-*/
 
 /* Fading animation */
 .fade {
@@ -421,7 +420,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <div class="bodyText">
@@ -451,7 +450,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <!-- ------------------------------- BEGIN SLIDESHOW V3 HTML --------------------------- --> <!-- 01 Art & Sculpture -->
@@ -534,7 +533,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <!-- ------------------------------- BEGIN SLIDESHOW V3 HTML --------------------------- --> <!-- 02 Food -->
@@ -616,7 +615,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <!-- ------------------------------- BEGIN SLIDESHOW V3 HTML --------------------------- --> <!-- 03 Jewelry -->
@@ -721,7 +720,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <!-- ------------------------------- BEGIN SLIDESHOW V3 HTML --------------------------- --> <!-- 04 Print -->
@@ -808,7 +807,7 @@ img {vertical-align: middle;}
   </div>
 </div>
 
-<div class="spacerShort">
+<div class="spacerXtraShort">
 </div>
 
 <!-- ------------------------------- BEGIN SLIDESHOW V3 HTML --------------------------- --> <!-- 05 Newspaper -->
@@ -986,9 +985,9 @@ document.addEventListener('DOMContentLoaded', function () {
     if (prevBtn) prevBtn.addEventListener('click', function () { plusSlides(-1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { plusSlides(1); });
 
-    //dots.forEach(function (dot, i) {
-      //dot.addEventListener('click', function () { currentSlide(i + 1); });
-    //});
+    dots.forEach(function (dot, i) {
+      dot.addEventListener('click', function () { currentSlide(i + 1); });
+    });
 
     // Kick things off
     showSlides(slideIndex);
