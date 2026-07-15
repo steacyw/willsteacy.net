@@ -325,26 +325,10 @@ img {vertical-align: middle;}
   display: block;
 }
 
-/* The dots/bullets/indicators */
-.dot {
-  cursor: pointer;
-  height: 20px;
-  width: 20px;
-  margin: 0 4px;
-  background-color: #DAD0C2;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-}
-
-.active, .dot:hover {
-  background-color: #B5DECB;
-}
-
 /* Fading animation */
 .fade {
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
 }
 
 @keyframes fade {
@@ -524,16 +508,6 @@ img {vertical-align: middle;}
     <a class="next">&#10095;</a>
 
   </div>
-  <br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
 </div>
 <!-- -------------------------------- END SLIDESHOW V3 HTML ---------------------------- --> <!-- 01 Art & Sculpture -->
 
@@ -612,16 +586,6 @@ img {vertical-align: middle;}
     <a class="next">&#10095;</a>
 
   </div>
-  <br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
 </div>
 <!-- -------------------------------- END SLIDESHOW V3 HTML ---------------------------- --> <!-- 02 Food -->
 
@@ -694,16 +658,6 @@ img {vertical-align: middle;}
     <a class="prev">&#10094;</a>
     <a class="next">&#10095;</a>
 
-  </div>
-  <br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
   </div>
 </div>
 <!-- -------------------------------- END SLIDESHOW V3 HTML ---------------------------- --> <!-- 03 Jewelry -->
@@ -804,16 +758,6 @@ img {vertical-align: middle;}
     <a class="next">&#10095;</a>
 
   </div>
-  <br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
 </div>
 <!-- -------------------------------- END SLIDESHOW V3 HTML ---------------------------- --> <!-- 04 Print -->
 
@@ -887,16 +831,6 @@ img {vertical-align: middle;}
     <a class="next">&#10095;</a>
 
   </div>
-  <br>
-  <div style="text-align:center">
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-    <span class="dot"></span>
-  </div>
 </div>
 <!-- -------------------------------- END SLIDESHOW V3 HTML ---------------------------- --> <!-- 05 Newspaper -->
 
@@ -945,7 +879,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   document.querySelectorAll('.carousel').forEach(function (carousel) {
     const slides  = carousel.querySelectorAll('.mySlides');
-    const dots    = carousel.querySelectorAll('.dot');
     const prevBtn = carousel.querySelector('.prev');
     const nextBtn = carousel.querySelector('.next');
 
@@ -959,10 +892,8 @@ document.addEventListener('DOMContentLoaded', function () {
       if (n < 1) slideIndex = slides.length;
 
       slides.forEach(function (slide) { slide.style.display = 'none'; });
-      dots.forEach(function (dot) { dot.classList.remove('active'); });
 
       slides[slideIndex - 1].style.display = 'block';
-      dots[slideIndex - 1].classList.add('active');
     }
 
     // Called ONLY by the running interval — a pure automatic tick.
@@ -988,7 +919,7 @@ document.addEventListener('DOMContentLoaded', function () {
       autoplayRestartTimeout = setTimeout(startAutoplay, AUTOPLAY_RESTART_DELAY);
     }
 
-    // Called ONLY by manual interaction (buttons/dots) — pauses,
+    // Called ONLY by manual interaction (buttons) — pauses,
     // shows the requested slide, then resumes autoplay after a breather.
     function plusSlides(n) {
       pauseAndRestartAutoplay();
@@ -1002,10 +933,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (prevBtn) prevBtn.addEventListener('click', function () { plusSlides(-1); });
     if (nextBtn) nextBtn.addEventListener('click', function () { plusSlides(1); });
-
-    dots.forEach(function (dot, i) {
-      dot.addEventListener('click', function () { currentSlide(i + 1); });
-    });
 
     // Kick things off
     showSlides(slideIndex);
